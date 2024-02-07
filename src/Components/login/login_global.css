@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-jetbrains-mono: "JetBrains Mono";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-lgi: 19px;
+
+  /* Colors */
+  --color-orange: #f8ae20;
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+  --color-silver: #bfbfbf;
+  --color-black: #000;
+  --color-whitesmoke: #efefef;
+
+  /* Paddings */
+  --padding-205xl: 224px;
+  --padding-76xl: 95px;
+  --padding-9xs: 4px;
+}

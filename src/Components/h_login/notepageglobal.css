@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-jetbrains-mono: "JetBrains Mono";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-lgi: 19px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-orange: #f8ae20;
+
+  /* Paddings */
+  --padding-xs: 12px;
+}

@@ -1,0 +1,219 @@
+.home,
+.home-frame-child {
+  position: relative;
+  max-width: 100%;
+}
+.home-frame-child {
+  height: 117px;
+  width: 480px;
+  background-color: var(--color-orange);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  display: none;
+}
+.home {
+  height: 77px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.home-frame,
+.home-frame-item {
+  background-color: var(--color-orange);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.home-frame {
+  flex: 0.9917;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl) 1px;
+}
+.home-frame-item {
+  height: 117px;
+  width: 480px;
+  position: relative;
+  display: none;
+}
+.home-frame1,
+.my-quizzes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.my-quizzes {
+  height: 77px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.home-frame1 {
+  flex: 0.9876;
+  background-color: var(--color-orange);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-xl) 4px var(--padding-xl) 0;
+  white-space: nowrap;
+  margin-left: -1px;
+}
+.home-frame-inner,
+.login {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+}
+.home-frame-inner {
+  height: 117px;
+  background-color: var(--color-orange);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.login {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-left: -476px;
+}
+.frame-a,
+.home-frame2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.home-frame2 {
+  flex: 1;
+  align-items: center;
+  margin-left: -1px;
+}
+.frame-a {
+  align-self: stretch;
+  align-items: flex-start;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
+.your-classes {
+  height: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-d-child {
+  height: 14.7px;
+  width: 113px;
+  position: relative;
+}
+.frame-c,
+.frame-d,
+.main-frame {
+  display: flex;
+  justify-content: flex-start;
+}
+.frame-d {
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.frame-c,
+.main-frame {
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frame-c {
+  flex-direction: row;
+  padding: 0 var(--padding-xs);
+  box-sizing: border-box;
+}
+.main-frame {
+  align-self: stretch;
+  flex-direction: column;
+  gap: 68px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
+.frame-e-child,
+.recent-quizzes {
+  position: relative;
+}
+.frame-e-child {
+  height: 14.7px;
+  width: 113px;
+}
+.frame-e,
+.home-frame3,
+.home-wo-login {
+  display: flex;
+  justify-content: flex-start;
+}
+.frame-e {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  max-width: 100%;
+}
+.home-frame3,
+.home-wo-login {
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.home-frame3 {
+  flex-direction: row;
+  padding: 0 var(--padding-xs);
+  max-width: 100%;
+}
+.home-wo-login {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0 0 411px;
+  gap: 364px;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
+@media screen and (max-width: 1425px) {
+  .frame-a {
+    display: none;
+  }
+}
+@media screen and (max-width: 825px) {
+  .main-frame {
+    gap: 34px;
+  }
+  .home-wo-login {
+    gap: 182px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .your-classes {
+    font-size: var(--font-size-lgi);
+  }
+  .main-frame {
+    gap: 17px;
+  }
+  .recent-quizzes {
+    font-size: var(--font-size-lgi);
+  }
+  .home-wo-login {
+    gap: 91px;
+  }
+}

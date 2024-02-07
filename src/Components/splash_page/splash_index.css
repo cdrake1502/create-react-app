@@ -1,0 +1,36 @@
+.rectangle-temp-icon {
+  position: absolute;
+  top: 107px;
+  left: 44px;
+  width: 1307px;
+  height: 810px;
+  object-fit: cover;
+}
+.temp-splash {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f8ae20;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+}
+
+.top-right-box {
+  position: absolute;
+  top: 20px; /* Adjust top position as needed */
+  right: 20px; /* Adjust right position as needed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Adjust button styles */
+.btn {
+  width: 120px; /* Adjust button width as needed */
+  border-radius: 20px; /* Adjust border radius for rounded corners */
+}
+

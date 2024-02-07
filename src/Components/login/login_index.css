@@ -1,0 +1,323 @@
+.login-child {
+  height: 1024px;
+  width: 1440px;
+  position: relative;
+  background-color: var(--color-orange);
+  display: none;
+  max-width: 100%;
+}
+.icon {
+  width: 524px;
+  height: 462px;
+  position: relative;
+  object-fit: cover;
+  max-width: 130%;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.wrapper {
+  height: 354px;
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 403px;
+  max-width: 100%;
+}
+.input-frame-child {
+  width: 597px;
+  height: 576px;
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 7px 4px rgba(0, 0, 0, 0.25);
+  display: none;
+  max-width: 100%;
+}
+.login1 {
+  margin: 0;
+  width: 192px;
+  height: 84px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.username-input-child {
+  height: 74px;
+  width: 480px;
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  display: none;
+  max-width: 100%;
+}
+.username,
+.username-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.username {
+  height: 77px;
+  flex: 1;
+  position: relative;
+  z-index: 3;
+}
+.username-input {
+  align-self: stretch;
+  background-color: var(--color-whitesmoke);
+  flex-direction: row;
+  padding: 0 var(--padding-9xs) 0 0;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.login-button-child,
+.password {
+  position: relative;
+  max-width: 100%;
+}
+.login-button-child {
+  align-self: stretch;
+  width: 480px;
+  background-color: var(--color-whitesmoke);
+  display: none;
+}
+.password {
+  height: 74px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.divider-frame,
+.login-button {
+  align-self: stretch;
+  display: flex;
+  max-width: 100%;
+}
+.login-button {
+  background-color: var(--color-whitesmoke);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-9xs);
+  box-sizing: border-box;
+  z-index: 2;
+}
+.divider-frame {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 65px;
+}
+.frame-child,
+.login2 {
+  height: 47px;
+  position: relative;
+}
+.frame-child {
+  width: 197px;
+  background-color: var(--color-gainsboro);
+  display: none;
+}
+.login2 {
+  flex: 1;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-jetbrains-mono);
+  color: var(--color-black);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.frame-item,
+.rectangle-parent {
+  background-color: var(--color-gainsboro);
+}
+.rectangle-parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 128px;
+  z-index: 2;
+}
+.rectangle-group:hover,
+.rectangle-parent:hover {
+  background-color: var(--color-silver);
+}
+.frame-item {
+  height: 47px;
+  width: 203px;
+  position: relative;
+  display: none;
+}
+.rectangle-group,
+.sign-up {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.sign-up {
+  height: 47px;
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-jetbrains-mono);
+  color: var(--color-black);
+  text-align: center;
+  justify-content: center;
+  z-index: 3;
+}
+.rectangle-group {
+  border: 0;
+  padding: 0 0 0 6px;
+  background-color: var(--color-gainsboro);
+  flex: 0.9704;
+  flex-direction: row;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  min-width: 132px;
+  white-space: nowrap;
+  z-index: 2;
+}
+.divider-frame-parent,
+.divider-frame1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 80px;
+}
+.divider-frame-parent {
+  flex-direction: column;
+  gap: 72px;
+  max-width: 100%;
+  font-size: var(--font-size-5xl);
+}
+.input-frame,
+.login,
+.root-frame {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.input-frame {
+  align-self: stretch;
+  background-color: var(--color-white);
+  box-shadow: 0 7px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  align-items: center;
+  padding: 17px 58px var(--padding-76xl) 59px;
+  gap: 45px;
+  max-width: 100%;
+  z-index: 1;
+}
+.login,
+.root-frame {
+  align-items: flex-start;
+}
+.root-frame {
+  width: 597px;
+  flex-direction: column;
+  padding: var(--padding-205xl) 0 0;
+  min-width: 597px;
+  max-width: 100%;
+}
+.login {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-orange);
+  overflow: hidden;
+  flex-direction: row;
+  padding: 0 0 var(--padding-205xl);
+  gap: 61px;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 64px;
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
+@media screen and (max-width: 1050px) {
+  .icon {
+    align-self: stretch;
+    width: auto;
+  }
+  .root-frame,
+  .wrapper {
+    flex: 1;
+  }
+  .login {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .login1 {
+    font-size: 51px;
+  }
+  .root-frame {
+    padding-top: 146px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 725px) {
+  .divider-frame {
+    gap: 32px;
+  }
+  .divider-frame1 {
+    gap: 40px;
+  }
+  .divider-frame-parent {
+    gap: 36px;
+  }
+  .input-frame {
+    gap: 22px;
+    padding: 20px 29px 62px;
+    box-sizing: border-box;
+  }
+  .root-frame {
+    min-width: 100%;
+  }
+  .login {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wrapper {
+    min-width: 100%;
+  }
+  .login1 {
+    font-size: 38px;
+  }
+  .login2,
+  .password,
+  .username {
+    font-size: var(--font-size-lgi);
+  }
+  .rectangle-group {
+    flex: 1;
+  }
+  .divider-frame1 {
+    flex-wrap: wrap;
+  }
+  .root-frame {
+    padding-top: var(--padding-76xl);
+    box-sizing: border-box;
+  }
+}

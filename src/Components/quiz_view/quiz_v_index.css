@@ -1,0 +1,105 @@
+.quiz-frame-child {
+  align-self: stretch;
+  width: 480px;
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  display: none;
+}
+.home {
+  height: 117px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.quiz-frame,
+.quiz-frame-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.quiz-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+}
+.quiz-frame-item {
+  align-self: stretch;
+  width: 480px;
+  position: relative;
+  display: none;
+}
+.my-quizzes,
+.quiz-frame1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-quizzes {
+  height: 117px;
+  position: relative;
+  z-index: 1;
+}
+.quiz-frame1 {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  flex-direction: row;
+  min-width: 360px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
+.quiz-frame-inner {
+  width: 480px;
+  position: relative;
+  max-height: 100%;
+  display: none;
+}
+.log-out {
+  height: 77px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.quiz-frame2,
+.quiz-view {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.quiz-frame2 {
+  flex: 1;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl) 0 var(--padding-xl) 4px;
+  min-width: 360px;
+}
+.quiz-view {
+  width: 100%;
+  position: relative;
+  background-color: #f8ae20;
+  overflow: hidden;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 907px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-jetbrains-mono);
+}
