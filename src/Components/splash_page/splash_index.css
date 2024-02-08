@@ -5,6 +5,8 @@
   width: 653px;
   height: 405px;
   object-fit: cover;
+  justify-content: center;
+  align-items: center;
 }
 .temp-splash {
   width: 100%;
