@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
 
   const handleLogin = () => {
-    navigate('/login')
+    navigate('/login');
     //setIsLoggedIn(true); // Example update (replace with actual auth check)
   };
 
@@ -20,18 +20,20 @@ const Navbar = () => {
   const handleLogout = () => {
     // Implement your logout logic and update isLoggedIn
     //setIsLoggedIn(false); // Example update (replace with actual auth check)
-    navigate('/splash')
+    navigate('/splash');
   };
-  
-    const navigateToLogIn = () => {
-      navigate('/quizgen');
-    };
-
+  const handleHome = () =>{
+    navigate('/splash');
+  }
+ 
   return (
     <div className="navbar-container fixed-top z-10 flex items-center justify-between px-4 bg-gray-800 text-white">
       <div className="navbar-image">
         {/* Replace with your image component or source */}
         <img src={Logo} alt="Navbar logo" />
+      </div>
+      <div>
+        <button class="" onClick={handleHome}>Home</button>
       </div>
       <nav className="navbar-links flex">
         {/* Conditionally render buttons based on login state */}
