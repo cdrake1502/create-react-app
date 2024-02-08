@@ -29,8 +29,38 @@
 }
 
 /* Adjust button styles */
-.btn {
-  width: 120px; /* Adjust button width as needed */
-  border-radius: 20px; /* Adjust border radius for rounded corners */
+.su_btn {
+  background-color: #FFFFFF; 
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
 }
 
+.l_btn {
+  background-color: #FFFFFF; 
+  border: none;
+  color: black;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.np_btn {
+  background-color: #FFFFFF; 
+  border: none;
+  color: black;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+}
