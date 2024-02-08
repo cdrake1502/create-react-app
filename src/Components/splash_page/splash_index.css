@@ -1,12 +1,10 @@
 .rectangle-temp-icon {
   position: absolute;
-  top: 54px;
-  left: 22px;
-  width: 653px;
-  height: 405px;
+  top: 107px;
+  left: 44px;
+  width: 1307px;
+  height: 810px;
   object-fit: cover;
-  justify-content: center;
-  align-items: center;
 }
 .temp-splash {
   width: 100%;
