@@ -23,7 +23,7 @@ const Splash = () =>{
     <div class="temp-splash">
 
           <div className="container">
-            <div className="top-center-box">
+            <div className="top-right-box">
               
               <button className="su_btn btn-secondary rounded-pill" onClick={navigateToSignUp}>Sign Up</button>
               <button className="l_btn btn-secondary rounded-pill" onClick={navigateToLogin}>Login</button>
