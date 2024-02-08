@@ -27,7 +27,7 @@ const Splash = () =>{
               
               <button className="su_btn btn-secondary rounded-pill" onClick={navigateToSignUp}>Sign Up</button>
               <button className="l_btn btn-secondary rounded-pill" onClick={navigateToLogin}>Login</button>
-              <button className="np_btn btn-secondary rounded-pill" onClick={navigateToNotePage}>NotePage</button>
+              <button className="np_btn btn-secondary rounded-pill" onClick={navigateToNotePage}>Note Page</button>
               
              
             </div>
