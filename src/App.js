@@ -13,10 +13,12 @@ import Navbar from './Components/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+     
       <BrowserRouter>
+      <Navbar/>
             <Routes>
                   <Route path='/' element={<Splash/>}/>
+                  <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
                   <Route path="/quizgen" element = {<QuizGen/>}/>
