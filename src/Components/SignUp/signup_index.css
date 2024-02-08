@@ -139,7 +139,8 @@
   }
 }
 
-.container {
+.container2{
+  background-color: white;
   position: relative;
   height: 100vh; /* Set container height to fill viewport */
 }
@@ -149,5 +150,8 @@
   bottom: 20px; /* Adjust bottom position as needed */
   left: 50%; /* Place the button at the horizontal center */
   transform: translateX(-50%); /* Center the button horizontally */
+  background-color: var(--color-gainsboro);
 }
-
+.bottom-button:hover{
+  background-color: var(--color-silver);
+}

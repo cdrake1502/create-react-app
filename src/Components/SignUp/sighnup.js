@@ -67,11 +67,10 @@ const SignUp =() =>{
                       <input class="rectangle-group3" type="text" placeholder="Last Name"/>
 
                       <input class="sign-up-text-child" type="text" placeholder="First Name"/>
+                      <button className="btn btn-secondary rounded-pill bottom-button">Sign Up</button>
                     </div>
+                   
               </div>
-          <div className="container">
-            <button className="btn btn-secondary rounded-pill bottom-button">Sign Up</button>
-          </div>
             </form>
             {error && (<div className="alert alert-danger" role="alert"> {error}
 

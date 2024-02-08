@@ -6,15 +6,19 @@ import Splash from './Components/splash_page/splash';
 import NotePage from './Components/h_login/NotePage';
 //import NoLogin from './Components/h_nologin/nologin';
 import QuizGen from './Components/QuizGeneration/QuizGen';
+import Navbar from './Components/Navbar/Navbar';
 
 
 
 function App() {
   return (
     <div className="App">
+     
       <BrowserRouter>
+      <Navbar/>
             <Routes>
                   <Route path='/' element={<Splash/>}/>
+                  <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
                   <Route path="/quizgen" element = {<QuizGen/>}/>

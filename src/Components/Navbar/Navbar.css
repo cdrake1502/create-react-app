@@ -1,0 +1,36 @@
+.navbar-container {
+    width: 100%; /* Ensure full-width coverage */
+    height: 50px; /* Set desired navbar height */
+    background-color: #212529; /* Use a darker gray for navbar background */
+    color: white; /* Maintain white text color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px; /* Add some padding for better spacing */
+  }
+  
+  .navbar-image {
+    width: 50px; /* Adjust image width as needed */
+    height: 50px;
+    border-radius: 50%; /* Make image circular */
+    margin-right: 16px; /* Add spacing between image and buttons */
+  }
+  
+  .navbar-links {
+    display: flex;
+  }
+  
+  button {
+    background-color: white;
+    color: #212529; /* Use same darker gray for button text */
+    border: none; /* Remove default button border */
+    border-radius: 8px; /* Add subtle button rounding */
+    padding: 8px 16px; /* Adjust button padding as needed */
+    margin-right: 8px; /* Add spacing between buttons */
+    font-size: 16px; /* Set button font size */
+    cursor: pointer; /* Indicate clickable buttons */
+  }
+  
+  button:hover {
+    background-color: #f2f2f2; /* Add subtle hover effect */
+  }
