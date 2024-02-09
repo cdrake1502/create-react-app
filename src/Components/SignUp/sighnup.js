@@ -2,10 +2,17 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './signup_global.css';
 import './signup_index.css';
+/*import React from 'react'*/
+/*import { useMediaQuery } from 'react-responsive'*/
 
 
 const SignUp =() =>{
 
+    /*const desktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const bigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+    const tabletMobile = useMediaQuery({query: 'max-width: 1224px)'})
+    const portrait = useMediaQuery({ query: '(orientation: portrait)' })
+    const retina = useMediaQuery({query: '(min-resolution: 2dppx)' })*/
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
