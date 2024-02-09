@@ -1,13 +1,13 @@
 /* TextBoxComponent.css */
 body{
-    background-color: orange;
+    background-color: #f8ae20;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    background-color: #f8ae20;
   }
   
   .textbox-container {

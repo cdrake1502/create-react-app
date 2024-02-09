@@ -19,7 +19,7 @@ const Splash = () =>{
   
 
   return(
-  <body>
+  <body className="body">
     <div class="temp-splash">
 
           <div className="container">
