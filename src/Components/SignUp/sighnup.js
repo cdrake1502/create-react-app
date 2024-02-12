@@ -2,17 +2,14 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './signup_global.css';
 import './signup_index.css';
-/*import React from 'react'*/
-/*import { useMediaQuery } from 'react-responsive'*/
+import {createClient} from '@supabase/supabase-js';
+const supbase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc2OTczNjYsImV4cCI6MjAyMzI3MzM2Nn0.g0vq8MRsOox8wKVEq8gde9CA_2egvpfMfoqDHiWJxv4');
+
+
 
 
 const SignUp =() =>{
-
-    /*const desktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' })
-    const bigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
-    const tabletMobile = useMediaQuery({query: 'max-width: 1224px)'})
-    const portrait = useMediaQuery({ query: '(orientation: portrait)' })
-    const retina = useMediaQuery({query: '(min-resolution: 2dppx)' })*/
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -43,6 +40,21 @@ const SignUp =() =>{
   
       // Clear any existing errors
       setError('');
+      
+      try {
+        const[data, error] = await supabase.from('users').insert([{email, password}]);
+
+        if(error) {
+          console.error('There was an error: ', error.message)
+          setError('There was an error signing up, Try again.');
+        } else {
+          console.log('Data inserted successfully: ', data);
+        }
+        } catch (error) {
+          console.error('Error: ', error.message);
+          setError('Error with sign up. Try aina.');
+        }
+      }
   
       // Proceed with sign-in logic
     };
