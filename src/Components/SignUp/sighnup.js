@@ -67,7 +67,7 @@ const SignUp = () => {
                   <div className="sign-up-text">
 
                       <input
-                          className="rectangle-group"
+                          className="rectangle-group3"
                           value={f_name}
                           onChange={(e) => setFname(e.target.value)}
                           type="f_name"
@@ -93,7 +93,7 @@ const SignUp = () => {
                       />
 
                       <input
-                          className="rectangle-group3"
+                          className="rectangle-group"
                           type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
