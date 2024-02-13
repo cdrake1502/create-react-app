@@ -65,8 +65,26 @@ const SignUp = () => {
               <div className="sign-up-box">
                   <h1 className="sign-up1">SIGN-UP</h1>
                   <div className="sign-up-text">
+
+                      <input
+                          className="rectangle-group"
+                          value={f_name}
+                          onChange={(e) => setFname(e.target.value)}
+                          type="f_name"
+                          placeholder="First Name"
+                          required
+                      />
                       <input
                           className="rectangle-group1"
+                          value={l_name}
+                          onChange={(e) => setLname(e.target.value)}
+                          type="l_name"
+                          placeholder="Last Name"
+                          required
+                      />
+
+                      <input
+                          className="rectangle-group2"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           type="email"
@@ -75,7 +93,7 @@ const SignUp = () => {
                       />
 
                       <input
-                          className="rectangle-group2"
+                          className="rectangle-group3"
                           type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
