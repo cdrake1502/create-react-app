@@ -9,6 +9,8 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const SignUp = () => {
+  const [f_name, setFname] = useState('');
+  const [l_name, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -42,7 +44,7 @@ const SignUp = () => {
 
       try {
           // Insert data into 'users' table
-          const { data, error } = await supabase.from('login').insert([{ email, password }]);
+          const { data, error } = await supabase.from('login').insert([{ f_name, l_name, email, password }]);
 
           if (error) {
               console.error('Error inserting data:', error.message);
