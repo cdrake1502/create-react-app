@@ -1,14 +1,23 @@
-.rectangle-temp-icon {
-  position: absolute;
-  width: 1307px;
-  height: 810px;
+.icon {
+  width: 524px;
+  height: 462px;
+  position: relative;
   object-fit: cover;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%; 
-  max-height: 100%;
-  background-color: #f8ae20;
+  max-width: 130%;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.wrapper {
+  height: 354px;
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 403px;
+  max-width: 100%;
 }
 .temp-splash {
   width: 100%;
