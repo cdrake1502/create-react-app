@@ -23,14 +23,14 @@ const Splash = () =>{
     <div class="temp-splash">
 
           <div className="container">
-            <div className="top-right-box">
-              
+            <div className="top-left-box">
+              <img class="rectangle-temp-icon" src={Logo} alt="Logo"/>
 
               
              
             </div>
           </div>
-      <img class="rectangle-temp-icon" src={Logo} alt="Logo"/>
+      
     </div>
   </body>
   );
