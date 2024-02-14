@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import './signup_global.css';
 import './signup_index.css';
 import {createClient} from '@supabase/supabase-js';

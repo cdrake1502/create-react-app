@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
   
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  //const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
 
   const handleLogin = () => {
     navigate('/login');
@@ -36,18 +36,9 @@ const Navbar = () => {
         <button class="" onClick={handleHome}>Home</button>
       </div>
       <nav className="navbar-links flex">
-        {/* Conditionally render buttons based on login state */}
-        {isLoggedIn ? (
-          <>
-            <button onClick={handleLogout}>Logout</button>
-            {/* Add other logged-in user options if needed */}
-          </>
-        ) : (
-          <>
+        
             <button onClick={handleLogin}>Login</button>
             <button onClick={handleSignup}>Sign Up</button>
-          </>
-        )}
       </nav>
     </div>
   );
