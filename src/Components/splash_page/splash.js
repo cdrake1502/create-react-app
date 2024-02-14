@@ -20,18 +20,21 @@ const Splash = () =>{
 
   return(
   <body className="body">
-    <div class="temp-splash">
+    // <div class="temp-splash">
 
-          <div className="container">
-            <div className="top-left-box">
-              <img class="rectangle-temp-icon" src={Logo} alt="Logo"/>
+    //       // <div className="container">
+    //       //   <div className="top-left-box">
+    //       //     <img class="rectangle-temp-icon" src={Logo} alt="Logo"/>
 
               
              
-            </div>
-          </div>
+    //       //   </div>
+    //       // </div>
       
-    </div>
+    // </div>
+    <div className="wrapper">
+            <img className="icon" alt="" src={Logo} />
+          </div>
   </body>
   );
 };
