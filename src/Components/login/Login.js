@@ -8,6 +8,11 @@ import Logo from './logo.png';
 const Login = () => {
 
     const navigate = useNavigate();
+    const [f_name, setFname] = useState('');
+    const [l_name, setLname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
   
     const navigateToSignUp = () => {
       navigate('/signup');
@@ -16,6 +21,7 @@ const Login = () => {
       navigate('/quizgen');
     };
   
+    
   return(
   <form id="Login">
         <div className="login">
