@@ -11,6 +11,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 const SignUp = () => {
   const [f_name, setFname] = useState('');
   const [l_name, setLname] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -40,13 +41,14 @@ const SignUp = () => {
       setError('');
 
       try {
-          const { data, error } = await supabase.from('login').insert([{ f_name, l_name, email, password }]);
+          const { data, error } = await supabase.from('login').insert([{ f_name, l_name,username, email, password }]);
 
           if (error) {
               console.error('Error inserting data:', error.message);
               setError('Error signing up. Please try again.');
           } else {
               console.log('Data inserted successfully:', data);
+              navigate('/quizgen');
           }
       } catch (error) {
           console.error('Error:', error.message);
@@ -75,6 +77,15 @@ const SignUp = () => {
                           onChange={(e) => setLname(e.target.value)}
                           type="l_name"
                           placeholder="Last Name"
+                          required
+                      />
+
+                    <input
+                          className="rectangle-group4"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                          type="username"
+                          placeholder="Username"
                           required
                       />
 
