@@ -5,7 +5,7 @@ import './login_index.css';
 import Logo from './logo.png';
 
 
-const Login = () => {
+const Login = async () => {
 
     const navigate = useNavigate();
     const [f_name, setFname] = useState('');
@@ -20,6 +20,21 @@ const Login = () => {
     const navigateToQuizGen = () => {
       navigate('/quizgen');
     };
+
+    try {
+      const { data, error } = await supabase.from('login').select('*');
+  
+      if (error) {
+          console.error('Error fetching data:', error.message);
+          setError('Error fetching data. Please try again.');
+      } else {
+          console.log('Data fetched successfully:', data);
+      }
+  } catch (error) {
+      console.error('Error:', error.message);
+      setError('Error fetching data. Please try again.');
+  }
+  
   
     
   return(

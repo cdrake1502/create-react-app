@@ -18,13 +18,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      // Regular expressions for password complexity
       const numberRegex = /\d/;
       const uppercaseRegex = /[A-Z]/;
       const lowercaseRegex = /[a-z]/;
       const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?/~\\-]/;
 
-      // Perform validation checks
       if (
           !email.includes('@') ||
           password.length < 6 ||
@@ -39,11 +37,9 @@ const SignUp = () => {
           return;
       }
 
-      // Clear any existing errors
       setError('');
 
       try {
-          // Insert data into 'users' table
           const { data, error } = await supabase.from('login').insert([{ f_name, l_name, email, password }]);
 
           if (error) {
@@ -51,7 +47,6 @@ const SignUp = () => {
               setError('Error signing up. Please try again.');
           } else {
               console.log('Data inserted successfully:', data);
-              // Redirect user to dashboard or display success message
           }
       } catch (error) {
           console.error('Error:', error.message);
