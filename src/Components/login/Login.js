@@ -7,36 +7,38 @@ import {createClient} from '@supabase/supabase-js';
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
 
 
-const Login = async () => {
+const Login = () => {
 
     const navigate = useNavigate();
-    const [f_name, setFname] = useState('');
-    const [l_name, setLname] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [error, setError] = useState();
   
-    const navigateToSignUp = () => {
-      navigate('/signup');
-    };
-    const navigateToQuizGen = () => {
-      navigate('/quizgen');
-    };
+    // const navigateToSignUp = () => {
+    //   navigate('/signup');
+    // };
+    // const navigateToQuizGen = () => {
+    //   navigate('/quizgen');
+    // };
 
-    try {
-      const { data, error } = await supabase.from('login').select('*');
-  
-      if (error) {
-          console.error('Error fetching data:', error.message);
-          setError('Error fetching data. Please try again.');
-      } else {
-          console.log('Data fetched successfully:', data);
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        const {user, session, error} = await supabase.auth.signIn({username, password});
+        if (error) {
+          throw error;
+        }
+        console.log('User: ', user);
+        navigate('/quizgen.js')
+      } catch (error) {
+        console.error('Login error: ', error.message);
+        setError('Invalid username or password. Try again.');
       }
-  } catch (error) {
-      console.error('Error:', error.message);
-      setError('Error fetching data. Please try again.');
-  }
-  
+      };
+      const navigateToSignUp = () => {
+        navigate('/signup');
+      };
+    
   
     
   return(
@@ -78,6 +80,6 @@ const Login = async () => {
     </form>
 
   );
-    };
+};
 
 export default Login;
