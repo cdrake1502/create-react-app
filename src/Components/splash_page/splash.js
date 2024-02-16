@@ -8,9 +8,9 @@ import Logo from "./logo.png";
 const Splash = () =>{
   return(
   <body className="body">
-    
+    <img className="icon" alt="" src={Logo} />
     <div className="wrapper">
-            <img className="icon" alt="" src={Logo} />
+            
           </div>
   </body>
   );
