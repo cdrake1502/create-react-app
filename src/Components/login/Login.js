@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { user, session, error } = await supabase.auth.signIn({ email: username, password });
+      const { user, session, error } = await supabase.auth.signIn({ username, password });
       if (error) {
         throw error;
       } else {
