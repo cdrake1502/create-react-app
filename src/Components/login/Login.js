@@ -19,9 +19,10 @@ const Login = () => {
       const { user, session, error } = await supabase.auth.signIn({ email: username, password });
       if (error) {
         throw error;
-      }
+      } else {
       console.log('User:', user);
-      navigate('/quizgen'); // Redirect to the appropriate route upon successful login
+      navigate('/quizgen')
+      }; // Redirect to the appropriate route upon successful login
     } catch (error) {
       console.error('Login error:', error.message);
       setError('Invalid username or password. Please try again.');
