@@ -21,8 +21,11 @@ const Login = () => {
         throw error;
       } else {
       console.log('User:', user);
-      navigate('/quizgen')
-      }; // Redirect to the appropriate route upon successful login
+      // navigate('/quizgen')
+      const navigateToSignUp = () => {
+        navigate('/quizgen');
+      }
+      }; 
     } catch (error) {
       console.error('Login error:', error.message);
       setError('Invalid username or password. Please try again.');
@@ -68,7 +71,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="divider-frame1">
-                <button type="submit" className="rectangle-parent">
+                <button type="submit" className="rectangle-parent" onClick={navigateToSignUp}>
                   <div className="frame-child"></div>
                   <div className="login2" id="lOGINText">LOGIN</div>
                 </button>
