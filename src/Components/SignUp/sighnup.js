@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './signup_global.css';
 import './signup_index.css';
+import { useNavigate } from 'react-router-dom';
 import {createClient} from '@supabase/supabase-js';
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
 
@@ -10,6 +11,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 const SignUp = () => {
   const [f_name, setFname] = useState('');
   const [l_name, setLname] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,13 +19,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      // Regular expressions for password complexity
       const numberRegex = /\d/;
       const uppercaseRegex = /[A-Z]/;
       const lowercaseRegex = /[a-z]/;
       const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?/~\\-]/;
 
-      // Perform validation checks
       if (
           !email.includes('@') ||
           password.length < 6 ||
@@ -38,19 +38,17 @@ const SignUp = () => {
           return;
       }
 
-      // Clear any existing errors
       setError('');
 
       try {
-          // Insert data into 'users' table
-          const { data, error } = await supabase.from('login').insert([{ f_name, l_name, email, password }]);
+          const { data, error } = await supabase.from('login').insert([{ f_name, l_name,username, email, password }]);
 
           if (error) {
               console.error('Error inserting data:', error.message);
               setError('Error signing up. Please try again.');
           } else {
               console.log('Data inserted successfully:', data);
-              // Redirect user to dashboard or display success message
+              navigate('/quizgen');
           }
       } catch (error) {
           console.error('Error:', error.message);
@@ -79,6 +77,15 @@ const SignUp = () => {
                           onChange={(e) => setLname(e.target.value)}
                           type="l_name"
                           placeholder="Last Name"
+                          required
+                      />
+
+                    <input
+                          className="rectangle-group4"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                          type="username"
+                          placeholder="Username"
                           required
                       />
 

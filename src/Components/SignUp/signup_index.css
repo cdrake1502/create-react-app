@@ -46,6 +46,16 @@
 .rectangle-group2 {
   top: 564px;
 }
+
+.rectangle-group4 {
+  position: absolute;
+  top: 489px;
+  left: 59px;
+  width: 480px;
+  height: 74px; 
+  z-index: 1;
+}
+
 .rectangle-group2,
 .rectangle-group3,
 .second-rectangle,
