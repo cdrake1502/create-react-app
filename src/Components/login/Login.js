@@ -68,7 +68,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="divider-frame1">
-                <button type="submit" className="rectangle-parent">
+                <button type="submit" className="rectangle-parent" onClick={handleLogin}>
                   <div className="frame-child"></div>
                   <div className="login2" id="lOGINText">LOGIN</div>
                 </button>
