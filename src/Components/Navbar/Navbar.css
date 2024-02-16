@@ -3,7 +3,6 @@
     height: 50px; /* Set desired navbar height */
     background-color: #212529; /* Use a darker gray for navbar background */
     color: white; /* Maintain white text color */
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
