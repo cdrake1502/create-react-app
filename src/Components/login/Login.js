@@ -21,10 +21,7 @@ const Login = () => {
         throw error;
       } else {
       console.log('User:', user);
-      // navigate('/quizgen')
-      const navigateToQuizGen = () => {
-        navigate('/quizgen');
-      }
+      navigate('/quizgen');
       }; 
     } catch (error) {
       console.error('Login error:', error.message);
