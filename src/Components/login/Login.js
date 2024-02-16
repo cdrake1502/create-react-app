@@ -22,7 +22,7 @@ const Login = () => {
       } else {
       console.log('User:', user);
       // navigate('/quizgen')
-      const navigateToSignUp = () => {
+      const navigateToQuizGen = () => {
         navigate('/quizgen');
       }
       }; 
@@ -71,7 +71,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="divider-frame1">
-                <button type="submit" className="rectangle-parent" onClick={navigateToSignUp}>
+                <button type="submit" className="rectangle-parent" onClick={navigateToQuizGen}>
                   <div className="frame-child"></div>
                   <div className="login2" id="lOGINText">LOGIN</div>
                 </button>
