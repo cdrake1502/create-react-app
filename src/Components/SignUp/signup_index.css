@@ -54,6 +54,7 @@
   width: 480px;
   height: 74px; 
   z-index: 1;
+  display: block;
 }
 
 .rectangle-group2,
