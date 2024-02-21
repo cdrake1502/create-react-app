@@ -45,10 +45,12 @@
   height: 74px;
   z-index: 1;
   background-color: var(--color-whitesmoke);
+  border-color:black;
 }
 .rectangle-group2 {
   top: 575px;
   background-color: var(--color-whitesmoke);
+  border-color:black;
 }
 
 .rectangle-group4 {
@@ -59,6 +61,7 @@
   height: 74px; 
   z-index: 1;
   background-color: var(--color-whitesmoke);
+  border-color:black;
 }
 
 .rectangle-group2,
@@ -77,7 +80,7 @@
   outline: 0;
   background-color: var(--color-whitesmoke);
   top: 275px;
-  background-color: var(--color-whitesmoke);
+  border-color:black;
 }
 .second-rectangle,
 .sign-up-text-child {
