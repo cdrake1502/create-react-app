@@ -12,12 +12,14 @@ const QuizGen = () => {
         function increment() {
             countValue++;
             updateCounter();
+            console.log(countValue);
         }
 
         function decrement() {
             if (countValue > 0) {
                 countValue--;
                 updateCounter();
+                console.log(countValue);
             }
         }
 
@@ -36,7 +38,7 @@ const QuizGen = () => {
         //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
         //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
         const endpoint = "https://api.openai.com/v1/completions";
-        console.log(apiKey);
+        console.log(countValue.toString());
     
         // Make the API call using Fetch API
         const response = await fetch(endpoint, {
