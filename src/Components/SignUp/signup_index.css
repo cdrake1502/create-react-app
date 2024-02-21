@@ -26,6 +26,7 @@
   width: 480px;
   height: 74px;
   z-index: 1;
+  background-color: var(--color-whitesmoke);
 }
 .rectangle-group,
 .rectangle-group1,
@@ -42,9 +43,11 @@
   width: 480px;
   height: 74px;
   z-index: 1;
+  background-color: var(--color-whitesmoke);
 }
 .rectangle-group2 {
   top: 575px;
+  background-color: var(--color-whitesmoke);
 }
 
 .rectangle-group4 {
@@ -54,6 +57,7 @@
   width: 480px;
   height: 74px; 
   z-index: 1;
+  background-color: var(--color-whitesmoke);
 }
 
 .rectangle-group2,
@@ -71,6 +75,7 @@
   outline: 0;
   background-color: var(--color-whitesmoke);
   top: 275px;
+  background-color: var(--color-whitesmoke);
 }
 .second-rectangle,
 .sign-up-text-child {

@@ -60,7 +60,6 @@ const SignUp = () => {
   return (
       <div className="sign-up">
           <form onSubmit={handleSubmit}>
-          <div className="input-frame">
               <div className="sign-up-box">
                   <h1 className="sign-up1">SIGN-UP</h1>
                   <div className="sign-up-text">
@@ -113,7 +112,6 @@ const SignUp = () => {
                   </div>
                   
                 </div>
-            </div>
           </form>
           {error && <div className="alert alert-danger" role="alert">{error}</div>}
       </div>
