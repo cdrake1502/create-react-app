@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import './QuizGen.css';
 
+
 const QuizGen = () => {
+    const [prompt, setPrompt] = useState('');
+    const [response, setResponse] = useState('');
+    const textAreaRef = useRef(null); // Create a ref
 
     let countValue = 0;
         const countElement = document.getElementById('count');
@@ -22,6 +26,50 @@ const QuizGen = () => {
             countElement.textContent = countValue;
         }
 
+  
+    const generateTagline = async () => {
+      try {
+        const dropdown = document.getElementById("difficulty");
+        const selectedOption = dropdown.options[dropdown.selectedIndex];
+        const selectedValue = selectedOption.value;
+        const checkbox = document.getElementById("myCheckbox1");
+        const selectedCheck = checkbox.value;
+        const Qnumber = countValue;
+        const apiKey = "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";
+        const endpoint = "https://api.openai.com/v1/completions";
+    
+        // Make the API call using Fetch API
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: 'gpt-3.5-turbo-instruct',
+            prompt: "Using this information:"+ prompt +"Give me "+ Qnumber + "questions of " + selectedValue + "difficulty that are" + selectedCheck + "as well as give the answers.After each question give a line break as well as after the answers.  ",
+            max_tokens: 500, // Optional: Limit the length of the response
+            temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
+            n: 1, // Number of completions to generate (1 in this case)
+          })
+        });
+        
+  
+        // Check if the response is successful
+        if (response.ok) {
+          const completion = await response.json();
+          setResponse(completion.choices[0].text.trim());
+        } else {
+          console.error("API call failed with status:", response.status);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    
+
   return (
     <body>
         <div className="container-file">
@@ -38,12 +86,18 @@ const QuizGen = () => {
         
         <div className="container">
         <div className="textbox-container">
-            <textarea className="textbox" placeholder="Enter your notes here..."></textarea>
+            <textarea className="textbox prompt" 
+                value={prompt} 
+                ref={textAreaRef}  
+                onChange={(e) => setPrompt(e.target.value)} 
+                placeholder="Enter your notes here...">
+                  
+            </textarea>
             <div className="button-container">
             <label for="checkbox">Provide answers</label>
             <input type="checkbox" id="checkbox" name="checkbox"/>
           
-            <div className="checkbox-container">
+            <div className="checkbox-container" id="checkbox1">
                 <label for="checkbox">Multiple Choice</label>
                 <input type="checkbox" id="mult" name="checkbox"/>
                 <label for="checkbox">Fill In Blank</label>
@@ -51,8 +105,7 @@ const QuizGen = () => {
                 <label for="checkbox">Short Answer</label>
                 <input type="checkbox" id="short" name="checkbox"/>
             </div>
-            <select className="dropdown">
-                <option value="diff">Difficulty</option>
+            <select className="dropdown" id="difficulty">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
@@ -60,7 +113,9 @@ const QuizGen = () => {
            
             <div id="counter">
                 <button onClick={decrement}>-</button>                
-                <span className="button-box"id="count">0</span>
+                <span className="button-box"id="count">
+                    0
+                    </span>
                 <button onClick={increment}>+</button>
             </div>
             <select className="dropdown">
@@ -70,12 +125,15 @@ const QuizGen = () => {
                 <option value="Option 4">Option 4</option>
                 <option value="Option 5">Option 5</option>
             </select>
-            <button className="generate-button">Generate</button>
+            <button className="generate-button" onClick={generateTagline}>Generate</button>
             </div>
+            
         </div>
         </div>
+        <div  className="response-test"  dangerouslySetInnerHTML={{ __html: responseWithLineBreaks }}></div>
     </body>
   );
 };
 
 export default QuizGen;
+
