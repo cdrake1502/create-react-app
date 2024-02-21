@@ -6,11 +6,11 @@ import "./Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
   
-  //const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
     navigate('/login');
-    //setIsLoggedIn(true); // Example update (replace with actual auth check)
+    setIsLoggedIn(true);
   };
 
   const handleSignup = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     // Implement your logout logic and update isLoggedIn
-    //setIsLoggedIn(false); // Example update (replace with actual auth check)
+    setIsLoggedIn(false);
     navigate('/splash');
   };
   const handleHome = () =>{

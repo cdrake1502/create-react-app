@@ -63,7 +63,6 @@ const SignUp = () => {
               <div className="sign-up-box">
                   <h1 className="sign-up1">SIGN-UP</h1>
                   <div className="sign-up-text">
-
                       <input
                           className="rectangle-group3"
                           value={f_name}
@@ -110,7 +109,7 @@ const SignUp = () => {
 
                       <button className="btn btn-secondary rounded-pill bottom-button">Sign Up</button>
                   </div>
-              </div>
+                </div>
           </form>
           {error && <div className="alert alert-danger" role="alert">{error}</div>}
       </div>
