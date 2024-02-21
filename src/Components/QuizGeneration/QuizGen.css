@@ -8,6 +8,8 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #f8ae20;
+    padding-left: 10%;
+    padding-right: 10%;
   }
   
   .textbox-container {
@@ -15,8 +17,8 @@ body{
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
   
   .textbox {
