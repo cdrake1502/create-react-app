@@ -21,7 +21,7 @@
 }
 .rectangle-group {
   position: absolute;
-  top: 713px;
+  top: 675px;
   left: 59px;
   width: 480px;
   height: 74px;
@@ -37,19 +37,19 @@
 }
 .rectangle-group1 {
   position: absolute;
-  top: 415px;
+  top: 375px;
   left: 59px;
   width: 480px;
   height: 74px;
   z-index: 1;
 }
 .rectangle-group2 {
-  top: 620px;
+  top: 575px;
 }
 
 .rectangle-group4 {
   position: absolute;
-  top: 525px;
+  top: 475px;
   left: 59px;
   width: 480px;
   height: 74px; 
