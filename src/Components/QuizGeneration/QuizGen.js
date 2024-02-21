@@ -9,7 +9,6 @@ const QuizGen = () => {
 
     let countValue = 0;
         const countElement = document.getElementById('count');
-
         function increment() {
             countValue++;
             updateCounter();
@@ -32,11 +31,12 @@ const QuizGen = () => {
         const dropdown = document.getElementById("difficulty");
         const selectedOption = dropdown.options[dropdown.selectedIndex];
         const selectedValue = selectedOption.value;
-        const checkbox = document.getElementById("myCheckbox1");
-        const selectedCheck = checkbox.value;
         const Qnumber = countValue;
-        const apiKey = "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";
+        const apiKey = "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";
+        //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
+        //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
         const endpoint = "https://api.openai.com/v1/completions";
+        console.log(apiKey);
     
         // Make the API call using Fetch API
         const response = await fetch(endpoint, {
@@ -47,7 +47,7 @@ const QuizGen = () => {
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo-instruct',
-            prompt: "Using this information:"+ prompt +"Give me "+ Qnumber + "questions of " + selectedValue + "difficulty that are" + selectedCheck + "as well as give the answers.After each question give a line break as well as after the answers.  ",
+            prompt: "Using this information:"+ prompt +"Give me "+ Qnumber + "questions of " +selectedValue+ "difficulty that are multiple choice as well as give the answers.After each question give a line break as well as after the answers.  ",
             max_tokens: 500, // Optional: Limit the length of the response
             temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
             n: 1, // Number of completions to generate (1 in this case)
@@ -65,6 +65,7 @@ const QuizGen = () => {
       } catch (error) {
         console.error(error);
       }
+     
     };
 
     const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
