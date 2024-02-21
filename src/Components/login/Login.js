@@ -20,9 +20,9 @@ const Login = () => {
       if (error) {
         throw error;
       } else {
-      console.log('User:', user);
-      navigate('/quizgen');
-      }; 
+        console.log('User:', user);
+        navigate('/quizgen');
+      }
     } catch (error) {
       console.error('Login error:', error.message);
       setError('Invalid username or password. Please try again.');
@@ -68,7 +68,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="divider-frame1">
-                <button type="submit" className="rectangle-parent" onClick={handleLogin}>
+                <button type="submit" className="rectangle-parent">
                   <div className="frame-child"></div>
                   <div className="login2" id="lOGINText">LOGIN</div>
                 </button>
@@ -81,6 +81,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      {error && <div className="error">{error}</div>}
     </form>
   );
 };
