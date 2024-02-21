@@ -20,20 +20,21 @@
   width: 100%;
   height: 100%;
 }
-.rectangle-group {
+.rectangle-group5 {
   position: absolute;
   top: 675px;
   left: 59px;
   width: 480px;
   height: 74px;
   z-index: 1;
-  background-color: var(--color-whitesmoke);
+  border: black;
+  border: 1px solid;
 }
-.rectangle-group,
+.rectangle-group5,
 .rectangle-group1,
 .rectangle-group2,
 .sign-up-text-child {
-  border: 0;
+  border: 1px solid;
   outline: 0;
   background-color: var(--color-whitesmoke);
 }
@@ -46,11 +47,13 @@
   z-index: 1;
   background-color: var(--color-whitesmoke);
   border-color:black;
+  border: 1px solid;
 }
 .rectangle-group2 {
   top: 575px;
   background-color: var(--color-whitesmoke);
   border-color:black;
+  border: 1px solid;
 }
 
 .rectangle-group4 {
@@ -62,6 +65,7 @@
   z-index: 1;
   background-color: var(--color-whitesmoke);
   border-color:black;
+  border: 1px solid;
 }
 
 .rectangle-group2,
@@ -74,9 +78,10 @@
   height: 74px;
   z-index: 1;
   background-color: var(--color-whitesmoke);
+  border: 1px solid;
 }
 .rectangle-group3 {
-  border: 0;
+  border: 1;
   outline: 0;
   background-color: var(--color-whitesmoke);
   top: 275px;

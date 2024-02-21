@@ -100,7 +100,7 @@ const SignUp = () => {
                       />
 
                       <input
-                          className="rectangle-group"
+                          className="rectangle-group5"
                           type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
