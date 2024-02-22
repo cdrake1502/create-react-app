@@ -9,27 +9,39 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const result = await handleLogin(username, password);
+    if (!result.success) {
+      setError(result.error);
+    }
+  };
+
+  const handleLogin = async (username, password) => {
     try {
-      const { user, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password
-      });
+      const { data: users, error } = await supabase
+        .from('login')
+        .select('*')
+        .eq('username', username)
+        .single();
+  
       if (error) {
         throw error;
-      } else {
-        console.log('User:', user);
+      }
+  
+      if (users && users.password === password) {
         navigate('/quizgen');
+        return { success: true, user: users };
+      } else {
+        return { success: false, error: 'Invalid username or password' };
       }
     } catch (error) {
-      console.error('Login error:', error.message);
-      setError('Invalid username or password. Please try again.');
+      console.error('Error authenticating user:', error.message);
+      return { success: false, error: 'An error occurred while authenticating user' };
     }
   };
 
@@ -38,7 +50,7 @@ const Login = () => {
   };
 
   return (
-    <form id="Login" onSubmit={handleLogin}>
+    <form id="Login" onSubmit={handleSubmit}>
       <div className="login">
         <div className="login-child"></div>
         <div className="wrapper">
