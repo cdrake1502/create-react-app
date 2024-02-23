@@ -1,5 +1,6 @@
 .sign-up1 {
   margin: 0;
+  top: 0px;
   height: 84px;
   position: relative;
   font-size: inherit;
@@ -22,7 +23,7 @@
 }
 .rectangle-group5 {
   position: absolute;
-  top: 600px;
+  top: 650px;
   left: 59px;
   width: 480px;
   height: 74px;
@@ -40,7 +41,7 @@
 }
 .rectangle-group1 {
   position: absolute;
-  top: 300px;
+  top: 275px;
   left: 59px;
   width: 480px;
   height: 74px;
@@ -50,7 +51,7 @@
   border: 1px solid;
 }
 .rectangle-group2 {
-  top: 500px;
+  top: 525px;
   background-color: var(--color-whitesmoke);
   border-color:black;
   border: 1px solid;
@@ -84,7 +85,7 @@
   border: 1;
   outline: 0;
   background-color: var(--color-whitesmoke);
-  top: 200px;
+  top: 150px;
   border-color:black;
 }
 .second-rectangle,
@@ -100,7 +101,7 @@
   height: 47px;
 }
 .sign-up-text {
-  height: 800px;
+  height: 875px;
   width: 597px;
   position: absolute;
   margin: 0 !important;
