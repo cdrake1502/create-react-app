@@ -26,7 +26,7 @@ const Splash = () =>{
 
   return(
     <div className="temp-splash">
-      <img className="icon" alt="" src={Logo} />
+      {/* <img className="icon" alt="" src={Logo} /> */}
       <div className="container">
         <div className="wrapper">
           {isLoggedIn ? (

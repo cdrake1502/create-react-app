@@ -3,3 +3,8 @@ body {
   line-height: normal;
   background-color: #f8ae20;
 }
+
+:root {
+  /* fonts */
+  --font-jetbrains-mono: "JetBrains Mono";
+}

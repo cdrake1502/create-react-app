@@ -20,11 +20,19 @@
   object-fit: cover;
   max-width: 100%;
   margin-right: 20px;
+  /* border-color: black;
+  border: 5px groove; */
 }
 
 .description {
-  color: black;
-  font-size: large;
+  top: 5px;
+  color: white;
+  font-size: 35px;
+  text-shadow: -2px 2px 0 #000,
+				  2px 2px 0 #000,
+				 2px -2px 0 #000,
+				-2px -2px 0 #000;
+        text-align: center;
 }
 
 /* Adjust button styles */
