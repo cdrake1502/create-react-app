@@ -28,11 +28,14 @@
   top: 5px;
   color: white;
   font-size: 35px;
-  text-shadow: -2px 2px 0 #000,
+  /* text-shadow: -2px 2px 0 #000,
 				  2px 2px 0 #000,
 				 2px -2px 0 #000,
-				-2px -2px 0 #000;
+				-2px -2px 0 #000; */
         text-align: center;
+        --font-jetbrains-mono: "JetBrains Mono";
+        /* font-family: var(--font-jetbrains-mono); */
+        font-family: inherit;
 }
 
 /* Adjust button styles */
