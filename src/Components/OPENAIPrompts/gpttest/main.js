@@ -1,8 +1,9 @@
-const apiKey = "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";
-const endpoint = "https://api.openai.com/v1/completions";
+const apiKey = "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";
+const endpoint = "https://api.openai.com/v1/chat/completions";
 
 async function generateTagline() {
   try {
+    
     // Make the API call using Fetch API
     const response = await fetch(endpoint, {
       method: 'POST',
@@ -11,7 +12,7 @@ async function generateTagline() {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-3.5-turbo-instruct',
+        model: 'gpt-3.5-turbo',
         prompt: 'Give me a 10 question quiz about computer science. 4 multiple choice , 3 fill in the blank and 3 short answer as well as give me the answers to these questions.',
         max_tokens: 500, // Optional: Limit the length of the response
         temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
