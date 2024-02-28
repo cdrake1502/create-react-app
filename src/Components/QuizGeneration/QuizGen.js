@@ -54,8 +54,8 @@ const QuizGen = () => {
           },
           body: JSON.stringify({
             model: 'gpt-3.5-turbo',
-            prompt: "Using this information:"+ prompt +"Give me "+ Qnumber + "questions of " +selectedValue+ "difficulty that are multiple choice as well as give the answers.After each question give a line break as well as after the answers.  ",
-            max_tokens: 500, // Optional: Limit the length of the response
+            prompt: "Using this information: "+ prompt +"Give me "+ Qnumber + "questions of " +selectedValue+ "difficulty that are multiple choice as well as give the answers. After each question give a line break as well as after the answers.  ",
+            max_tokens: 2200, // Optional: Limit the length of the response
             temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
             n: 1, // Number of completions to generate (1 in this case)
           })
