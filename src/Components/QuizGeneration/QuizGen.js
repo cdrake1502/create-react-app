@@ -35,15 +35,15 @@ const QuizGen = () => {
         const selectedOption = dropdown.options[dropdown.selectedIndex];
         const selectedValue = selectedOption.value;
         const Qnumber = countValue;
-<<<<<<< HEAD
+
         const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
         const endpoint = "https://api.openai.com/v1/chat/completions";
-=======
-        const apiKey = "fakenum";
-        //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
-        //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
-        const endpoint = "https://api.openai.com/v1/completions";
->>>>>>> 74e9ff0c033099f49b94d0ca539cf21e2ed4286e
+
+//         const apiKey = "fakenum";
+//         //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
+//         //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
+//         const endpoint = "https://api.openai.com/v1/completions";
+// >>>>>>> 74e9ff0c033099f49b94d0ca539cf21e2ed4286e
         console.log(countValue.toString());
     
         const response = await fetch(endpoint, {
