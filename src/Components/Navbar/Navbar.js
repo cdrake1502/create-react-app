@@ -37,7 +37,7 @@ const Navbar = () => {
       </div>
       <nav className="navbar-links flex">
             {isLoggedIn ? (
-              <button onClick={handleLogout}>logout</button>
+              <button onClick={handleLogout}>Logout</button>
             ) : (
             <button onClick={handleLogin}>Login</button> )}
             <button onClick={handleSignup}>Sign Up</button>

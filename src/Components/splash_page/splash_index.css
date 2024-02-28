@@ -28,10 +28,10 @@
   top: 5px;
   color: white;
   font-size: 35px;
-  /* text-shadow: -2px 2px 0 #000,
-				  2px 2px 0 #000,
-				 2px -2px 0 #000,
-				-2px -2px 0 #000; */
+  text-shadow: -1px 1px 0 #000000,
+				  1px 1px 0 #000000,
+				 1px -1px 0 #000000,
+				-1px -1px 0 #000000; 
         text-align: center;
         --font-jetbrains-mono: "JetBrains Mono";
         /* font-family: var(--font-jetbrains-mono); */
