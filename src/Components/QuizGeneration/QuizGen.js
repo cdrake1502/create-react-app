@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import './QuizGen.css';
 
 
+
 const QuizGen = () => {
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
@@ -34,7 +35,7 @@ const QuizGen = () => {
         const selectedOption = dropdown.options[dropdown.selectedIndex];
         const selectedValue = selectedOption.value;
         const Qnumber = countValue;
-        const apiKey = "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";
+        const apiKey = "fakenum";
         //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
         //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
         const endpoint = "https://api.openai.com/v1/completions";
