@@ -66,6 +66,10 @@ const QuizGen = () => {
         if (response.ok) {
           const completion = await response.json();
           setResponse(completion.choices[0].text.trim());
+          history.push({
+            pathname: '/quizview',
+            state: {quizContent: response}
+          })
         } else {
           console.error("API call failed with status:", response.status);
           console.log('API Key:', apiKey);
@@ -124,7 +128,6 @@ const QuizGen = () => {
                 <div id="counter">
                     <button onClick={decrement}>-</button>                
                     <span className="button-box"id="count">
-                        0
                         </span>
                     <button onClick={increment}>+</button>
                 </div>

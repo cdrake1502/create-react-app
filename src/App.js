@@ -26,6 +26,7 @@ function App() {
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
                   <Route path="/quizgen" element = {<QuizGen/>}/>
+                  <Route path="/quizview" component = {QuizView} />
             </Routes>
       </BrowserRouter>
     </div>
