@@ -4,6 +4,7 @@ import Login from './Components/login/Login';
 import SignUp from './Components/SignUp/sighnup';
 import Splash from './Components/splash_page/splash';
 import QuizGen from './Components/QuizGeneration/QuizGen';
+import QuizView from './Components/Quizview/quizview'
 import Navbar from './Components/Navbar/Navbar';
 import {createClient} from '@supabase/supabase-js';
 

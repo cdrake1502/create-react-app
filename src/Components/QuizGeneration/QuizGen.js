@@ -66,10 +66,10 @@ const QuizGen = () => {
         if (response.ok) {
           const completion = await response.json();
           setResponse(completion.choices[0].text.trim());
-          history.push({
-            pathname: '/quizview',
-            state: {quizContent: response}
-          })
+    //      history.push({
+      //      pathname: '/quizview',
+      //      state: {quizContent: response}
+       //   })
         } else {
           console.error("API call failed with status:", response.status);
           console.log('API Key:', apiKey);
