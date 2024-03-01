@@ -1,13 +1,21 @@
 import React, {useState, useRef} from 'react';
 import './QuizGen.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 
 const QuizGen = () => {
+    const navigate = useNavigate();
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
     const textAreaRef = useRef(null); // Create a ref
 
+
+
+
+//-------------counter for number of questions --------------------//
     let countValue = 0;
         const countElement = document.getElementById('count');
         function increment() {
@@ -27,7 +35,20 @@ const QuizGen = () => {
         function updateCounter() {
             countElement.textContent = countValue;
         }
+//-------------counter for number of questions --------------------//
 
+
+//-------------counter for number of questions --------------------//
+
+const navigateToQuizView = () => {
+  navigate('/quizview');
+};
+
+//-------------counter for number of questions --------------------//
+
+
+
+//---------------------------------------------------api call ----------------------------------//
   
     const generateTagline = async () => {
       try {
@@ -70,6 +91,8 @@ const QuizGen = () => {
       //      pathname: '/quizview',
       //      state: {quizContent: response}
        //   })
+
+        navigateToQuizView();
         } else {
           console.error("API call failed with status:", response.status);
           console.log('API Key:', apiKey);
@@ -82,7 +105,12 @@ const QuizGen = () => {
     };
 
     const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+    //---------------------------------------------------api call ----------------------------------//
     
+
+
+
 
   return (
     <body>

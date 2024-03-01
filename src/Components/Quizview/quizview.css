@@ -1,4 +1,6 @@
-
+:root{
+--color-gainsboro: #d9d9d9;
+}
 
 .container2 {
     display: flex;
@@ -9,22 +11,39 @@
     border-radius: 10px; /* Rounded corners for container */
     padding: 20px; /* Add some padding inside the container */
   }
+  .text-container {
+    display: flex; /* Enable flexbox for the container */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+    background-color:white;
+    width:80.4%;
+    height:80.4%;
+    margin: 0;
+    border-radius: 10px; /* Rounded corners for container */
+    padding: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+
+  }
   
   .text-box2 {
+    
     background-color: white;
     width: 80%;
     height: 80%;
     margin: 0; /* Remove margin as we added padding to container */
-    padding: 10px;
+    border-radius: 10px; /* Rounded corners for container */
+    padding: 5px;
     border: 1px solid #ddd;
     resize: none;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1); /* Inset shadow for text box */
+    
   }
   
   .button-container2 {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 80.4%;
   }
   
   button {
@@ -33,12 +52,14 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #f0f0f0; /* Default button color */
-    transition: background-color 0.2s ease; /* Add hover effect */
+    background-color: var(--color-gainsboro);
+    border-width: 5px;
+    border-color:black;
+    border-style: solid;
   }
   
   button:hover {
-    background-color: #ddd; /* Button background on hover */
+    background-color:  #bfbfbf; /* Button background on hover */
   }
   .main-heading {
     text-align: center;

@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
             <Routes>
-                  <Route path='/' element={<QuizView/>}/>
+                  <Route path='/' element={<QuizGen/>}/>
                   <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
