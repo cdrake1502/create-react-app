@@ -1,18 +1,16 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef} from 'react';
 import './QuizGen.css';
 import { useNavigate } from 'react-router-dom';
+import QuizView from '../Quizview/quizview';
 
-
-
-
-
-
-const QuizGen = () => {
+const QuizGen = (props) => {
     const navigate = useNavigate();
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
     const [selectedOptions, setSelectedOptions] = useState('');
     const textAreaRef = useRef(null); // Create a ref
+
+    const [buttonText, setButtonText] = useState('');
 
 
 //---------------------handle check boxes for question type -----------------//
@@ -126,17 +124,36 @@ const generateTagline = async () => {
     // Check if the response is successful
     if (response.ok) {
       const completion = await response.json();
-      setResponse(completion.choices[0].text.trim());
+      const finishedResponse = (completion.choices[0].text.trim());
+      //console.log(finishedResponse);
+      return finishedResponse;
+     
+
     } else {
       console.error("API call failed with status:", response.status);
     }
   } catch (error) {
     console.error(error);
   }
- 
+
+};
+const handleGenerateQuiz = async (props) => {
+
+
+  const processedResponse = await generateTagline();
+  if (processedResponse) {
+    // Pass the processedResponse to the target component (explained next)
+    setResponse(processedResponse); // Assuming TargetComponent exists
+  } else {
+    // Handle API call failure (optional)
+    alert("No response was generated");
+  }
 };
 
-const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
+   
+
+
+
 
     //---------------------------------------------------api call ----------------------------------//
     
@@ -146,6 +163,7 @@ const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
   return (
     <body>
+       
         <div className="container-file">
                 <div>
                     <h1 className="audio-title">Audio File</h1>
@@ -212,15 +230,17 @@ const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
                         </span>
                     <button onClick={increment}>+</button>
                 </div>
-                <button className="generate-button" onClick={generateTagline}>Generate</button>
+                <button className="generate-button" onClick={handleGenerateQuiz}>Generate</button>
+               
                 </div>
                 
             </div>
         </div>
-      <div  className="response-test"  dangerouslySetInnerHTML={{ __html: responseWithLineBreaks }}></div>
+        {response && <QuizView response={response} />}
+    
     </body>
   );
 };
-
+// <div  className="response-test"  dangerouslySetInnerHTML={{ __html: responseWithLineBreaks }}></div>
 export default QuizGen;
 

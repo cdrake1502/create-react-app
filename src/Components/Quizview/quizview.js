@@ -1,14 +1,22 @@
-import react, { useState }from 'react';
+import react, { useState,useContext }from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
 
 
-const QuizView = () => {
+
+
+const QuizView = (props) => {
+    const {response} = props;
+    console.log({response});
+
+  
+
     
     //for copying the text -------------------------------------------------------//
     const [textToCopy, setTextToCopy] = useState('');
 
     const handleTextAreaChange = (event) => {
+        textToCopy = document.getElementById("text-box");
         setTextToCopy(event.target.value);
       };
     const { copied, copyToClipboard } = CopyQuiz(textToCopy);
@@ -22,11 +30,11 @@ const QuizView = () => {
                 <textarea
               
                 id="text-box"
-                value={textToCopy}
+                value={response}
                 onChange={handleTextAreaChange}
                 className="text-box2"
-                placeholder="Enter your text here"
-                />
+                placeholder=" "
+                >{textToCopy} </textarea>
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
             </div>
             <div className="button-container2">
@@ -34,6 +42,7 @@ const QuizView = () => {
                     <button>Back</button>
                     <button>Exit</button>
                 </div>
+               
 
        
       </div>
