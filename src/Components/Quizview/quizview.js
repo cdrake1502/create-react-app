@@ -1,14 +1,28 @@
 import react, { useState,useContext }from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
-
+import jsPDF from 'jspdf';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const QuizView = (props) => {
+    const navigate = useNavigate();
     const {response} = props;
     console.log({response});
+    
+   
+        const generatePDF = () => {
+            const doc = new jsPDF();
+            doc.text(response, 10, 10);
+            doc.save('quiz.pdf');
+        };
+        
+    
 
+        const navigateToQuizGen = () => {
+            navigate('/quizgen');
+          };
   
 
     
@@ -39,8 +53,10 @@ const QuizView = (props) => {
             </div>
             <div className="button-container2">
                     <button>Save</button>
-                    <button>Back</button>
-                    <button>Exit</button>
+                    <button onClick={generatePDF}>
+                        Get PDF</button>
+                    <button onClick={navigateToQuizGen}>
+                        Exit</button>
                 </div>
                
 

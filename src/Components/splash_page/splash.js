@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './splash_global.css';
 import './splash_index.css';
 import Logo from "./logo.png";
-
+import Example1 from "./example1.png";
 
 
 const Splash = () =>{
@@ -39,10 +39,13 @@ const Splash = () =>{
               ))}
             </div>
           ) : (
-            <div className="description">
-              <h2>Quizify</h2>
-              <p>An AI-powered quiz maker created to enhance your studying needs.</p>
-              <p>Sign up or Login to begin.</p>
+            <div>
+              <div className="description" >
+                <h2>Quizify</h2>
+                <p>An AI-powered quiz maker created to enhance your studying needs.</p>
+                <p>Sign up or Login to begin.</p>
+              </div>
+           
             </div>
           )}
         </div>
