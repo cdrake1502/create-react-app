@@ -1,6 +1,7 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import './QuizGen.css';
 import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -10,14 +11,42 @@ const QuizGen = () => {
     const navigate = useNavigate();
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
+    const [selectedOptions, setSelectedOptions] = useState('');
     const textAreaRef = useRef(null); // Create a ref
 
 
+//---------------------handle check boxes for question type -----------------//
+    const handleCheckboxChange = (event) => {
+      const { checked, name } = event.target;
+      let updatedOptions = '';
+
+      if (checked) {
+        updatedOptions = selectedOptions
+          ? `${selectedOptions}, ${name}`
+          : name;
+      } else {
+        updatedOptions = selectedOptions
+          .split(', ')
+          .filter((option) => option !== name)
+          .join(', ');
+      }
+
+      setSelectedOptions(updatedOptions);
+    };
+//---------------------handle check boxes for question type -----------------//
+const [isChecked, setIsChecked] = useState(false); // Initial state for the checkbox
+
+const handleCheckboxAns = (event) => {
+  const { checked } = event.target;
+  setIsChecked(checked);
+};
 
 
 //-------------counter for number of questions --------------------//
     let countValue = 0;
+
         const countElement = document.getElementById('count');
+       
         function increment() {
             countValue++;
             updateCounter();
@@ -50,61 +79,64 @@ const navigateToQuizView = () => {
 
 //---------------------------------------------------api call ----------------------------------//
   
-    const generateTagline = async () => {
-      try {
-        const dropdown = document.getElementById("difficulty");
-        const selectedOption = dropdown.options[dropdown.selectedIndex];
-        const selectedValue = selectedOption.value;
-        const Qnumber = countValue;
-
-        const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-        console.log(apiKey);
-        const endpoint = "https://api.openai.com/v1/chat/completions";
-
-//         const apiKey = "fakenum";
-//         //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
-//         //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
-//         const endpoint = "https://api.openai.com/v1/completions";
-// >>>>>>> 74e9ff0c033099f49b94d0ca539cf21e2ed4286e
-        console.log(countValue.toString());
+const generateTagline = async () => {
+  try {
+    const dropdown = document.getElementById("difficulty");
+    const selectedOption = dropdown.options[dropdown.selectedIndex];
+    const selectedValue = selectedOption.value;
+    const questionType = selectedOptions;
+    const answerBool = isChecked;
+    let answerString = "";
     
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-          },
-          body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
-            prompt: "Using this information: "+ prompt +"Give me "+ Qnumber + "questions of " +selectedValue+ "difficulty that are multiple choice as well as give the answers. After each question give a line break as well as after the answers.  ",
-            max_tokens: 2200, // Optional: Limit the length of the response
-            temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
-            n: 1, // Number of completions to generate (1 in this case)
-          })
-        });
-        
-  
-        if (response.ok) {
-          const completion = await response.json();
-          setResponse(completion.choices[0].text.trim());
-    //      history.push({
-      //      pathname: '/quizview',
-      //      state: {quizContent: response}
-       //   })
+    if (answerBool == true){
+      answerString = "Please add the answers to each question";
+    }else {
+      answerString = "Do not add answers to these questions";
+    }
+    
+   
+    const Qnumber = countValue;
+    //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
+    const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+    
+    const endpoint = "https://api.openai.com/v1/completions";
+    console.log(apiKey);
 
-        navigateToQuizView();
-        } else {
-          console.error("API call failed with status:", response.status);
-          console.log('API Key:', apiKey);
-          console.log(process.env);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-     
-    };
+    // Make the API call using Fetch API
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo-instruct',
+              prompt: "Using this information:"+ 
+              prompt +"Give me "+
+              Qnumber + "questions of "
+                +selectedValue+ "difficulty that are "
+                + questionType +". "+answerString,
+        max_tokens: 500, // Optional: Limit the length of the response
+        temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
+        n: 1, // Number of completions to generate (1 in this case)
+      })
+    });
+    
 
-    const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    // Check if the response is successful
+    if (response.ok) {
+      const completion = await response.json();
+      setResponse(completion.choices[0].text.trim());
+    } else {
+      console.error("API call failed with status:", response.status);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+ 
+};
+
+const responseWithLineBreaks = response.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
     //---------------------------------------------------api call ----------------------------------//
     
@@ -137,15 +169,36 @@ const navigateToQuizView = () => {
                 </textarea>
                 <div className="button-container">
                 <label for="checkbox">Provide answers</label>
-                <input type="checkbox" id="checkbox" name="checkbox"/>
+                <input 
+                type="checkbox" 
+                id="checkbox" 
+                name="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxAns}
+                />
               
                 <div className="checkbox-container" id="checkbox1">
                     <label for="checkbox">Multiple Choice</label>
-                    <input type="checkbox" id="mult" name="checkbox"/>
+                    <input 
+                      type="checkbox" 
+                      id="mult" 
+                      name="Multiple Choice"
+                      onChange={handleCheckboxChange}
+                      />
                     <label for="checkbox">Fill In Blank</label>
-                    <input type="checkbox" id="fill" name="checkbox"/>
+                    <input 
+                      type="checkbox"
+                      id="fill" 
+                      name="Fill In Blank"
+                      onChange={handleCheckboxChange}
+                      />
                     <label for="checkbox">Short Answer</label>
-                    <input type="checkbox" id="short" name="checkbox"/>
+                    <input 
+                      type="checkbox" 
+                      id="short" 
+                      name="Short Answer"
+                      onChange={handleCheckboxChange}
+                      />
                 </div>
                 <select className="dropdown" id="difficulty">
                     <option value="easy">Easy</option>
@@ -155,17 +208,10 @@ const navigateToQuizView = () => {
               
                 <div id="counter">
                     <button onClick={decrement}>-</button>                
-                    <span className="button-box"id="count">
+                    <span className="button-box"id="count" > 0
                         </span>
                     <button onClick={increment}>+</button>
                 </div>
-                <select className="dropdown">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                    <option value="Option 3">Option 3</option>
-                    <option value="Option 4">Option 4</option>
-                    <option value="Option 5">Option 5</option>
-                </select>
                 <button className="generate-button" onClick={generateTagline}>Generate</button>
                 </div>
                 

@@ -7,7 +7,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@vercel/postgres": "^0.7.2",
     "browser-router": "^0.2.0",
-    "dotenv": "^16.4.2",
+    "dotenv": "^16.4.5",
     "jspdf": "^2.5.1",
     "openai": "^4.26.1",
     "postgres": "^3.4.3",
