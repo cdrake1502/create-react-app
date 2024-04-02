@@ -3,6 +3,9 @@ body {
   line-height: normal;
   background-color: #f8ae20;
 }
+body text{
+  color:blueviolet;
+}
 
 :root {
   /* fonts */

@@ -6,6 +6,7 @@ import Splash from './Components/splash_page/splash';
 import QuizGen from './Components/QuizGeneration/QuizGen';
 import QuizView from './Components/Quizview/quizview';
 import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
 import {createClient} from '@supabase/supabase-js';
 
 
@@ -23,7 +24,16 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 
 
+
+
 function App() {
+  const [response, setResponse] = useState();
+
+  const handleReChange = (newData) => {
+    setResponse(newData);
+    console.log("new response");
+  };
+ 
 
 
 
@@ -32,14 +42,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar/>
+      
             <Routes>
-                  <Route path='/' element={<QuizGen/>}/>
+                  <Route path='/' element={<QuizGen onResponse={handleReChange}/>}/>
                   <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
-                  <Route path="/quizgen" element = {<QuizGen/>} />
-                  <Route path="/quizview" element = {<QuizView/>} />
+                  <Route path="/quizgen" element = {<QuizGen />} />
+                  <Route path="/quizview" element = {<QuizView data={response} onResponse={handleReChange}/>} />
             </Routes>
+       <Footer/>
       </BrowserRouter>
     </div>
     

@@ -9,8 +9,9 @@ const QuizGen = (props) => {
     const [response, setResponse] = useState('');
     const [selectedOptions, setSelectedOptions] = useState('');
     const textAreaRef = useRef(null); // Create a ref
-
-    const [buttonText, setButtonText] = useState('');
+   
+    //console.log(props.onResponse);
+    
 
 
 //---------------------handle check boxes for question type -----------------//
@@ -48,14 +49,14 @@ const handleCheckboxAns = (event) => {
         function increment() {
             countValue++;
             updateCounter();
-            console.log(countValue);
+            
         }
 
         function decrement() {
             if (countValue > 0) {
                 countValue--;
                 updateCounter();
-                console.log(countValue);
+              
             }
         }
 
@@ -65,13 +66,13 @@ const handleCheckboxAns = (event) => {
 //-------------counter for number of questions --------------------//
 
 
-//-------------counter for number of questions --------------------//
 
-const navigateToQuizView = () => {
+
+/*const navigateToQuizView = () => {
   navigate('/quizview');
-};
+};*/
 
-//-------------counter for number of questions --------------------//
+
 
 
 
@@ -86,7 +87,7 @@ const generateTagline = async () => {
     const answerBool = isChecked;
     let answerString = "";
     
-    if (answerBool == true){
+    if (answerBool === true){
       answerString = "Please add the answers to each question";
     }else {
       answerString = "Do not add answers to these questions";
@@ -109,11 +110,11 @@ const generateTagline = async () => {
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo-instruct',
-              prompt: "Using this information:"+ 
-              prompt +"Give me "+
-              Qnumber + "questions of "
-                +selectedValue+ "difficulty that are "
-                + questionType +". "+answerString,
+              prompt: "Using this information: "+ 
+              prompt +" Give me "+
+              Qnumber + " questions of "
+                +selectedValue+ " difficulty that are "
+                + questionType +". "+ answerString,
         max_tokens: 500, // Optional: Limit the length of the response
         temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
         n: 1, // Number of completions to generate (1 in this case)
@@ -137,13 +138,14 @@ const generateTagline = async () => {
   }
 
 };
-const handleGenerateQuiz = async (props) => {
+const handleGenerateQuiz =async (props) => {
 
 
   const processedResponse = await generateTagline();
   if (processedResponse) {
     // Pass the processedResponse to the target component (explained next)
     setResponse(processedResponse); // Assuming TargetComponent exists
+    
   } else {
     // Handle API call failure (optional)
     alert("No response was generated");
@@ -156,34 +158,39 @@ const handleGenerateQuiz = async (props) => {
 
 
     //---------------------------------------------------api call ----------------------------------//
-    
+ 
+    //------------------------------Get Text file ---------------------------//
+  
+   //-------------------Get Text file ---------------------------//
 
 
 
 
   return (
-    <body>
+  <div>
        
         <div className="container-file">
                 <div>
-                    <h1 className="audio-title">Audio File</h1>
+                    <h1 className="audio-title">Add Text File Only</h1>
                 </div>
-                <div class="file-input-container">
-                    <input type="file" class="file-input"/>
+                <div className="file-input-container">
+                    <input type="file" class="file-input"  />
                 </div>
-                <div class="button-container">
-                    <button class="generate-button">Generate</button>
+                <div className="button-container">
+                    <button id="generateButton" class="generate-button" >Generate</button>
                 </div>
             </div>
             
             <div className="container">
+             
             <div className="textbox-container">
                 <textarea className="textbox prompt" 
-                    value={prompt} 
-                    ref={textAreaRef}  
-                    onChange={(e) => setPrompt(e.target.value)} 
-                    placeholder="Enter your notes here...">
-                      
+                value={prompt} 
+                ref={textAreaRef}  
+                onChange={(e) => setPrompt(e.target.value)} 
+                placeholder="Enter your notes here..."
+                >
+                     
                 </textarea>
                 <div className="button-container">
                 <label for="checkbox">Provide answers</label>
@@ -238,7 +245,7 @@ const handleGenerateQuiz = async (props) => {
         </div>
         {response && <QuizView response={response} />}
     
-    </body>
+        </div>
   );
 };
 // <div  className="response-test"  dangerouslySetInnerHTML={{ __html: responseWithLineBreaks }}></div>

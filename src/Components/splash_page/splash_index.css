@@ -6,24 +6,6 @@
   overflow: hidden;
 }
 
-.container {
-  position: relative;
-  height: 100vh;
-  background-color: #f8ae20;
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  width: 524px;
-  height: 462px;
-  object-fit: cover;
-  max-width: 100%;
-  margin-right: 20px;
-  /* border-color: black;
-  border: 5px groove; */
-}
-
 .description {
   top: 5px;
   color: white;
@@ -34,27 +16,48 @@
 				-1px -1px 0 #000000; 
         text-align: center;
         --font-jetbrains-mono: "JetBrains Mono";
-        /* font-family: var(--font-jetbrains-mono); */
+         font-family: var(--font-jetbrains-mono); 
         font-family: inherit;
-        float: left;
+       
+        
+}
+.description h1 {
+  text-decoration-line: underline;
+}
+.description p {
+  font-family: 'Courier New', Courier, monospace;
+  color: #212529;
+  text-align: left;
+  text-indent: 5%;
 }
 
-/* Adjust button styles */
-.su_btn,
-.l_btn {
-  background-color: #FFFFFF; 
-  border: none;
-  color: black;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  border-radius: 12px;
+.split-container {
+  display: flex; /* Enable flexbox layout for splitting */
+  width: 100%; /* Ensure container fills the width */
+  margin:  auto; /* Center the container horizontally */
 }
-.description{
-  float: left;
+
+.description {
+  flex: 1; /* Allow description to fill available space */
+  padding: 1rem; /* Add some padding for better visuals */
+  max-width: 50%;
+  padding-left: 5%;
 }
-.example1{
-  float: right;
+
+.right-content {
+  display: flex; /* Allow stacking images vertically */
+  flex-direction: column; /* Stack images top to bottom */
+  align-items: center; /* Center images horizontally */
+  /*justify-content: space-between; /* Distribute spacing between images */
+  width: 50%;  /*Set width to 50% for equal split */
+  margin-left: -50%;
 }
+
+.image1, .image2 {
+  width:100%;
+  margin: 1rem 0; /* Add some margin between images */
+  
+}
+
+
+
