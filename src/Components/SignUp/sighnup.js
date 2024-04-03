@@ -113,7 +113,7 @@ const SignUp = () => {
                   
                 </div>
           </form>
-          {error && <div className="alert alert-danger" role="alert">{error}</div>}
+          {error && <div className="alert alert-danger" role="alert">{alert(error)}</div>}
       </div>
   );
 };

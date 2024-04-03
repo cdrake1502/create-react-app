@@ -29,6 +29,7 @@
   color: #212529;
   text-align: left;
   text-indent: 5%;
+  padding-right: 5%;
 }
 
 .split-container {
@@ -51,11 +52,16 @@
   /*justify-content: space-between; /* Distribute spacing between images */
   width: 50%;  /*Set width to 50% for equal split */
   margin-left: -50%;
+  padding-top: 10%;
+  padding-right: 6%;
+
+
 }
 
 .image1, .image2 {
-  width:100%;
+  width:120%;
   margin: 1rem 0; /* Add some margin between images */
+
   
 }
 
