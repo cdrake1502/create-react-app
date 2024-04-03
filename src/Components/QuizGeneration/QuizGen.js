@@ -95,8 +95,9 @@ const generateTagline = async () => {
     
    
     const Qnumber = countValue;
-    //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
-    const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+  
+    const apiKey = process.env.OPENAI_API_KEY;
+   
     
     const endpoint = "https://api.openai.com/v1/completions";
     console.log(apiKey);
@@ -165,7 +166,6 @@ const handleGenerateQuiz =async (props) => {
 
 
 
-
   return (
   <div>
        
@@ -174,16 +174,18 @@ const handleGenerateQuiz =async (props) => {
                     <h1 className="audio-title">Add Text File Only</h1>
                 </div>
                 <div className="file-input-container">
-                    <input type="file" class="file-input"  />
+                    <input type="file" class="file-input" id="textInput"  />
+                    <p>After Clicking generate below your quiz will be converted and dropped in the Generate Quiz box below</p>
                 </div>
                 <div className="button-container">
-                    <button id="generateButton" class="generate-button" >Generate</button>
+                    <button id="convertButton" class="generate-button" >Generate</button>
                 </div>
             </div>
             
             <div className="container">
              
             <div className="textbox-container">
+              <h1 className="audio-title">Generate Quiz</h1>
                 <textarea className="textbox prompt" 
                 value={prompt} 
                 ref={textAreaRef}  
