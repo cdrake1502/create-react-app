@@ -45,7 +45,7 @@ const Splash = () => {
             easily learn and study materials related to their courses.{" "}
           </p>
           <p>
-            Its easy at 1.2.3... Just sighn up , paste or upload your notes,
+            Its as easy as 1.2.3... Just sign up, paste or upload your notes,
             configure your preferences, and download.{" "}
           </p>
           <p>
