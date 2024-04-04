@@ -37,7 +37,7 @@ const Login = () => {
         navigate('/quizgen');
         return { success: true, user: users };
       } else {
-        return { success: false, error: 'Invalid username or password' };
+        return { success: false, error: alert("Invalid Username or Password.") };
       }
     } catch (error) {
       console.error('Error authenticating user:', error.message);

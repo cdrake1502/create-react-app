@@ -22,6 +22,9 @@ const Navbar = () => {
     setIsLoggedIn(false);
     navigate('/splash');
   };
+  const handleQuzGen = () => {
+    navigate('/QuizGen');
+  }
   const handleHome = () =>{
     navigate('/splash');
   }
@@ -37,7 +40,7 @@ const Navbar = () => {
       </div>
       <nav className="navbar-links flex">
             {isLoggedIn ? (
-              <button onClick={handleLogout}>Logout</button>
+              <><button onClick={handleLogout}>Logout</button><button onClick={handleQuzGen}>Quiz Gen.</button></>
             ) : (
             <button onClick={handleLogin}>Login</button> )}
             <button onClick={handleSignup}>Sign Up</button>
