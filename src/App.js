@@ -44,7 +44,7 @@ function App() {
       <Navbar/>
       
             <Routes>
-                  <Route path='/' element={<QuizGen/>}/>
+                  <Route path='/' element={<Splash/>}/>
                   <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp/>} />
                   <Route path="/login" element = {<Login/>} />
