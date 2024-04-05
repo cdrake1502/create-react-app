@@ -9,6 +9,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -34,6 +35,7 @@ const Login = () => {
       }
   
       if (users && users.password === password) {
+        
         navigate('/quizgen');
         return { success: true, user: users };
       } else {

@@ -116,7 +116,7 @@ const generateTagline = async () => {
               Qnumber + " questions of "
                 +selectedValue+ " difficulty that are "
                 + questionType +". "+ answerString,
-        max_tokens: 500, // Optional: Limit the length of the response
+        max_tokens: 1000, // Optional: Limit the length of the response
         temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
         n: 1, // Number of completions to generate (1 in this case)
       })
@@ -163,7 +163,26 @@ const handleGenerateQuiz =async (props) => {
     //------------------------------Get Text file ---------------------------//
   
    //-------------------Get Text file ---------------------------//
+   function convertFileToString() {
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput.files[0];
+  
+    const reader = new FileReader();
+  
+    reader.onload = function (event) {
+      const fileString = event.target.result;
+      const fixedString = fileString.replace(/\r?\n/g, "\n");
 
+  
+      // Use the file string for further processing
+      setPrompt(fixedString);
+      // You can display it in an element, process it, etc.
+    };
+
+  
+    reader.readAsText(file);
+  }
+  
 
 
   return (
@@ -174,11 +193,11 @@ const handleGenerateQuiz =async (props) => {
                     <h1 className="audio-title">Add Text File Only</h1>
                 </div>
                 <div className="file-input-container">
-                    <input type="file" class="file-input" id="textInput"  />
+                    <input type="file" class="file-input" id="fileInput"/>
                     <p>After Clicking generate below your quiz will be converted and dropped in the Generate Quiz box below</p>
                 </div>
                 <div className="button-container">
-                    <button id="convertButton" class="generate-button" >Generate</button>
+                    <button id="convertButton" class="generate-button" onClick={convertFileToString} >Generate</button>
                 </div>
             </div>
             
