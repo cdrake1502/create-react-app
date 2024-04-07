@@ -54,7 +54,7 @@ const Navbar = ({ user, onLogout }) => {
             {getLoginState().isLoggedIn ?(
               <div>
                  
-                    <button className='userName'>{user}</button>
+                    <button className='userName'>{getLoginState().user}</button>
                   
                <button onClick={handleLogout}>Logout</button>
                {pathname !== '/QuizGen' && (
