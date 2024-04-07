@@ -3,12 +3,14 @@ import './QuizGen.css';
 import { useNavigate } from 'react-router-dom';
 import QuizView from '../Quizview/quizview';
 import {getLoginState} from "../authenticate/getLoginState"; 
+import { setResponseState } from "../apiresponse/setResponseState";
+import {getResponseState} from "../apiresponse/getResponseState";
 
 
 const QuizGen = (props) => {
     const navigate = useNavigate();
     const [prompt, setPrompt] = useState('');
-    const [response, setResponse] = useState('');
+    const [response, setResponseValue] = useState('');
     const [selectedOptions, setSelectedOptions] = useState('');
     const textAreaRef = useRef(null); // Create a ref
    
@@ -147,7 +149,10 @@ const handleGenerateQuiz =async (props) => {
   const processedResponse = await generateTagline();
   if (processedResponse) {
     // Pass the processedResponse to the target component (explained next)
-    setResponse(processedResponse); // Assuming TargetComponent exists
+    setResponseValue(processedResponse); // Assuming TargetComponent exists
+    setResponseState(processedResponse);
+    console.log(getResponseState().Response);
+    
     
   } else {
     // Handle API call failure (optional)
@@ -267,6 +272,8 @@ const handleGenerateQuiz =async (props) => {
                 
             </div>
         </div>
+        {}
+
         {response && <QuizView response={response} />}
     
         </div>

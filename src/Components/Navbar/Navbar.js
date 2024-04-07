@@ -7,7 +7,6 @@ import {setLoginState} from "../authenticate/setLoginState";
 
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
-  const[isLoggedIn] = useState(getLoginState().isLoggedIn);
   const { pathname } = useLocation();
   console.log(pathname);
 
@@ -33,9 +32,7 @@ const Navbar = ({ user, onLogout }) => {
   const handleHome = () =>{
     navigate('/splash');
   }
-  const testButton = () =>{
-    alert(getLoginState().user);
-  };
+
 
  
   return (
@@ -46,20 +43,17 @@ const Navbar = ({ user, onLogout }) => {
       </div>
       <div className="center-nav">
         <button className="Home-Button" onClick={handleHome}>Home</button>
-        {console.log(getLoginState())}
          
       </div>
       <nav className="navbar-links flex">
      
             {getLoginState().isLoggedIn ?(
               <div>
-                 
-                    <p className='userName'>{getLoginState().user}</p>
-                  
-               <button onClick={handleLogout}>Logout</button>
-               {pathname !== '/QuizGen' && (
-               <button onClick={handleQuzGen}> QuizGen</button>
-              )}
+                <p className='userName'>{getLoginState().user}</p>  
+                <button onClick={handleLogout}>Logout</button>
+                  {pathname !== '/QuizGen' && (
+                    <button onClick={handleQuzGen}> QuizGen</button>
+                  )}
               </div>
             ):(
               <div>
