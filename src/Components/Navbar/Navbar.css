@@ -34,3 +34,15 @@
   button:hover {
     background-color: #f2f2f2; /* Add subtle hover effect */
   }
+
+
+
+  .user-p,.home-button {
+    display:inline-block;
+    padding: 20px;
+  }
+ .center-nav:last-child p { /* Remove margin for the last paragraph */
+    margin-right: 0;
+    
+    
+  }

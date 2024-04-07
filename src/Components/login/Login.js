@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login_global.css';
 import './login_index.css';
 import Logo from './logo.png';
 import { createClient } from '@supabase/supabase-js';
+import { getLoginState } from '../authenticate/getLoginState';
+import {setLoginState} from '../authenticate/setLoginState';
 
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
 
-const Login = () => {
+const Login = ({onLogin}) => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
@@ -15,6 +17,7 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
+   
     e.preventDefault();
     const result = await handleLogin(username, password);
     if (!result.success) {
@@ -35,7 +38,8 @@ const Login = () => {
       }
   
       if (users && users.password === password) {
-        
+        setLoginState(true, username);
+        onLogin(true);
         navigate('/quizgen');
         return { success: true, user: users };
       } else {
@@ -50,6 +54,13 @@ const Login = () => {
   const navigateToSignUp = () => {
     navigate('/signup');
   };
+  
+  const testButton = () =>{
+    setLoginState(true, "drake");
+    alert(getLoginState().user);
+  };
+
+
 
   return (
     <form id="Login" onSubmit={handleSubmit}>
@@ -84,6 +95,13 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
+                <div className="Test-button">
+                  <button type="submit" className='btn-test' onClick={testButton}>
+                    test-button
+
+                  </button>
+
+                </div>
               </div>
               <div className="divider-frame1">
                 <button type="submit" className="rectangle-parent">
@@ -103,5 +121,6 @@ const Login = () => {
     </form>
   );
 };
+
 
 export default Login;

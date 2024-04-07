@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Logo from './logo.png';
 import "./Navbar.css";
+import {getLoginState} from "../authenticate/getLoginState"; 
+import {setLoginState} from "../authenticate/setLoginState";
 
-const Navbar = () => {
+const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
-  
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const[isLoggedIn] = useState(getLoginState().isLoggedIn);
+
 
   const handleLogin = () => {
     navigate('/login');
-    setIsLoggedIn(true);
+    //setIsLoggedIn(true);
   };
 
   const handleSignup = () => {
@@ -19,7 +21,8 @@ const Navbar = () => {
 
   const handleLogout = () => {
     // Implement your logout logic and update isLoggedIn
-    setIsLoggedIn(false);
+    setLoginState(false);
+    onLogout();
     navigate('/splash');
   };
   const handleQuzGen = () => {
@@ -28,6 +31,10 @@ const Navbar = () => {
   const handleHome = () =>{
     navigate('/splash');
   }
+  const testButton = () =>{
+    alert(getLoginState().user);
+  };
+
  
   return (
     <div className="navbar-container fixed-top z-10 flex items-center justify-between px-4 bg-gray-800 text-white">
@@ -35,15 +42,31 @@ const Navbar = () => {
         {/* Replace with your image component or source */}
         <img src={Logo} alt="Navbar logo" />
       </div>
-      <div>
-        <button class="" onClick={handleHome}>Home</button>
+      <div className="center-nav">
+        <button className="Home-button" onClick={handleHome}>Home</button>
+        {getLoginState().isLoggedIn ?(
+        <p className='user-p'>{user}</p>
+          ):(
+          <p></p>
+          )
+        }
       </div>
       <nav className="navbar-links flex">
-            {isLoggedIn ? (
-              <><button onClick={handleLogout}>Logout</button><button onClick={handleQuzGen}>Quiz Gen.</button></>
-            ) : (
-            <button onClick={handleLogin}>Login</button> )}
-            <button onClick={handleSignup}>Sign Up</button>
+      {console.log(getLoginState())}
+            {getLoginState().isLoggedIn ?(
+               <button onClick={handleLogout}>Logout</button>
+              
+            ):(
+              <div>
+                <button onClick={handleLogin}>Login</button>
+                <button onClick={handleSignup}>Sign Up</button>
+                <button onClick={testButton}> test</button>
+              </div>
+             
+            )
+            }
+    
+
       </nav>
     </div>
   );

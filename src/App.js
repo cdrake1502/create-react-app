@@ -8,6 +8,8 @@ import QuizView from './Components/Quizview/quizview';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import {createClient} from '@supabase/supabase-js';
+import { setLoginState} from './Components/authenticate/setLoginState'; // Import functions from auth.js
+import {getLoginState } from './Components/authenticate/getLoginState';
 
 
 
@@ -27,13 +29,23 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 
 function App() {
-  const [response, setResponse] = useState();
-
-  const handleReChange = (newData) => {
-    setResponse(newData);
-    console.log("new response");
-  };
+  const [isLoggedIn, setIsLoggedIn] = useState(getLoginState().isLoggedIn); // Initial state from storage
+  const [user, setUser] = useState(getLoginState().user); // Optional: store user data
  
+  
+
+
+  const handleLogin = (loggedIn) =>{
+    setIsLoggedIn(loggedIn);
+    console.log(isLoggedIn);
+    console.log(user);
+  };
+
+  const handleLogout = () => {
+    setLoginState(false);
+    setIsLoggedIn(false); // Update state for immediate UI change
+  };
+
 
 
 
@@ -41,15 +53,15 @@ function App() {
    
     <div className="App">
       <BrowserRouter>
-      <Navbar/>
+      <Navbar user={user} onLogout={handleLogout}/>
       
             <Routes>
                   <Route path='/' element={<Splash/>}/>
                   <Route path='/splash' element={<Splash/>}/>
-                  <Route path='/signup' element={<SignUp/>} />
-                  <Route path="/login" element = {<Login/>} />
+                  <Route path='/signup' element={<SignUp onSignUp = {handleLogin}/>} />
+                  <Route path="/login" element = {<Login onLogin = {handleLogin}/>} />
                   <Route path="/quizgen" element = {<QuizGen />} />
-                  <Route path="/quizview" element = {<QuizView data={response} onResponse={handleReChange}/>} />
+                  <Route path="/quizview" element = {<QuizView />} />
             </Routes>
        <Footer/>
       </BrowserRouter>
