@@ -38,6 +38,9 @@
     display:inline-block;
     padding-right:50px;
   }
+  .Home-Button{
+    flex: 1;
+  }
 
 
 

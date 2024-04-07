@@ -2,6 +2,8 @@ import React, {useState, useRef} from 'react';
 import './QuizGen.css';
 import { useNavigate } from 'react-router-dom';
 import QuizView from '../Quizview/quizview';
+import {getLoginState} from "../authenticate/getLoginState"; 
+
 
 const QuizGen = (props) => {
     const navigate = useNavigate();
@@ -186,6 +188,7 @@ const handleGenerateQuiz =async (props) => {
 
 
   return (
+
   <div>
        
         <div className="container-file">
@@ -267,7 +270,9 @@ const handleGenerateQuiz =async (props) => {
         {response && <QuizView response={response} />}
     
         </div>
+  
   );
+
 };
 // <div  className="response-test"  dangerouslySetInnerHTML={{ __html: responseWithLineBreaks }}></div>
 export default QuizGen;

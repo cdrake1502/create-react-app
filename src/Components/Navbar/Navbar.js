@@ -45,7 +45,7 @@ const Navbar = ({ user, onLogout }) => {
         <img src={Logo} alt="Navbar logo" />
       </div>
       <div className="center-nav">
-        <button className="Home-button" onClick={handleHome}>Home</button>
+        <button className="Home-Button" onClick={handleHome}>Home</button>
         {console.log(getLoginState())}
          
       </div>
