@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState} from 'react';
+import {useNavigate, useLocation} from 'react-router-dom';
 import Logo from './logo.png';
 import "./Navbar.css";
 import {getLoginState} from "../authenticate/getLoginState"; 
@@ -8,6 +8,8 @@ import {setLoginState} from "../authenticate/setLoginState";
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
   const[isLoggedIn] = useState(getLoginState().isLoggedIn);
+  const { pathname } = useLocation();
+  console.log(pathname);
 
 
   const handleLogin = () => {
@@ -54,8 +56,12 @@ const Navbar = ({ user, onLogout }) => {
       <nav className="navbar-links flex">
       {console.log(getLoginState())}
             {getLoginState().isLoggedIn ?(
+              <div>
                <button onClick={handleLogout}>Logout</button>
-              
+               {pathname !== '/QuizGen' && (
+               <button onClick={handleQuzGen}> QuizGen</button>
+              )}
+              </div>
             ):(
               <div>
                 <button onClick={handleLogin}>Login</button>
