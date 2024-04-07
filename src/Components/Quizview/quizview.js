@@ -1,17 +1,16 @@
-import react, { useState, useContext }from 'react';
+import react, { useState}from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
 import jsPDF from 'jspdf';
 import { useNavigate } from 'react-router-dom';
+import {getResponseState} from "../apiresponse/getResponseState";
 
 
 
-const QuizView = (props) => {
+const QuizView = () => {
     
     const navigate = useNavigate();
-
-    
-    const [textBoxValue, setTextBoxValue] = useState(props.response);
+    const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
             const doc = new jsPDF();
             doc.text(textBoxValue, 10, 10);
@@ -20,7 +19,7 @@ const QuizView = (props) => {
         
     
 
-        const navigateToQuizGen = () => {
+        const handleBack = () => {
             navigate('/quizgen');
           };
   
@@ -36,11 +35,6 @@ const QuizView = (props) => {
       };
     const { copied, copyToClipboard } = CopyQuiz(textToCopy);
     //for copying the text -------------------------------------------------------//
-    
-   
-        const handleExit = () => {
-          window.location.reload();
-        };
     
     return(
        
@@ -62,8 +56,8 @@ const QuizView = (props) => {
                     <button>Save</button>
                     <button onClick={generatePDF}>
                         Get PDF</button>
-                    <button onClick={handleExit}>
-                        Exit</button>
+                    <button onClick={handleBack}>
+                        Back</button>
                 </div>
                
 

@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import './QuizGen.css';
 import { useNavigate } from 'react-router-dom';
-import QuizView from '../Quizview/quizview';
 import {getLoginState} from "../authenticate/getLoginState"; 
 import { setResponseState } from "../apiresponse/setResponseState";
 import {getResponseState} from "../apiresponse/getResponseState";
@@ -72,9 +71,9 @@ const handleCheckboxAns = (event) => {
 
 
 
-/*const navigateToQuizView = () => {
+const handleQuizView = () => {
   navigate('/quizview');
-};*/
+};
 
 
 
@@ -151,7 +150,7 @@ const handleGenerateQuiz =async (props) => {
     // Pass the processedResponse to the target component (explained next)
     setResponseValue(processedResponse); // Assuming TargetComponent exists
     setResponseState(processedResponse);
-    console.log(getResponseState().Response);
+    handleQuizView();
     
     
   } else {
@@ -272,11 +271,7 @@ const handleGenerateQuiz =async (props) => {
                 
             </div>
         </div>
-        {}
-
-        {response && <QuizView response={response} />}
-    
-        </div>
+      </div>
   
   );
 
