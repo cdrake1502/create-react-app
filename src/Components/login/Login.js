@@ -95,13 +95,7 @@ const Login = ({onLogin}) => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="Test-button">
-                  <button type="submit" className='btn-test' onClick={testButton}>
-                    test-button
-
-                  </button>
-
-                </div>
+             
               </div>
               <div className="divider-frame1">
                 <button type="submit" className="rectangle-parent">

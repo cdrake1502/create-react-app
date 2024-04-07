@@ -46,17 +46,16 @@ const Navbar = ({ user, onLogout }) => {
       </div>
       <div className="center-nav">
         <button className="Home-button" onClick={handleHome}>Home</button>
-        {getLoginState().isLoggedIn ?(
-        <p className='user-p'>{user}</p>
-          ):(
-          <p></p>
-          )
-        }
+        {console.log(getLoginState())}
+         
       </div>
       <nav className="navbar-links flex">
-      {console.log(getLoginState())}
+     
             {getLoginState().isLoggedIn ?(
               <div>
+                 
+                    <p className='userName'>{user}</p>
+                  
                <button onClick={handleLogout}>Logout</button>
                {pathname !== '/QuizGen' && (
                <button onClick={handleQuzGen}> QuizGen</button>
