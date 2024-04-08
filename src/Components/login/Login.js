@@ -38,7 +38,9 @@ const Login = ({onLogin}) => {
       }
   
       if (users && users.password === password) {
-        setLoginState(true, username, users.user_id);
+        const userId = users.user_id; // Access the user_id from the data object
+        console.log('User ID:', userId);
+        setLoginState(true, username);
         console.log(users.user_id);
         onLogin(true);
         navigate('/quizgen');
