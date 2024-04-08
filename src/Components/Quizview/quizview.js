@@ -35,19 +35,23 @@ const QuizView = () => {
           const saveQuiz = async (e) =>{
             
            const {data, error}= await supabase.from('quizzes').insert([
+            
             {
                 quiz_name:"it is what it is", 
                 content:"wow first quiz saved",
-            },
-
-          ])
-          
-          }
+            },])
+            if (error) {
+                console.error('Error adding quiz:', error);
+                return; // Handle error appropriately
+              }
+            
+              console.log('Quiz added successfully:', data);
+        }
   //-------------------------------------------- insert saved Quizzes -------------------------------
          
        
     
-    //for copying the text -------------------------------------------------------//
+    //--------------------------------------for copying the text -------------------------------------------------------//
     let [textToCopy, setTextToCopy] = useState('');
 
     const handleTextAreaChange = (event) => {
@@ -56,7 +60,7 @@ const QuizView = () => {
         setTextToCopy(event.target.value);
       };
     const { copied, copyToClipboard } = CopyQuiz(textToCopy);
-    //for copying the text -------------------------------------------------------//
+    //----------------------------------------for copying the text -------------------------------------------------------//
     
     return(
        
