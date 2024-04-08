@@ -35,18 +35,22 @@ const QuizView = () => {
           const saveQuiz = async (e) =>{
             
            const {data, error}= await supabase.from('quizzes').insert([
-            
             {
                 quiz_name:"it is what it is", 
-                content:"wow first quiz saved",
+                content:{textBoxValue},
             },])
-            
+
             if (error) {
                 console.error('Error adding quiz:', error);
                 return; // Handle error appropriately
               }
             
               console.log('Quiz added successfully:', data);
+             
+
+              const user = getLoginState().user_id;
+            console.log(user);
+
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
          
