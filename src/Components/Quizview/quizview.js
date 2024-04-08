@@ -30,11 +30,24 @@ const QuizView = () => {
             navigate('/quizgen');
           };
 
+//--------------------------------------for copying the text -------------------------------------------------------//
+                let [textToCopy, setTextToCopy] = useState('');
+
+                const handleTextAreaChange = (event) => {
+                    setTextBoxValue(event.target.value);
+                    textToCopy = document.getElementById("text-box");
+                    
+                    setTextToCopy(event.target.value);
+                };
+                const { copied, copyToClipboard } = CopyQuiz(textToCopy);
+//----------------------------------------for copying the text -------------------------------------------------------//
+    
+
 
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
-            const quizContent = document.getElementById("text-box").value;
-            
+            const quizContent = document.getElementById("text-box");
+            console.log(quizContent);
            const {data, error}= await supabase.from('quizzes').insert([
             {
                 quiz_name:"it is what it is", 
@@ -50,7 +63,7 @@ const QuizView = () => {
              
 
               const user = getLoginState().user_id;
-                console.log(user);
+               
 
               //  const {data, error} = await supabase.from('')
 
@@ -59,18 +72,7 @@ const QuizView = () => {
          
        
     
-    //--------------------------------------for copying the text -------------------------------------------------------//
-    let [textToCopy, setTextToCopy] = useState('');
-
-    const handleTextAreaChange = (event) => {
-        setTextBoxValue(event.target.value);
-        textToCopy = document.getElementById("text-box");
-        console.log(textToCopy);
-        setTextToCopy(event.target.value);
-      };
-    const { copied, copyToClipboard } = CopyQuiz(textToCopy);
-    //----------------------------------------for copying the text -------------------------------------------------------//
-    
+ 
     const testButton =() =>{
         alert(getLoginState().user_id);
     }
