@@ -33,11 +33,12 @@ const QuizView = () => {
 
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
+            const quizContent = document.getElementById("text-box").value;
             
            const {data, error}= await supabase.from('quizzes').insert([
             {
                 quiz_name:"it is what it is", 
-                content:{textBoxValue},
+                content: quizContent,
             },])
 
             if (error) {
@@ -45,11 +46,13 @@ const QuizView = () => {
                 return; // Handle error appropriately
               }
             
-              console.log('Quiz added successfully:', data.quiz_name);
+              console.log('Quiz added successfully:', data);
              
 
               const user = getLoginState().user_id;
-            console.log(user);
+                console.log(user);
+
+              //  const {data, error} = await supabase.from('')
 
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
