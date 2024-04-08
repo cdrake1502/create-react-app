@@ -100,7 +100,7 @@ const generateTagline = async () => {
     const Qnumber = countValue;
   
     const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-   
+   //const apiKey = "sk-o4XT0McKTdcSYd7QKKSZT3BlbkFJ72jiqzy9SgiFoNcK6Fi
     
     const endpoint = "https://api.openai.com/v1/completions";
     console.log(apiKey);

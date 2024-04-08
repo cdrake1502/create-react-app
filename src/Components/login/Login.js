@@ -38,7 +38,8 @@ const Login = ({onLogin}) => {
       }
   
       if (users && users.password === password) {
-        setLoginState(true, username);
+        setLoginState(true, username, users.user_id);
+        console.log(users.user_id);
         onLogin(true);
         navigate('/quizgen');
         return { success: true, user: users };
