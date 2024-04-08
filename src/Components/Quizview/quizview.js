@@ -70,6 +70,10 @@ const QuizView = () => {
     const { copied, copyToClipboard } = CopyQuiz(textToCopy);
     //----------------------------------------for copying the text -------------------------------------------------------//
     
+    const testButton =() =>{
+        alert(getLoginState().user_id);
+    }
+
     return(
        
         <div className="container2">
@@ -86,12 +90,13 @@ const QuizView = () => {
 
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
             </div>
+            
             <div className="button-container2">
                     <button className="saveButton"onClick={saveQuiz}>
                         Save
                         </button>
 
-                      
+                        <button onClick={testButton}>test button </button>
 
                     <button onClick={generatePDF}>
                         Get PDF</button>
