@@ -5,8 +5,9 @@ import jsPDF from 'jspdf';
 import { useNavigate } from 'react-router-dom';
 import {getResponseState} from "../apiresponse/getResponseState";
 import {saveQuizData} from "../savedQuizzes/saveQuiz";
-import { createClient } from '@supabase/supabase-js';
+import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
+
 
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
 
@@ -30,32 +31,19 @@ const QuizView = () => {
           };
 
 
-//-------------------------------------------- get saved Quizzes -------------------------------
+//-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
-            const quizData = document.getElementById("text-box").value;
-            const user_id = getLoginState().user_id;
             
-            e.preventDefault();
-            const result = await getDbInfo(user_id, quizData);
+           const {data, error}= await supabase.from('quizzes').insert([
+            {
+                quiz_name:"it is what it is", 
+                content:"wow first quiz saved",
+            },
 
-          };
-
-          const getDbInfo = async (user_id, quiz) =>{
-            const { data, error } = await supabase
-            .from('quizzes')
-            .select('quizzes.name') // Select only quiz name
-            .innerJoin('ownedquizzes', 'ownedquizzes.quiz_id', 'quizzes.quiz_id') // Join tables
-            .eq('ownedquizzes.user_id', user_id) // Filter by user ID
-        
-          if (error) {
-            console.error('Error fetching user quizzes:', error);
-            return []; // Return empty array if error occurs
+          ])
+          
           }
-          const returnedData = data.map(quiz => quiz.name);
-          console.log(returnedData);
-          return returnedData; // Extract and return only quiz names
-          }
-  //-------------------------------------------- get saved Quizzes -------------------------------
+  //-------------------------------------------- insert saved Quizzes -------------------------------
          
        
     
