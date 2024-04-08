@@ -45,7 +45,7 @@ const QuizView = () => {
                 return; // Handle error appropriately
               }
             
-              console.log('Quiz added successfully:', data);
+              console.log('Quiz added successfully:', data.quiz_name);
              
 
               const user = getLoginState().user_id;
