@@ -40,6 +40,7 @@ const QuizView = () => {
                 quiz_name:"it is what it is", 
                 content:"wow first quiz saved",
             },])
+            
             if (error) {
                 console.error('Error adding quiz:', error);
                 return; // Handle error appropriately
