@@ -56,7 +56,7 @@ function App() {
       <Navbar user={user} onLogout={handleLogout}/>
       
             <Routes>
-                  <Route path='/' element={<QuizGen/>}/>
+                  <Route path='/' element={<Splash/>}/>
                   <Route path='/splash' element={<Splash/>}/>
                   <Route path='/signup' element={<SignUp onSignUp = {handleLogin}/>} />
                   <Route path="/login" element = {<Login onLogin = {handleLogin}/>} />
