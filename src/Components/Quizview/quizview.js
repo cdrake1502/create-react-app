@@ -7,6 +7,8 @@ import {getResponseState} from "../apiresponse/getResponseState";
 import {saveQuizData} from "../savedQuizzes/saveQuiz";
 import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
+import { setQuizzesState } from '../apiresponse/setQuizzes';
+
 
 
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
@@ -96,7 +98,8 @@ const QuizView = () => {
                 }else if (quizzes.length === 0) {
                     console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
                   } else {
-                    console.log(quizzes.length);
+                    
+                    setQuizzesState(quizzes);
                     for (const quiz of quizzes) {
                       console.log(quiz.quiz_name)
                     }}
