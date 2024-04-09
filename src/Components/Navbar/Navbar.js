@@ -33,7 +33,7 @@ const Navbar = ({onLogout }) => {
     navigate('/splash');
   }
   const handleDisplaySaved = () =>{
-    navigate('/displaySaved');
+    navigate('/displayquizzes');
   }
 
 

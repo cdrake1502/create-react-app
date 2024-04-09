@@ -56,7 +56,7 @@ const DisplayQuizzes = () =>{
     */
   return (
     <div>
-    
+    <p>this is some example text</p>
      
       <button >display quizzes</button>
      
