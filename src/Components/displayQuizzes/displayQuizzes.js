@@ -54,12 +54,11 @@ const DisplayQuizzes = () =>{
     }
   return (
     <div>
+    
      
-     <h1>Saved Quizzes</h1>
-     <ul id="quiz-list">
-      <button onClick={display}></button>
+      <button onClick={display} style="padding: 100px;"></button>
      
-      </ul>
+      
       
     </div>
   );
