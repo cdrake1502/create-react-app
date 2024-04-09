@@ -104,8 +104,9 @@ const QuizView = () => {
                 }else if (quizzes.length === 0) {
                     console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
                   } else {
-                    
-                    setQuizzes(quizzes);
+                    let Count = 0;
+                  
+                    setQuizzes(JSON.stringify(quizzes));
                     for (const quiz of quizzes) {
                       console.log(quiz.quiz_name)
                     }}
