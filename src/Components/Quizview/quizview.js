@@ -47,12 +47,15 @@ const QuizView = () => {
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
             const quizContent = textBoxValue;
-            console.log(quizContent);
+            const user = getLoginState().user_id;
+         console.log(user);
            const {data, error}= await supabase.from('quizzes').insert([
             {
                 quiz_name:"it is what it is", 
                 content: quizContent,
+                user_id: user,
             },])
+
 
             if (error) {
                 console.error('Error adding quiz:', error);
@@ -62,14 +65,34 @@ const QuizView = () => {
               console.log('Quiz added successfully:', data);
              
 
-              const user = getLoginState().user_id;
-               
+                
+
+              
 
               //  const {data, error} = await supabase.from('')
 
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
-         
+       const addLink = async () =>{
+        try {
+            const user = getLoginState().user_id;
+
+            const {data: quiz, error}= await supabase.from('quizzes')
+                .select('*')
+                .eq("user_id", user);
+
+                if (error) {
+                    console.error('Error adding quiz:', error);
+                    return; // Handle error appropriately
+                }
+                console.log(quiz.quiz_name);
+                
+                    } catch (error) {
+                console.error('Error authenticating user:', error.message);
+                return { success: false, error: 'An error occurred while authenticating user' };
+              }
+        }
+
        
     
  
