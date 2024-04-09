@@ -5,10 +5,10 @@ import "./Navbar.css";
 import {getLoginState} from "../authenticate/getLoginState"; 
 import {setLoginState} from "../authenticate/setLoginState";
 
-const Navbar = ({ user, onLogout }) => {
+const Navbar = ({onLogout }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  console.log(pathname);
+  
 
 
   const handleLogin = () => {

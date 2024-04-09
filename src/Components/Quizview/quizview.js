@@ -63,7 +63,15 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              addLink();
+              const userid = getLoginState().user_id;
+              addLink(userid)
+              .then(quizzes => {
+                // You can access the retrieved quizzes array here (optional)
+                console.log('Quizzes:', quizzes);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
              
 
                 
@@ -74,25 +82,31 @@ const QuizView = () => {
 
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
-       const addLink = async () =>{
+       const addLink = async (user) =>{
         try {
-            const user = getLoginState().user_id;
+            
 
-            const {data: quiz, error}= await supabase.from('quizzes')
+            const {data: quizzes, error}= await supabase.from('quizzes')
                 .select('*')
                 .eq("user_id", user);
 
                 if (error) {
                     console.error('Error adding quizzes:', error);
                     return; // Handle error appropriately
-                }
-                console.log(quiz.quiz_name);
+                }else if (quizzes.length === 0) {
+                    console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
+                  } else {
+                    console.log(quizzes.length);
+                    for (const quiz of quizzes) {
+                      
+                    }}
 
                     } catch (error) {
                 console.error('Error getting Quizzes:', error.message);
                 return { success: false, error: 'An error occurred while authenticating user' };
               }
         }
+    
 
        
     
