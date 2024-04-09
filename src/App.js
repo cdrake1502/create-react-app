@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import {createClient} from '@supabase/supabase-js';
 import { setLoginState} from './Components/authenticate/setLoginState'; // Import functions from auth.js
 import {getLoginState } from './Components/authenticate/getLoginState';
+import DisplayQuizzes from './Components/displayQuizzes/displayQuizzes';
 
 
 
@@ -62,6 +63,8 @@ function App() {
                   <Route path="/login" element = {<Login onLogin = {handleLogin}/>} />
                   <Route path="/quizgen" element = {<QuizGen />} />
                   <Route path="/quizview" element = {<QuizView />} />
+                  <Route path="/quizview" element = {<DisplayQuizzes/>} />
+
             </Routes>
        <Footer/>
       </BrowserRouter>

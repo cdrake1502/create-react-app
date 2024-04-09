@@ -7,7 +7,7 @@ import {getResponseState} from "../apiresponse/getResponseState";
 import {saveQuizData} from "../savedQuizzes/saveQuiz";
 import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
-import { setQuizzesState } from '../apiresponse/setQuizzes';
+import { setQuizzes } from '../apiresponse/setQuizzes';
 
 
 
@@ -99,7 +99,7 @@ const QuizView = () => {
                     console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
                   } else {
                     
-                    setQuizzesState(quizzes);
+                    setQuizzes(quizzes);
                     for (const quiz of quizzes) {
                       console.log(quiz.quiz_name)
                     }}

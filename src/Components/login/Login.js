@@ -56,10 +56,7 @@ const Login = ({onLogin}) => {
     navigate('/signup');
   };
   
-  const testButton = () =>{
-    setLoginState(true, "drake");
-    alert(getLoginState().user);
-  };
+
 
 
 
