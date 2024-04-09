@@ -56,7 +56,7 @@ const DisplayQuizzes = () =>{
     <div>
     
      
-      <button onClick={display} style="padding: 100px;"></button>
+      <button onClick={display} ></button>
      
       
       
