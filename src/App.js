@@ -63,7 +63,7 @@ function App() {
                   <Route path="/login" element = {<Login onLogin = {handleLogin}/>} />
                   <Route path="/quizgen" element = {<QuizGen />} />
                   <Route path="/quizview" element = {<QuizView />} />
-                  <Route path="/quizview" element = {<DisplayQuizzes/>} />
+                  <Route path="/displayquizzes" element = {<DisplayQuizzes/>} />
 
             </Routes>
        <Footer/>

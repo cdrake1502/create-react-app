@@ -31,6 +31,9 @@ const QuizView = () => {
         const handleBack = () => {
             navigate('/quizgen');
           };
+          const handleDisplaySaved = () =>{
+            navigate('/displayquizzes');
+          }
 
 //--------------------------------------for copying the text -------------------------------------------------------//
                 let [textToCopy, setTextToCopy] = useState('');
@@ -74,6 +77,9 @@ const QuizView = () => {
               .catch(error => {
                 console.error('Error:', error);
               });
+
+
+              handleDisplaySaved();
              
 
                 
