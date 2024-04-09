@@ -63,6 +63,7 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
+              addLink();
              
 
                 
@@ -82,13 +83,13 @@ const QuizView = () => {
                 .eq("user_id", user);
 
                 if (error) {
-                    console.error('Error adding quiz:', error);
+                    console.error('Error adding quizzes:', error);
                     return; // Handle error appropriately
                 }
                 console.log(quiz.quiz_name);
-                
+
                     } catch (error) {
-                console.error('Error authenticating user:', error.message);
+                console.error('Error getting Quizzes:', error.message);
                 return { success: false, error: 'An error occurred while authenticating user' };
               }
         }
