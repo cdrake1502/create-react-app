@@ -53,7 +53,7 @@ const QuizView = () => {
           const saveQuiz = async (e) =>{
             const quizContent = textBoxValue;
             const user = getLoginState().user_id;
-         console.log(user);
+         
            const {data, error}= await supabase.from('quizzes').insert([
             {
                 quiz_name:"it is what it is", 
@@ -68,55 +68,14 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              const userid = getLoginState().user_id;
-              addLink(userid)
-              .then(quizzes => {
-                // You can access the retrieved quizzes array here (optional)
-                console.log('Quizzes:', quizzes);
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              });
-
-
-              handleDisplaySaved();
-             
-
-                
-
+              navigate('/displayquizzes');
               
-
+ 
               //  const {data, error} = await supabase.from('')
 
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
-       const addLink = async (user) =>{
-        try {
-            
-
-            const {data: quizzes, error}= await supabase.from('quizzes')
-                .select('*')
-                .eq("user_id", user);
-
-                if (error) {
-                    console.error('Error adding quizzes:', error);
-                    return; // Handle error appropriately
-                }else if (quizzes.length === 0) {
-                    console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
-                  } else {
-                    let Count = 0;
-                  
-                    setQuizzes(JSON.stringify(quizzes));
-                    for (const quiz of quizzes) {
-                      console.log(quiz.quiz_name)
-                    }}
-
-                    } catch (error) {
-                console.error('Error getting Quizzes:', error.message);
-                return { success: false, error: 'An error occurred while authenticating user' };
-              }
-        }
-    
+      
 
        
     
