@@ -51,6 +51,7 @@ const Navbar = ({onLogout }) => {
               <div>
                 <p className='userName'>{getLoginState().user}</p>  
                 <button onClick={handleLogout}>Logout</button>
+                <button onClick={navigate('/displayquizzes')}> Saved</button>
                   {pathname !== '/QuizGen' && (
                     <button onClick={handleQuzGen}> QuizGen</button>
                   )}
