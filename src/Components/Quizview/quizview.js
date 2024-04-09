@@ -98,7 +98,7 @@ const QuizView = () => {
                   } else {
                     console.log(quizzes.length);
                     for (const quiz of quizzes) {
-                      
+                      console.log(quiz.quiz_name)
                     }}
 
                     } catch (error) {
