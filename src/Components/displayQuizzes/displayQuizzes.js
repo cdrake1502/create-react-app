@@ -35,28 +35,17 @@ const DisplayQuizzes = () =>{
             if (error) {
                 console.error('Error adding quizzes:', error);
                 return; // Handle error appropriately
+                
             }else if (quizzes.length === 0) {
                 console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
-              } else {
-               
-                const quizList = document.getElementById('quiz-list');
-                quizList.innerHTML = ''; 
-  
-                  if (quizzes.length === 0) {
-                    quizList.textContent = 'No quizzes found for this user.'; // Inform user if no quizzes exist
-                  } else {
+            } else {
                     for (const quiz of quizzes) {
                       // Create and customize your display elements here
-                      const quizElement = document.createElement('li'); // Example element
-                      quizElement.textContent = quiz.quiz_name; // Example: Display quiz name
-                      quizList.appendChild(quizElement);
+                     console.log(quiz.quiz_name);
                       // Add event listeners or other functionality for individual quizzes as needed
                     }
-                  
-                  
-                  
-                  
-                }}
+                  }
+
   
                 } catch (error) {
             console.error('Error getting Quizzes:', error.message);
