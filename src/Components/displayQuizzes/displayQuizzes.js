@@ -10,6 +10,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const DisplayQuizzes = () =>{
+  
   const userid = getLoginState().user_id;
   const display=()=>{
    
@@ -56,7 +57,7 @@ const DisplayQuizzes = () =>{
     <div>
     
      
-      <button onClick={display} ></button>
+      <button onClick={display} >display quizzes</button>
      
       
       
