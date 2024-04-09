@@ -10,7 +10,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const DisplayQuizzes = () =>{
-  
+  /*
   const userid = getLoginState().user_id;
   const display=()=>{
    
@@ -53,11 +53,12 @@ const DisplayQuizzes = () =>{
             return { success: false, error: 'An error occurred while authenticating user' };
           }
     }
+    */
   return (
     <div>
     
      
-      <button onClick={display} >display quizzes</button>
+      <button >display quizzes</button>
      
       
       
