@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getLoginState } from '../authenticate/getLoginState';
 import { createClient} from '@supabase/supabase-js';
-//import {getQuizzes} from '../apiresponse/getQuizzes';
+import {getQuizzes} from '../apiresponse/getQuizzes';
 
 
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
@@ -10,9 +10,9 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const DisplayQuizzes = () =>{
-
+  const userid = getLoginState().user_id;
   const display=()=>{
-    const userid = getLoginState().user_id;
+   
     addLink(userid)
     .then(quizzes => {
       // You can access the retrieved quizzes array here (optional)
@@ -57,7 +57,7 @@ const DisplayQuizzes = () =>{
      
      <h1>Saved Quizzes</h1>
      <ul id="quiz-list">
-      {display}
+      <button onClick={display}></button>
      
       </ul>
       
