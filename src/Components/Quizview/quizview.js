@@ -86,7 +86,7 @@ const QuizView = () => {
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
-    const stringifiedQuiz = "";
+    let stringifiedQuiz = "";
     const QuizArray= [];
 
     const {data: quizzes, error}= await supabase.from('quizzes')
