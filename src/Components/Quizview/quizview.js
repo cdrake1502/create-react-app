@@ -1,4 +1,4 @@
-import react, { useState}from 'react';
+import react, { useState, useEffect}from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
 import jsPDF from 'jspdf';
@@ -18,7 +18,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const QuizView = () => {
-    
+    const [quizzesUse, setQuizzesUse] = useState([]);
     const navigate = useNavigate();
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
@@ -114,14 +114,9 @@ const QuizView = () => {
             }
             stringifiedQuiz = JSON.stringify(Neededobjects);
             console.log( stringifiedQuiz);
-            setQuizzes(stringifiedQuiz);
+            setQuizzes(user, stringifiedQuiz);
 
-            const quizArray = getQuizzes();
-
-                for(const quiz of quizArray){
-                    console.log(quiz.name)
-                }
-            }
+          
         
     }
       
@@ -132,6 +127,16 @@ const QuizView = () => {
     const testButton =() =>{
         alert(getLoginState().user_id);
     }
+  
+    }
+    useEffect(() => {
+        // Retrieve quizzes from session storage using get_string_state
+        const retrievedQuizzes = getQuizzes("myQuizzes");
+        if (retrievedQuizzes) {
+          console.log(retrievedQuizzes); // Update state with retrieved quizzes
+        }
+      }, []);
+    
 
     return(
        
@@ -155,7 +160,7 @@ const QuizView = () => {
                         Save
                         </button>
 
-                        <button onClick={testButton}>test button </button>
+                       
 
                     <button onClick={generatePDF}>
                         Get PDF</button>
