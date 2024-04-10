@@ -5,9 +5,8 @@ import {getQuizzes} from '../apiresponse/getQuizzes';
 
 
 
-const supabaseUrl = 'https://vyvojvrtkryvbsmcgzrq.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc2OTczNjYsImV4cCI6MjAyMzI3MzM2Nn0.g0vq8MRsOox8wKVEq8gde9CA_2egvpfMfoqDHiWJxv4';
-const supabase = createClient(supabaseUrl, supabaseKey); 
+const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
+
 
 
 const DisplayQuiz = () => {
@@ -28,7 +27,14 @@ const DisplayQuiz = () => {
 const user = getLoginState().UserID;
 console.log(user);
   
-  
+const handleSubmit = async (e) => {
+   
+  e.preventDefault();
+  const result = await addLink(user);
+  if (!result.success) {
+    setError(result.error);
+  }
+};
   const addLink = async () =>{
     try {
         const {data: quizzes, error}= await supabase.from('quizzes')
@@ -64,7 +70,7 @@ console.log(user);
       </ul>
      </p>
      
-      <button onClick={addLink} >display quizzes</button>
+      <button onClick={handleSubmit} >display quizzes</button>
      
       
       
