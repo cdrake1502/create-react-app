@@ -1,14 +1,12 @@
-import react, { useState, useEffect}from 'react';
+import react, { useState}from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
 import jsPDF from 'jspdf';
 import { useNavigate } from 'react-router-dom';
 import {getResponseState} from "../apiresponse/getResponseState";
-import {saveQuizData} from "../savedQuizzes/saveQuiz";
 import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
-import { setQuizzes } from '../apiresponse/setQuizzes';
-import { getQuizzes } from '../apiresponse/getQuizzes';
+
 
 
 
@@ -42,7 +40,6 @@ const QuizView = () => {
                 const handleTextAreaChange = (event) => {
                     setTextBoxValue(event.target.value);
                     textToCopy = document.getElementById("text-box");
-                    
                     setTextToCopy(event.target.value);
                 };
                 const { copied, copyToClipboard } = CopyQuiz(textToCopy);
@@ -86,8 +83,7 @@ const QuizView = () => {
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
-    let stringifiedQuiz = "";
-    const Neededobjects = [];
+    
 
     const {data: quizzes, error}= await supabase.from('quizzes')
     .select('*')
@@ -103,18 +99,16 @@ const QuizView = () => {
             let count = 0;
             for (const quiz of quizzes) {
                 count++;
-                Neededobjects.push(
-                    {name:quiz.quiz_name,id:quiz.id }
-                )
+                console.log(quiz.quiz_name, quiz.id)
+                    
+                
                 // Create and customize your display elements here
                 
                 
             
                 // Add event listeners or other functionality for individual quizzes as needed
             }
-            stringifiedQuiz = JSON.stringify(Neededobjects);
-            console.log( stringifiedQuiz);
-            setQuizzes(user, stringifiedQuiz);
+           
 
           
         
@@ -129,13 +123,7 @@ const QuizView = () => {
     }
   
     }
-    useEffect(() => {
-        // Retrieve quizzes from session storage using get_string_state
-        const retrievedQuizzes = getQuizzes("myQuizzes");
-        if (retrievedQuizzes) {
-          console.log(retrievedQuizzes); // Update state with retrieved quizzes
-        }
-      }, []);
+   
     
 
     return(
