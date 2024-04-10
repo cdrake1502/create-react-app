@@ -68,3 +68,8 @@
     --font-jetbrains-mono: "JetBrains Mono";
   
   }
+  .display-names{
+    display:flex;
+    align-items: center;
+
+  }
