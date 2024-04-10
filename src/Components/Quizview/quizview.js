@@ -132,7 +132,10 @@ const QuizView = () => {
         for (const item of array) {
             console.log(item.user_id);
           const listItem = document.createElement("li");
-          listItem.textContent = item.user_id; // Set the content of the list item
+          listItem.textContent = item.quiz_name; // Set the content of the list item
+          const ListButton = document.createElement("button");
+          ListButton.textContent= "show Quiz";
+          ListButton.onClick= console.log(item.id)
           listElement.appendChild(listItem);
         }
         containerElement.innerHTML = "";
