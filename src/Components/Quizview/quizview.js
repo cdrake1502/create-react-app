@@ -112,7 +112,7 @@ const QuizView = () => {
             
                 // Add event listeners or other functionality for individual quizzes as needed
             }
-            stringifiedQuiz = JSON.stringify(Neededobjects);
+            stringifiedQuiz = JSON.stringify(quizzes);
             console.log( stringifiedQuiz);
             setQuizzes(stringifiedQuiz);
 
