@@ -119,7 +119,7 @@ const QuizView = () => {
             const retrievedString = getQuizzes();
 
                 if (retrievedString) {
-                    console.log(retrievedString);
+                    console.log(typeof retrievedString);
                     //for (const quiz of quizArray){
                     //console.log(quiz.quiz_name)
                     //}
