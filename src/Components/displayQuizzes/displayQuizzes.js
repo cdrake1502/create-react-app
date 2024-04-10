@@ -24,6 +24,7 @@ const DisplayQuiz = () => {
     });
   }
   */
+const [error, setError] = useState('');
 const user = getLoginState().UserID;
 console.log(user);
   
@@ -33,6 +34,7 @@ const handleSubmit = async (e) => {
   const result = await addLink(user);
   if (!result.success) {
     setError(result.error);
+    console.log(error);
   }
 };
   const addLink = async () =>{
