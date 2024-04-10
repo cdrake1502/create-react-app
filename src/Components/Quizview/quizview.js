@@ -105,7 +105,8 @@ const QuizView = () => {
 
 
             }
-            setQuizzesUse(count);
+            setQuizzesUse(quiznames);
+            displayquizzes(quizzesUse,"text-container");
            
 
           
@@ -113,7 +114,26 @@ const QuizView = () => {
     }
   
     }
-   
+    const displayquizzes =(array, containerId)=>{
+        if (!Array.isArray(array)) {
+            console.error("Error: displayArrayInList requires an array as input.");
+            return;
+          }
+        
+          const containerElement = document.getElementById(containerId);
+          if (!containerElement) {
+            console.error("Error: Container element with ID", containerId, "not found.");
+            return;
+          }
+        const listElement = document.createElement("ul");
+
+        // Loop through the array and create list items
+        for (const item of array) {
+          const listItem = document.createElement("li");
+          listItem.textContent = item; // Set the content of the list item
+          listElement.appendChild(listItem);
+        }
+}   
     
 
     return(
