@@ -12,21 +12,6 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 const DisplayQuiz = () => {
   
   /*
-  const display=()=>{
-   
-    addLink(userid)
-    .then(quizzes => {
-      // You can access the retrieved quizzes array here (optional)
-      console.log('Quizzes:', quizzes);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }
-  
-const [error, setError] = useState('');
-const user = getLoginState().UserID;
-console.log(user);
   
 const handleSubmit = async (e) => {
    
@@ -39,6 +24,7 @@ const handleSubmit = async (e) => {
 };
   const addLink = async () =>{
     try {
+      
         const {data: quizzes, error}= await supabase.from('quizzes')
             .select('*')
             .eq("user_id", user);
@@ -63,7 +49,7 @@ const handleSubmit = async (e) => {
             return { success: false, error: 'An error occurred while authenticating user' };
           }
     }
-    */
+   */
   return (
     <div>
      <p>

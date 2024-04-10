@@ -68,13 +68,43 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              navigate('/display');
+              
+                addLink(user)
+                .then(quizzes => {
+                // You can access the retrieved quizzes array here (optional)
+                console.log('Quizzes:', quizzes);
+                })
+                .catch(error => {
+                console.error('Error:', error);
+                });
+              //navigate('/display');
               
  
               //  const {data, error} = await supabase.from('')
 
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
+  const addLink= async (user) =>{
+    
+
+    const {data: quizzes, error}= await supabase.from('quizzes')
+    .select('*')
+    .eq("user_id", user);
+
+    if (error) {
+        console.error('Error adding quizzes:', error);
+        return; // Handle error appropriately
+        
+    }else if (quizzes.length === 0) {
+        console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
+    } else {
+            for (const quiz of quizzes) {
+                // Create and customize your display elements here
+            console.log(quiz.quiz_name);
+                // Add event listeners or other functionality for individual quizzes as needed
+            }
+            }
+    }
       
 
        
