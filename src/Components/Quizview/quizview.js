@@ -8,6 +8,7 @@ import {saveQuizData} from "../savedQuizzes/saveQuiz";
 import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
 import { setQuizzes } from '../apiresponse/setQuizzes';
+import { getQuizzes } from '../apiresponse/getQuizzes';
 
 
 
@@ -85,6 +86,7 @@ const QuizView = () => {
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
+    const stringifiedQuiz = "";
     const QuizArray= [];
 
     const {data: quizzes, error}= await supabase.from('quizzes')
@@ -103,11 +105,26 @@ const QuizView = () => {
                 count++;
                 // Create and customize your display elements here
                 QuizArray[count] = quiz.quiz_name;
-                console.log(QuizArray.length);
+                
             
                 // Add event listeners or other functionality for individual quizzes as needed
             }
+            stringifiedQuiz = stringifiedQuiz.slice(0,-1);
+            setQuizzes(stringifiedQuiz);
+
+            const retrievedString = getQuizzes();
+                if (retrievedString) {
+                // Parse the string if necessary
+                let fruitsArray = retrievedString;
+                if (typeof retrievedString === 'string') {
+                    fruitsArray = JSON.parse(retrievedString); // Parse back to array or objects
+                }
+
+                // Use the retrieved fruitsArray (string array or object array)
+                console.log(fruitsArray); // Example: Output: ["apple", "banana", "cherry"] (or array of objects)
+                }
             }
+        
     }
       
 
