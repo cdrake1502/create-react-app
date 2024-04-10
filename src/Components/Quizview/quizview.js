@@ -149,11 +149,12 @@ const QuizView = () => {
        
         <div className="container2">
             <h1 className="main-heading">Generated Quiz</h1>
-            <div id="display-names" className="display-names">
-
-            </div>
+           
 
             <div className="text-container" >
+            <div id="display-names" className="display-names">
+
+</div>
                 <textarea
                 className='text-box2'
                 id="text-box"
