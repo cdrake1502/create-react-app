@@ -116,14 +116,11 @@ const QuizView = () => {
             console.log( stringifiedQuiz);
             setQuizzes(stringifiedQuiz);
 
-            const retrievedString = getQuizzes();
+            const quizArray = getQuizzes();
 
-                if (retrievedString) {
-                    console.log(typeof retrievedString);
-                    //for (const quiz of quizArray){
-                    //console.log(quiz.quiz_name)
-                    //}
-                   }
+                for(const quiz of quizArray){
+                    console.log(quiz.name)
+                }
             }
         
     }
