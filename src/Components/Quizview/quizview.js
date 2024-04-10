@@ -109,20 +109,17 @@ const QuizView = () => {
             
                 // Add event listeners or other functionality for individual quizzes as needed
             }
-            stringifiedQuiz = stringifiedQuiz.slice(0,-1);
+            stringifiedQuiz = JSON.stringify(quizzes);
             setQuizzes(stringifiedQuiz);
 
             const retrievedString = getQuizzes();
-                if (retrievedString) {
-                // Parse the string if necessary
-                let fruitsArray = retrievedString;
-                if (typeof retrievedString === 'string') {
-                    fruitsArray = JSON.parse(retrievedString); // Parse back to array or objects
-                }
 
-                // Use the retrieved fruitsArray (string array or object array)
-                console.log(fruitsArray); // Example: Output: ["apple", "banana", "cherry"] (or array of objects)
-                }
+                if (retrievedString) {
+                    const quizArray = JSON.parse(retrievedString);
+                    for (const quiz of quizArray){
+                    console.log(quiz.quiz_name)
+                    }
+                   }
             }
         
     }
