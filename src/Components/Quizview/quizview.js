@@ -133,6 +133,10 @@ const QuizView = () => {
           listItem.textContent = item; // Set the content of the list item
           listElement.appendChild(listItem);
         }
+        containerElement.innerHTML = "";
+
+        // Append the list to the container element
+        containerElement.appendChild(listElement);
 }   
     
 
@@ -140,7 +144,8 @@ const QuizView = () => {
        
         <div className="container2">
             <h1 className="main-heading">Generated Quiz</h1>
-            <div className="text-container">
+
+            <div className="text-container" id="test-container">
                 <textarea
                 className='text-box2'
                 id="text-box"
