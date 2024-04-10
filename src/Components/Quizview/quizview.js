@@ -97,29 +97,19 @@ const QuizView = () => {
         quizzes.textContent = ('No quizzes found for this user.'); // Inform user if no quizzes exist
     } else {
             let count = 0;
+            const quiznames = [];
             for (const quiz of quizzes) {
                 count++;
-                console.log(quiz.quiz_name, quiz.id)
-                    
-                
-                // Create and customize your display elements here
-                
-                
-            
-                // Add event listeners or other functionality for individual quizzes as needed
+                console.log(quiz.quiz_name, quiz.id);
+                quiznames[count].push(quiz.quiz_name);
+
+
             }
+            setQuizzesUse(count);
            
 
           
         
-    }
-      
-
-       
-    
- 
-    const testButton =() =>{
-        alert(getLoginState().user_id);
     }
   
     }
