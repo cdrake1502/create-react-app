@@ -9,7 +9,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const DisplayQuiz = () => {
   
-  const userid = getLoginState().user_id;
+  /*
   const display=()=>{
    
     addLink(userid)
@@ -21,12 +21,13 @@ const DisplayQuiz = () => {
       console.error('Error:', error);
     });
   }
+  */
+const user = getLoginState().UserID;
+console.log(user);
   
   
-  const addLink = async (user) =>{
+  const addLink = async () =>{
     try {
-        
-  
         const {data: quizzes, error}= await supabase.from('quizzes')
             .select('*')
             .eq("user_id", user);
@@ -56,11 +57,11 @@ const DisplayQuiz = () => {
     <div>
      <p>
       <ul>
-        {display}
+        
       </ul>
      </p>
      
-      <button >display quizzes</button>
+      <button onClick={addLink} >display quizzes</button>
      
       
       
