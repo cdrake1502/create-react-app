@@ -106,7 +106,7 @@ const QuizView = () => {
 
             }
             setQuizzesUse(quiznames);
-            displayquizzes(quizzesUse,"text-container");
+            displayquizzes(quizzes,"text-container");
            
 
           
@@ -130,9 +130,9 @@ const QuizView = () => {
         // Loop through the array and create list items
         
         for (const item of array) {
-            console.log(item);
+            console.log(item.user_id);
           const listItem = document.createElement("li");
-          listItem.textContent = item; // Set the content of the list item
+          listItem.textContent = item.user_id; // Set the content of the list item
           listElement.appendChild(listItem);
         }
         containerElement.innerHTML = "";
