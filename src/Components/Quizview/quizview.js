@@ -85,7 +85,7 @@ const QuizView = () => {
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
-    
+    const QuizArray= [];
 
     const {data: quizzes, error}= await supabase.from('quizzes')
     .select('*')
@@ -96,11 +96,15 @@ const QuizView = () => {
         return; // Handle error appropriately
         
     }else if (quizzes.length === 0) {
-        console.log('No quizzes found for this user.'); // Inform user if no quizzes exist
+        QuizArray[0] = ('No quizzes found for this user.'); // Inform user if no quizzes exist
     } else {
+            let count = 0;
             for (const quiz of quizzes) {
+                count++;
                 // Create and customize your display elements here
-            console.log(quiz.quiz_name);
+                QuizArray[count] = quiz.quiz_name;
+                console.log(QuizArray.length);
+            
                 // Add event listeners or other functionality for individual quizzes as needed
             }
             }
