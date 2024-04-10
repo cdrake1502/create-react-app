@@ -17,11 +17,26 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const QuizView = () => {
     const [quizzesUse, setQuizzesUse] = useState([]);
+    const newValue = "null";
     const navigate = useNavigate();
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
             const doc = new jsPDF();
-            doc.text(textBoxValue, 10, 10,  { autoPrint: true });
+            let currentY = 10; 
+            
+            const lines = doc.splitTextToSize(textBoxValue, doc.internal.pageSize.getWidth() - 20); 
+            for (const line of lines) {
+                // Check if currentY + line height would exceed page height
+                if (currentY + doc.getTextHeight() > doc.internal.pageSize.getHeight() - 20) {
+                  // Add a new page if needed
+                  doc.addPage();
+                  currentY = 10; // Reset Y position for new page
+                }
+            
+                // Write the line of text
+                doc.text(line, 10, currentY); // Adjust X position
+                currentY += doc.getTextHeight(); // Update Y position for next line
+              }
             doc.save('quiz.pdf');
         };
         
@@ -131,14 +146,15 @@ const QuizView = () => {
         
         for (const item of array) {
             console.log(item.user_id);
+            
+          
           const listItem = document.createElement("li");
           listItem.textContent = item.quiz_name; // Set the content of the list item
-          const ListButton = document.createElement("button");
-          ListButton.textContent= "show Quiz";
-          ListButton.onClick= console.log(item.id)
+          
           listElement.appendChild(listItem);
         }
         containerElement.innerHTML = "";
+
 
         // Append the list to the container element
         containerElement.appendChild(listElement);
