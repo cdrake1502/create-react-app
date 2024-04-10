@@ -87,6 +87,7 @@ const QuizView = () => {
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
     let stringifiedQuiz = "";
+    const Neededobjects = [];
 
     const {data: quizzes, error}= await supabase.from('quizzes')
     .select('*')
@@ -102,13 +103,16 @@ const QuizView = () => {
             let count = 0;
             for (const quiz of quizzes) {
                 count++;
+                Neededobjects.push(
+                    {name:quiz.quiz_name, id:quiz.quiz.id, }
+                )
                 // Create and customize your display elements here
                 
                 
             
                 // Add event listeners or other functionality for individual quizzes as needed
             }
-            stringifiedQuiz = JSON.stringify(quizzes);
+            stringifiedQuiz = JSON.stringify(Neededobjects);
             console.log( stringifiedQuiz);
             setQuizzes(stringifiedQuiz);
 
