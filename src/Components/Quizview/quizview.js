@@ -101,7 +101,7 @@ const QuizView = () => {
             for (const quiz of quizzes) {
                 count++;
                 console.log(quiz.quiz_name, quiz.id);
-                quiznames[count].push(quiz.quiz_name);
+                quiznames.push(quiz.quiz_name);
 
 
             }
