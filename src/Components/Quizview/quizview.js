@@ -22,21 +22,8 @@ const QuizView = () => {
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
             const doc = new jsPDF();
-            let currentY = 10; 
-            
-            const lines = doc.splitTextToSize(textBoxValue, doc.internal.pageSize.getWidth() - 20); 
-            for (const line of lines) {
-                // Check if currentY + line height would exceed page height
-                if (currentY + doc.getTextHeight() > doc.internal.pageSize.getHeight() - 20) {
-                  // Add a new page if needed
-                  doc.addPage();
-                  currentY = 10; // Reset Y position for new page
-                }
-            
-                // Write the line of text
-                doc.text(line, 10, currentY); // Adjust X position
-                currentY += doc.getTextHeight(); // Update Y position for next line
-              }
+            doc.text(textBoxValue, 10, 10,  { autoPrint: true });
+           
             doc.save('quiz.pdf');
         };
         
