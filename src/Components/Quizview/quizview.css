@@ -34,6 +34,7 @@
     margin: 0; /* Remove margin as we added padding to container */
     border-radius: 10px; /* Rounded corners for container */
     padding: 5px;
+    padding-left:10px;
     border: 1px solid #ddd;
     resize: none;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1); /* Inset shadow for text box */
