@@ -23,7 +23,7 @@ const DisplayQuiz = () => {
       console.error('Error:', error);
     });
   }
-  */
+  
 const [error, setError] = useState('');
 const user = getLoginState().UserID;
 console.log(user);
@@ -63,7 +63,7 @@ const handleSubmit = async (e) => {
             return { success: false, error: 'An error occurred while authenticating user' };
           }
     }
-    
+    */
   return (
     <div>
      <p>
@@ -72,7 +72,7 @@ const handleSubmit = async (e) => {
       </ul>
      </p>
      
-      <button onClick={handleSubmit} >display quizzes</button>
+      <button  >display quizzes</button>
      
       
       
