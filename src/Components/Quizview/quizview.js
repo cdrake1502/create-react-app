@@ -119,10 +119,10 @@ const QuizView = () => {
             const retrievedString = getQuizzes();
 
                 if (retrievedString) {
-                    const quizArray = JSON.parse(retrievedString);
-                    for (const quiz of quizArray){
-                    console.log(quiz.quiz_name)
-                    }
+                    console.log(retrievedString);
+                    //for (const quiz of quizArray){
+                    //console.log(quiz.quiz_name)
+                    //}
                    }
             }
         
