@@ -100,7 +100,7 @@ const QuizView = () => {
             const quiznames = [];
             for (const quiz of quizzes) {
                 count++;
-                console.log(quiz.quiz_name, quiz.id);
+               // console.log(quiz.quiz_name, quiz.id);
                 quiznames.push(quiz.quiz_name);
 
 
@@ -128,7 +128,9 @@ const QuizView = () => {
         const listElement = document.createElement("ul");
 
         // Loop through the array and create list items
+        
         for (const item of array) {
+            console.log(item);
           const listItem = document.createElement("li");
           listItem.textContent = item; // Set the content of the list item
           listElement.appendChild(listItem);
