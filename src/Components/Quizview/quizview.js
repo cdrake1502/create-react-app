@@ -104,7 +104,7 @@ const QuizView = () => {
             for (const quiz of quizzes) {
                 count++;
                 Neededobjects.push(
-                    {name:quiz.quiz_name, }
+                    {name:quiz.quiz_name,id:quiz.id }
                 )
                 // Create and customize your display elements here
                 
