@@ -32,7 +32,7 @@ const QuizView = () => {
             navigate('/quizgen');
           };
           const handleDisplaySaved = () =>{
-            navigate('/displayquizzes');
+            navigate('/display');
           }
 
 //--------------------------------------for copying the text -------------------------------------------------------//
@@ -68,7 +68,7 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              navigate('/displayquizzes');
+              navigate('/display');
               
  
               //  const {data, error} = await supabase.from('')

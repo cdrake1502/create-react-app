@@ -7,7 +7,7 @@ import {getQuizzes} from '../apiresponse/getQuizzes';
 const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5dm9qdnJ0a3J5dmJzbWNnenJxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNzY5NzM2NiwiZXhwIjoyMDIzMjczMzY2fQ.PzXtntpiXdhHH0lMh0EgPLFU1sYm4piufRkM6k2fkq4');
 
 
-const  DisplayQuizzes = () => {
+const DisplayQuiz = () => {
   /*
   const userid = getLoginState().user_id;
   const display=()=>{
@@ -64,4 +64,4 @@ const  DisplayQuizzes = () => {
   );
 };
 
-export default DisplayQuizzes;
+export default DisplayQuiz;
