@@ -148,9 +148,10 @@ const QuizView = () => {
         containerElement.appendChild(listElement);
 }   
 
-const onclickItem = async(content) =>{
-    setquizContentSelect(content);
-    setTextBoxValue(quizContentSelect);
+const onclickItem = (content) =>{
+    console.log(content)
+    
+    setTextBoxValue(content);
 }
     
 
