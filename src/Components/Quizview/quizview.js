@@ -132,13 +132,18 @@ const QuizView = () => {
         // Loop through the array and create list items
         
         for (const item of array) {
-            console.log(item.user_id);
+        console.log(item.user_id);
+        const displaycontent = "console.log('Content: ' + {" + item.quiz.content + "});";
             
           
           const listItem = document.createElement("li");
           listItem.textContent = item.quiz_name; // Set the content of the list item
-          
+          const listButton = document.createElement("button");
+          listButton.onClick = displaycontent;
+          listItem.appendChild(listButton);
+
           listElement.appendChild(listItem);
+          
         }
         containerElement.innerHTML = "";
 
@@ -157,7 +162,7 @@ const QuizView = () => {
             <div className="text-container" >
             <div id="display-names" className="display-names">
 
-</div>
+            </div>
                 <textarea
                 className='text-box2'
                 id="text-box"
