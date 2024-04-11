@@ -16,7 +16,6 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const QuizView = () => {
-    const [quizContentSelect,setquizContentSelect] = useState(null);
     const [quizzesUse, setQuizzesUse] = useState([]);
     const newValue = "null";
     const navigate = useNavigate();
@@ -131,17 +130,21 @@ const QuizView = () => {
         const listElement = document.createElement("ul");
 
         // Loop through the array and create list items
-        
+      let count = 0;
         for (const item of array) {
-        console.log(item.user_id);
-
-          const baseItem = document.createElement("li");
+            console.log(item.user_id);
+          quizArray.push(item.content); //push content to array 
+          const baseItem = document.createElement("div");
+          baseItem.id = count; //push id to each div
+          console.log("id: " +baseItem.id)
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
-          buttonItem.onclick = onclickItem(item.content);
+          buttonItem.onClick = () => {
+            onclickItem(count);
+          };
           baseItem.appendChild(buttonItem);
           listElement.appendChild(baseItem);
-          
+          count++;
         }
         containerElement.innerHTML = "";
 
@@ -149,12 +152,26 @@ const QuizView = () => {
         // Append the list to the container element
         containerElement.appendChild(listElement);
 }   
+const quizArray = [];
+const onclickItem = (count) =>{
+    const quiz = "";
+    if (quizArray === null) {
+        
+    }else {
+        quiz = quizArray[count];
 
-const onclickItem = (content) =>{
-    console.log(content)
-    
-    setTextBoxValue(content);
+    }
+    setTextBoxValue(quiz);
+
 }
+/* How can I do this whith using vanilla script. 
+
+call  create array with elements . 
+count creates array elements and the count for the onclick
+this onclick takes in count and will get its content from the array same index numbers
+this will settextboxvalue to the content. 
+*/ 
+   
     
 
     return(
