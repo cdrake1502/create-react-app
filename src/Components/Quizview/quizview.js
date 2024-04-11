@@ -106,7 +106,7 @@ const QuizView = () => {
 
 */
             }
-            setQuizzes(data);
+            setQuizzes(quizzes);
            // setQuizzesUse(quiznames);
             //displayquizzes(quizzes,"display-names");
            
