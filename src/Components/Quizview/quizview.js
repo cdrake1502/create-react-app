@@ -140,6 +140,7 @@ const QuizView = () => {
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.onClick = () => {
+            console.log(count);
             onclickItem(count);
           };
           baseItem.appendChild(buttonItem);
