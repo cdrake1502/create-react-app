@@ -133,7 +133,7 @@ const QuizView = () => {
         
         for (const item of array) {
         console.log(item.user_id);
-        const displaycontent = "console.log('Content: ' + {" + item.quiz.content + "});";
+        const displaycontent = "console.log('Content: ' + {" + item.content + "});";
             
           
           const listItem = document.createElement("li");
