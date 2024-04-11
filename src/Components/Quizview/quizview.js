@@ -16,6 +16,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const QuizView = () => {
+    const [quizContentSelect,setquizContentSelect] = useState(null);
     const [quizzesUse, setQuizzesUse] = useState([]);
     const newValue = "null";
     const navigate = useNavigate();
@@ -133,14 +134,10 @@ const QuizView = () => {
         
         for (const item of array) {
         console.log(item.user_id);
-       
-            
-          
+
           const listItem = document.createElement("li");
           listItem.textContent = item.quiz_name; // Set the content of the list item
-          listItem.onclick = console.log(item.content);
-          
-
+          listItem.onclick = onclickItem(item.content);
           listElement.appendChild(listItem);
           
         }
@@ -150,6 +147,11 @@ const QuizView = () => {
         // Append the list to the container element
         containerElement.appendChild(listElement);
 }   
+
+const onclickItem = async(content) =>{
+    setquizContentSelect(content);
+    setTextBoxValue(quizContentSelect);
+}
     
 
     return(
