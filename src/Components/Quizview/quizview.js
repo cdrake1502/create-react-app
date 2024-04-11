@@ -115,7 +115,7 @@ const QuizView = () => {
         
     }
     useEffect(() => {
-       saveQuiz()
+       saveQuiz();
       
         saveQuiz();
       }, []); // Run only on component mount
@@ -173,6 +173,8 @@ first function gets all quiz objects and displays the names
 so we save each quiz with its quiz id in an array array index is correlated to the displayed quizzes
 
 */ 
+
+
    
     
 
@@ -183,20 +185,27 @@ so we save each quiz with its quiz id in an array array index is correlated to t
            
 
             <div className="text-container" >
+            { quizzes ?(
             <div id="display-names" className="display-names">
-                
+              
             {quizzes.map((quiz) => (
-        <li key={quiz.id}>
-          <button onClick={() => {
-            setSelectedQuiz(quiz);
-            console.log(selectedQuiz.content);
-            }}>
-            {quiz.name}
-          </button>
-        </li>
+            <li key={quiz.id}>
+            <button onClick={() => {
+                setSelectedQuiz(quiz);
+                console.log(selectedQuiz.content);
+                }}>
+                {quiz.name}
+                
+            </button>
+            </li>
+        
+            
       ))}
+   
 
             </div>
+             ):(<div></div>)
+            }
                 <textarea
                 className='text-box2'
                 id="text-box"
