@@ -1,4 +1,4 @@
-import react, { useState}from 'react';
+import react, { useState, useEffect}from 'react';
 import './quizview.css';
 import CopyQuiz from './copyquiz';
 import jsPDF from 'jspdf';
@@ -16,9 +16,12 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const QuizView = () => {
-    const [quizzesUse, setQuizzesUse] = useState([]);
+    const [quizzes, setQuizzes] = useState([]); // Array to store quiz data
+    const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
+  
     const newValue = "null";
     const navigate = useNavigate();
+
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
             const doc = new jsPDF();
@@ -77,15 +80,9 @@ const QuizView = () => {
                 .catch(error => {
                 console.error('Error:', error);
                 });
-              //navigate('/display');
-              
- 
-              //  const {data, error} = await supabase.from('')
-
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   const addLink= async (user) =>{
-    
 
     const {data: quizzes, error}= await supabase.from('quizzes')
     .select('*')
@@ -98,6 +95,8 @@ const QuizView = () => {
     }else if (quizzes.length === 0) {
         quizzes.textContent = ('No quizzes found for this user.'); // Inform user if no quizzes exist
     } else {
+        console.log("Generation Successful");
+        /*
             let count = 0;
             const quiznames = [];
             for (const quiz of quizzes) {
@@ -105,17 +104,24 @@ const QuizView = () => {
                // console.log(quiz.quiz_name, quiz.id);
                 quiznames.push(quiz.quiz_name);
 
-
+*/
             }
-            setQuizzesUse(quiznames);
-            displayquizzes(quizzes,"display-names");
+            setQuizzes(data);
+           // setQuizzesUse(quiznames);
+            //displayquizzes(quizzes,"display-names");
            
 
           
         
     }
+    useEffect(() => {
+       saveQuiz()
+      
+        saveQuiz();
+      }, []); // Run only on component mount
   
-    }
+    
+    /*
     const displayquizzes =(array, containerId)=>{
         if (!Array.isArray(array)) {
             console.error("Error: displayArrayInList requires an array as input.");
@@ -139,10 +145,6 @@ const QuizView = () => {
           console.log("id: " +baseItem.id)
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
-          buttonItem.onClick = () => {
-            console.log(count);
-            onclickItem(count);
-          };
           baseItem.appendChild(buttonItem);
           listElement.appendChild(baseItem);
           count++;
@@ -164,13 +166,12 @@ const onclickItem = (count) =>{
     }
     setTextBoxValue(quiz);
 
-}
-/* How can I do this whith using vanilla script. 
+}*/
 
-call  create array with elements . 
-count creates array elements and the count for the onclick
-this onclick takes in count and will get its content from the array same index numbers
-this will settextboxvalue to the content. 
+/* 
+first function gets all quiz objects and displays the names 
+so we save each quiz with its quiz id in an array array index is correlated to the displayed quizzes
+
 */ 
    
     
@@ -183,11 +184,23 @@ this will settextboxvalue to the content.
 
             <div className="text-container" >
             <div id="display-names" className="display-names">
+                
+            {quizzes.map((quiz) => (
+        <li key={quiz.id}>
+          <button onClick={() => {
+            setSelectedQuiz(quiz);
+            console.log(selectedQuiz.content);
+            }}>
+            {quiz.name}
+          </button>
+        </li>
+      ))}
 
             </div>
                 <textarea
                 className='text-box2'
                 id="text-box"
+                
                 value={textBoxValue}
                 onChange={handleTextAreaChange}
                 >
