@@ -21,7 +21,7 @@ const Login = ({onLogin}) => {
     e.preventDefault();
     const result = await handleLogin(username, password);
     if (!result.success) {
-      setError(result.error);
+      setError("Invalid username or password.");
     }
   };
 
