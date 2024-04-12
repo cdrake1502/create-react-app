@@ -16,6 +16,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 const QuizView = () => {
+    const [savePress, setSavePress] = useState(false);
     const [quizzes, setQuizzes] = useState([]); // Array to store quiz data
     const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
   
@@ -54,6 +55,7 @@ const QuizView = () => {
 
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
+            
             const quizContent = textBoxValue;
             const user = getLoginState().user_id;
          
@@ -107,6 +109,7 @@ const QuizView = () => {
 */
             }
             setQuizzes(quizzes);
+            setSavePress(true);
            // setQuizzesUse(quiznames);
             //displayquizzes(quizzes,"display-names");
            
@@ -114,11 +117,7 @@ const QuizView = () => {
           
         
     }
-    useEffect(() => {
-       saveQuiz();
-      
-        saveQuiz();
-      }, []); // Run only on component mount
+  
   
     
     /*
@@ -185,9 +184,11 @@ so we save each quiz with its quiz id in an array array index is correlated to t
            
 
             <div className="text-container" >
-            { quizzes.length > 0 &&(
+            { savePress() ?(
             <div id="display-names" className="display-names"> 
+            {}
                     {quizzes.map((quiz) => (
+                        
                     <li key={quiz.id}>
                     <button onClick={() => {
                         setSelectedQuiz(quiz);
@@ -199,7 +200,7 @@ so we save each quiz with its quiz id in an array array index is correlated to t
                     </li>  
                         ))}
             </div>
-             )}
+             ):(<div></div>)}
                 <textarea
                 className='text-box2'
                 id="text-box"
