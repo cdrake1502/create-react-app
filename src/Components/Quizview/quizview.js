@@ -199,9 +199,14 @@ first function gets all quiz objects and displays the names
 so we save each quiz with its quiz id in an array array index is correlated to the displayed quizzes
 
 */ 
+const iterate =(Quizzes)=>{
+  let i;
 
+for ( i=0;i < Quizzes.length;i++){
+  console.log(Quizzes.id);
+}
+}
 
-   
     
 
     return(
@@ -211,10 +216,18 @@ so we save each quiz with its quiz id in an array array index is correlated to t
            
 
             <div className="text-container" >
-            {savePress ?(<div></div>/*
+            {savePress ?( 
+              
             <div id="display-names" className="display-names"> 
-            {console.log(quiz.id)}
-                    {quizzes.map((quiz) => (
+            
+                {
+                     iterate()
+                    
+                    
+                    
+                    
+                    
+                    /*quizzes.map((quiz) => (
                         
                     <li key={quiz.id}>
                     <button onClick={() => {
@@ -225,9 +238,9 @@ so we save each quiz with its quiz id in an array array index is correlated to t
                         
                     </button>
                     </li>  
-                        ))}
+                        ))*/}
             </div>
-                    */):(<div></div>)}
+                      ):(<div></div>)}
                 <textarea
                 className='text-box2'
                 id="text-box"
