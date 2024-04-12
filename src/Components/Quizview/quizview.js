@@ -198,14 +198,14 @@ const onclickItem = (count) =>{
 first function gets all quiz objects and displays the names 
 so we save each quiz with its quiz id in an array array index is correlated to the displayed quizzes
 
-*/ 
+
 const iterate =(Quizzes)=>{
   let i;
 
 for ( i=0;i < Quizzes.length;i++){
   console.log(Quizzes.id);
 }
-}
+}*/
 
     
 
