@@ -185,27 +185,21 @@ so we save each quiz with its quiz id in an array array index is correlated to t
            
 
             <div className="text-container" >
-            { quizzes.length() !== 0  ?(
-            <div id="display-names" className="display-names">
-              
-            {quizzes.map((quiz) => (
-            <li key={quiz.id}>
-            <button onClick={() => {
-                setSelectedQuiz(quiz);
-                console.log(selectedQuiz.content);
-                }}>
-                {quiz.name}
-                
-            </button>
-            </li>
-        
-            
-      ))}
-   
-
+            { quizzes.length > 0 &&(
+            <div id="display-names" className="display-names"> 
+                    {quizzes.map((quiz) => (
+                    <li key={quiz.id}>
+                    <button onClick={() => {
+                        setSelectedQuiz(quiz);
+                        console.log(selectedQuiz.content);
+                        }}>
+                        {quiz.name}
+                        
+                    </button>
+                    </li>  
+                        ))}
             </div>
-             ):(<div></div>)
-            }
+             )}
                 <textarea
                 className='text-box2'
                 id="text-box"
