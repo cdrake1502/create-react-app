@@ -84,6 +84,7 @@ const QuizView = () => {
                 });
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
+  /*
   const addLink= async (user) =>{
 
     const {data: quizzes, error}= await supabase.from('quizzes')
@@ -109,7 +110,7 @@ const QuizView = () => {
                // console.log(quiz.quiz_name, quiz.id);
                 quiznames.push(quiz.quiz_name);
 
-*/
+
             }
             
            
@@ -119,7 +120,27 @@ const QuizView = () => {
 
           
         
-    }
+    }*/
+
+    useEffect(() => {
+        const saveButton= async () => {
+            setSavePress(true)
+            const user = getLoginState().user_id;
+          const { data, error } = await supabase
+            .from('quizzes') // Replace with your table name
+            .select('*')
+            .eq('user_id', user);
+      
+          if (error) {
+            console.error('Error fetching quizzes:', error);
+            return; // Handle error appropriately
+          }
+      
+          setQuizzes(data); // Update state with fetched quizzes
+        };
+      
+        saveButton();
+      }, []); // Run only on component mount
   
   
     
