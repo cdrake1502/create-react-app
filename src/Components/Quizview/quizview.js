@@ -221,7 +221,7 @@ for ( i=0;i < Quizzes.length;i++){
             <div id="display-names" className="display-names"> 
             
                 {
-                     iterate()
+                     console.log(Quizzes.at(0).user_id)
                     
                     
                     
