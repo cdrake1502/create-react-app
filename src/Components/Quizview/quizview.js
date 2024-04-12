@@ -73,7 +73,7 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              
+              /*
                 addLink(user)
                 .then(quizzes => {
                 // You can access the retrieved quizzes array here (optional)
@@ -81,7 +81,7 @@ const QuizView = () => {
                 })
                 .catch(error => {
                 console.error('Error:', error);
-                });
+                });*/
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
   /*
@@ -137,6 +137,7 @@ const QuizView = () => {
           }
       
           setQuizzes(data); // Update state with fetched quizzes
+          console.log
         };
       
         saveButton();
@@ -208,7 +209,7 @@ so we save each quiz with its quiz id in an array array index is correlated to t
            
 
             <div className="text-container" >
-            { savePress ?(
+            {savePress ?(<div></div>/*
             <div id="display-names" className="display-names"> 
             {console.log(quiz.id)}
                     {quizzes.map((quiz) => (
@@ -224,7 +225,7 @@ so we save each quiz with its quiz id in an array array index is correlated to t
                     </li>  
                         ))}
             </div>
-             ):(<div></div>)}
+                    */):(<div></div>)}
                 <textarea
                 className='text-box2'
                 id="text-box"
