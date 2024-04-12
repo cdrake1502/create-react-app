@@ -137,7 +137,8 @@ const QuizView = () => {
           }
       
           setQuizzes(data); // Update state with fetched quizzes
-          console.log
+          console.log(data.user_id);
+
         };
       
         saveButton();
