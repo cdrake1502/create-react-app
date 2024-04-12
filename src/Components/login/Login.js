@@ -48,7 +48,7 @@ const Login = ({onLogin}) => {
       }
     } catch (error) {
       console.error('Error authenticating user:', error.message);
-      return { success: false, error: 'An error occurred while authenticating user' };
+      return { success: false, error: alert("Invalid Username or Password.") };
     }
   };
 
