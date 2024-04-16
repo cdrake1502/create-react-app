@@ -73,7 +73,7 @@ const QuizView = () => {
               }
             
               console.log('Quiz added successfully:', data);
-              /*
+              
                 addLink(user)
                 .then(quizzes => {
                 // You can access the retrieved quizzes array here (optional)
@@ -81,10 +81,10 @@ const QuizView = () => {
                 })
                 .catch(error => {
                 console.error('Error:', error);
-                });*/
+                });
         }
   //-------------------------------------------- insert saved Quizzes -------------------------------
-  /*
+  
   const addLink= async (user) =>{
 
     const {data: quizzes, error}= await supabase.from('quizzes')
@@ -102,7 +102,7 @@ const QuizView = () => {
         setQuizzes(quizzes);
         console.log(Quizzes.at(0).id)
         setSavePress(true);
-        /*
+        
             let count = 0;
             const quiznames = [];
             for (const quiz of quizzes) {
@@ -114,14 +114,15 @@ const QuizView = () => {
             }
             
            
-           // setQuizzesUse(quiznames);
-            //displayquizzes(quizzes,"display-names");
+            setQuizzesUse(quiznames);
+            displayquizzes(quizzes,"display-names");
            
 
           
         
-    }*/
-
+    }
+  }
+/*
     useEffect(() => {
         const saveButton= async () => {
             setSavePress(true)
@@ -133,7 +134,7 @@ const QuizView = () => {
       
           if (error) {
             console.error('Error fetching quizzes:', error);
-            return; // Handle error appropriately
+            return; // Handle error appropriately0
           }
       
           setQuizzes(data); // Update state with fetched quizzes
@@ -145,9 +146,9 @@ const QuizView = () => {
         saveButton();
       }, []); // Run only on component mount
   
-  
+  */
     
-    /*
+    
     const displayquizzes =(array, containerId)=>{
         if (!Array.isArray(array)) {
             console.error("Error: displayArrayInList requires an array as input.");
@@ -192,7 +193,7 @@ const onclickItem = (count) =>{
     }
     setTextBoxValue(quiz);
 
-}*/
+}
 
 /* 
 first function gets all quiz objects and displays the names 
@@ -216,31 +217,13 @@ for ( i=0;i < Quizzes.length;i++){
            
 
             <div className="text-container" >
-            {savePress ?( 
+          { savePress ?(
               
             <div id="display-names" className="display-names"> 
-            
-                {
-                     console.log(Quizzes.at(0).user_id)
-                    
-                    
-                    
-                    
-                    
-                    /*quizzes.map((quiz) => (
-                        
-                    <li key={quiz.id}>
-                    <button onClick={() => {
-                        setSelectedQuiz(quiz);
-                        console.log(selectedQuiz.content);
-                        }}>
-                        {quiz.name}
-                        
-                    </button>
-                    </li>  
-                        ))*/}
+           
             </div>
-                      ):(<div></div>)}
+          ):(<div> </div>)}
+  
                 <textarea
                 className='text-box2'
                 id="text-box"
