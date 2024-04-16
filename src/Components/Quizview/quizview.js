@@ -106,15 +106,13 @@ const QuizView = () => {
             let count = 0;
             const quiznames = [];
             for (const quiz of quizzes) {
-                count++;
-               // console.log(quiz.quiz_name, quiz.id);
-                quiznames.push(quiz.quiz_name);
+             
 
 
             }
             
            
-            setQuizzesUse(quiznames);
+            //setQuizzesUse(quiznames);
             displayquizzes(quizzes,"display-names");
            
 
