@@ -106,6 +106,12 @@ const generateTagline = async () => {
     console.log(apiKey);
 
     // Make the API call using Fetch API
+    const promptString = ("Using this information: "+ 
+              prompt +" Give me "+
+              Qnumber + " questions of "
+                +selectedValue+ " difficulty that are "
+                + questionType +". "+ answerString)
+    console.log("prompt:" +promptString);
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -114,11 +120,7 @@ const generateTagline = async () => {
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo-instruct',
-              prompt: "Using this information: "+ 
-              prompt +" Give me "+
-              Qnumber + " questions of "
-                +selectedValue+ " difficulty that are "
-                + questionType +". "+ answerString,
+              prompt: promptString,
         max_tokens: 1000, // Optional: Limit the length of the response
         temperature: 0.7, // Optional: Controls creativity (0.0: deterministic, 1.0: more creative)
         n: 1, // Number of completions to generate (1 in this case)
