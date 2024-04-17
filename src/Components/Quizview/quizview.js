@@ -170,6 +170,7 @@ const QuizView = () => {
           console.log("id: " + count);
           
           const buttonItem = document.createElement("h3");
+          buttonItem.className = "quizNames-Button";
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
