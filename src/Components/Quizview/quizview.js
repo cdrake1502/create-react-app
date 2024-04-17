@@ -247,9 +247,10 @@ for ( i=0;i < Quizzes.length;i++){
                       <input type="text" 
                               className="quiz-nameBox" 
                               placeholder='Please enter name for Quiz'
-                              id="newQuizName">
+                              id="newQuizName"
+                              />
                         Name:
-                  </input>
+                 
              </div>
             )}
             <div className="button-container2">
