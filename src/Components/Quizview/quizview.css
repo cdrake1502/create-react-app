@@ -93,14 +93,18 @@
   .quiz-nameBox li:last-child {
     border-bottom: none; /* Remove bottom border from the last list item */
   }
-  
+  .quizNames-Button{
+    display:flex;
+    text-align: left;
+    padding:-10px;
+  }
 
   .quizNames-Button:hover{
     background-color: lightgrey;
     border-bottom: black;
     border-width: 1px;
     border-right: solid;
-    padding:-10px;
+    
   }
   .quizzes-heading{
     text-decoration: underline;
