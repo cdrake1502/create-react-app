@@ -39,16 +39,22 @@
 
    flex: 1;
   }
+  .text-title{
+    align-items: center;
+    width: 80%;
+    height: 500px;
+    margin:0;
+    background-color: white;
+  }
+  .Quiz-title{
+    text-decoration: underline;
+  }
   
   .text-box2 {
     align-items: left;
     background-color: white;
-    width: 80%;
-    height: 500px;
     margin: 0; 
-    margin-right: 5px;
     border-radius: 10px;
-    padding: 5px;
     padding-left:10px;
     padding-top: 15px;
     border: 1px solid #ddd;
