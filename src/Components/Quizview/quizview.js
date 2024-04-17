@@ -17,7 +17,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const QuizView = () => {
     const [savePress, setSavePress] = useState(false);
-    const [Quizzes, setQuizzes] = useState([]); // Array to store quiz data
+    //const [Quizzes, setQuizzes] = useState([]); // Array to store quiz data
     const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
   
     const newValue = "null";
@@ -99,8 +99,7 @@ const QuizView = () => {
         quizzes.textContent = ('No quizzes found for this user.'); // Inform user if no quizzes exist
     } else {
         console.log("Generation Successful");
-        setQuizzes(quizzes);
-        console.log(Quizzes.at(0).id)
+        
         setSavePress(true);
         
             let count = 0;
