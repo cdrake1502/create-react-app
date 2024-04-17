@@ -203,11 +203,7 @@ const onclickItem = (count) =>{
                       </div>
                 </div>
               ):(<div> </div>)}
-                    <div className="text-title">
-                      {savePress ?(<h3 className='Quiz-title'>{quizName}</h3>):
-                      (<div></div>)
-                      
-                      }
+                   
                       <textarea
                       className='text-box2'
                       id="text-box"
@@ -217,7 +213,7 @@ const onclickItem = (count) =>{
                       >
                           {textToCopy} 
                       </textarea>
-                    </div>
+                    
 
                     <button className="copy-button"id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
           </div>

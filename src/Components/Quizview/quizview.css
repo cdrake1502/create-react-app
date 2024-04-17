@@ -39,19 +39,10 @@
 
    flex: 1;
   }
-  .text-title{
-    align-items: center;
+  .text-box2{
+    align-items: left;
     width: 80%;
     height: 500px;
-    margin:0;
-    background-color: white;
-  }
-  .Quiz-title{
-    text-decoration: underline;
-  }
-  
-  .text-box2 {
-    align-items: left;
     background-color: white;
     margin: 0; 
     border-radius: 10px;
