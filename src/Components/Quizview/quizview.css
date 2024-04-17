@@ -41,7 +41,7 @@
   }
   
   .text-box2 {
-    text-align: left;
+    align-items: left;
     background-color: white;
     width: 80%;
     height: 500px;
