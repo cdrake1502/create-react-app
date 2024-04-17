@@ -206,7 +206,7 @@ const handleGenerateQuiz =async (props) => {
                     <p>After Clicking generate below your quiz will be converted and dropped in the Generate Quiz box below</p>
                 </div>
                 <div className="button-container">
-                    <button id="convertButton" class="generate-button" onClick={convertFileToString} >Generate</button>
+                    <button id="convertButton" class="generate-button" onClick={convertFileToString} >Submit Notes</button>
                 </div>
             </div>
             
