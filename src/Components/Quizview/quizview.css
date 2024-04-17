@@ -38,7 +38,7 @@
   }
   
   .text-box2 {
-    align-items: center;
+    align-content:center ;
     background-color: white;
     width: 80%;
     height: 80%;
@@ -52,17 +52,15 @@
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
     
   }
+  .copy-button{
+    width: calc(10% - 10px); /* Take up 10% of the top container minus margin */
+    margin-left: 10px; /* Add margin between elements */
+    background:lightgreen;
+  }
 
  
   
-  .button-container2 {
-    /*right copy buitton*/
-    width: calc(10% - 10px);
-    margin-top: 10px;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
+ 
   .container-row{
     display: flex;
   justify-content: center;
@@ -116,4 +114,10 @@
   
   }
   
- 
+  .button-container2 {
+    /*bottom button container*/
+    display:inline-block;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
