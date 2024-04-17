@@ -26,7 +26,7 @@ const QuizView = () => {
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
             const doc = new jsPDF();
-            doc.text(textBoxValue, 10, 10,  { autoPrint: true });
+            doc.text(textBoxValue, 25, 25,  { autoPrint: true });
            
             doc.save('quiz.pdf');
         };
