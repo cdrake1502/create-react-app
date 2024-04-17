@@ -14,8 +14,7 @@
 
   .text-container {
     /*main white container*/
-    display:flex;
-    flex-direction:row;
+ display:flex;
   align-items: left;
   justify-content: center; 
     background-color:white;
@@ -30,16 +29,16 @@
   }
   .container-col{
     /*column textbox and copy*/
-    display: flex; 
-    flex-direction: column;
+    display: inline-block; 
     align-items: center;
   }
   
   .text-box2 {
     display:8;
+    align-items: center;
     background-color: white;
     width: 80%;
-    height: 500px;
+    height: 80%;
     margin: 0; 
     margin-right: 5px;
     border-radius: 10px;
@@ -56,7 +55,6 @@
   .button-container2 {
     /*right copy buitton*/
     display: 2;
-    align-items: right;
     align-items: center;
     justify-content: space-between;
     
@@ -65,7 +63,7 @@
     width:100%;
     align-items: center;
     justify-content: center; 
-    margin-top: 10x;
+    
   }
   .display-names{
     display:flex;
@@ -73,10 +71,6 @@
     padding-right: 30px;
 
   }
-  .quiz-nameBox{
-    display:inline;
-  }
- 
   
 
 
