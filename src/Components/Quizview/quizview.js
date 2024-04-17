@@ -25,7 +25,11 @@ const QuizView = () => {
 
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
         const generatePDF = () => {
-            const doc = new jsPDF();
+          const doc = new jsPDF({
+            orientation: 'landscape', 
+            unit: 'pt', 
+            format: 'letter' 
+        });
             doc.text(textBoxValue, 25, 25,  { autoPrint: true });
            
             doc.save('quiz.pdf');
