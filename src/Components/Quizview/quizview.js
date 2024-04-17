@@ -55,13 +55,13 @@ const QuizView = () => {
 
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
-            
+            const newName = document.getElementById("newQuizName");
             const quizContent = textBoxValue;
             const user = getLoginState().user_id;
          
            const {data, error}= await supabase.from('quizzes').insert([
             {
-                quiz_name:"it is what it is", 
+                quiz_name: newName,
                 content: quizContent,
                 user_id: user,
             },])
@@ -163,16 +163,17 @@ const QuizView = () => {
         // Loop through the array and create list items
       let count = 0;
         for (const item of array) {
-            console.log(item.user_id);
+            
           quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
           baseItem.id = 'quiz-${count}'; //push id to each div
-          console.log("id: " +baseItem.id)
+          
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
-            console.log(item.content);
+            console.log(item.name);
+            setTextBoxValue(item.content);
         });
 
           baseItem.appendChild(buttonItem);
@@ -238,6 +239,7 @@ for ( i=0;i < Quizzes.length;i++){
                 </textarea>
 
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
+                <input type="Quiz name" id="newQuizName"></input>
             </div>
             
             <div className="button-container2">
