@@ -26,7 +26,7 @@ const QuizView = () => {
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
     const generatePDF = () => {
       const doc = new jsPDF({
-          orientation: 'portrait',
+          orientation: 'landscape',
           unit: 'pt',
           format: [800, 1000] 
       });
