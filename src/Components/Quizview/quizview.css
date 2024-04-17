@@ -76,8 +76,8 @@
   .quiz-nameBox {
     width:100%;
     list-style-type: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    padding: -10; /* Remove default padding */
+    margin: -10; /* Remove default margin */
     overflow-y: scroll;
     border: 1px solid #ccc;
   }
