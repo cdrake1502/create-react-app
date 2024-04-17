@@ -56,12 +56,13 @@ const QuizView = () => {
 //-------------------------------------------- insert saved Quizzes -------------------------------
           const saveQuiz = async (e) =>{
             const newName = document.getElementById("newQuizName");
+            const newNameValue = newName.value;
             const quizContent = textBoxValue;
             const user = getLoginState().user_id;
          
            const {data, error}= await supabase.from('quizzes').insert([
             {
-                quiz_name: newName,
+                quiz_name: newNameValue,
                 content: quizContent,
                 user_id: user,
             },])
