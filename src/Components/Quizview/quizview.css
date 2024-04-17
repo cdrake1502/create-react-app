@@ -3,17 +3,19 @@
 }
 
 .container2 {
-    display: flex;
-    flex-direction: column;
+    
     align-items: center;
     height: fit-content;
     background-color: #f8ae20;
     border-radius: 10px; 
     padding: 20px;
   }
+
+
   .text-container {
-    display: flex; 
-    flex-direction: column;
+    /*main white container*/
+    display:flex;
+    flex-direction:row;
   align-items: left;
   justify-content: center; 
     background-color:white;
@@ -26,9 +28,15 @@
     resize: none;
 
   }
+  .container-col{
+    /*column textbox and copy*/
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+  }
   
   .text-box2 {
-    align-items: right;
+    display:8;
     background-color: white;
     width: 80%;
     height: 500px;
@@ -46,10 +54,47 @@
  
   
   .button-container2 {
-    display: flex;
+    /*right copy buitton*/
+    display: 2;
+    align-items: right;
+    align-items: center;
     justify-content: space-between;
-    width: 80.4%;
+    
   }
+  .input-name{
+    width:100%;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10x;
+  }
+  .display-names{
+    display:flex;
+    align-items: center;
+    padding-right: 30px;
+
+  }
+  .quiz-nameBox{
+    display:inline;
+  }
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   button {
     padding: 10px;
@@ -72,21 +117,6 @@
 
     --font-jetbrains-mono: "JetBrains Mono";
   
-  }
-  .display-names{
-    display:flex;
-    align-items: center;
-    padding-right: 30px;
-
-  }
-  .quiz-nameBox{
-    display:inline;
-  }
-  .input-name{
-    width:100%;
-    align-items: center;
-    justify-content: center; 
-    margin-top: 10x;
   }
   
  
