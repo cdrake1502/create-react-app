@@ -71,16 +71,18 @@
 
   .quiz-nameBox{
     width:100%;
+
   }
   .quizNames-Button{
     border-width: 3px;
     border-color: black;
     border-style: solid;
+    padding:-5%;
   }
   .quizNames-Button:hover{
     background-color: lightgrey;
   }
- 
+
   
 
 
