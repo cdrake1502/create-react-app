@@ -13,6 +13,7 @@
   }
   .text-container {
     display: flex; /* Enable flexbox for the container */
+    flex-direction: column;
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
     background-color:white;
@@ -79,7 +80,8 @@
     display:inline;
   }
   .input-name{
-   
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center; /* Center items along the main axis (horizontally) */
     margin-top: 20px;
