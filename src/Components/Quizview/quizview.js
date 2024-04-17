@@ -38,8 +38,7 @@ const QuizView = () => {
       doc.autoPrint({variant: 'non-conform'});
       doc.save('quiz.pdf');
   };
-           
-
+  
         
     
 
@@ -205,9 +204,7 @@ const onclickItem = (count) =>{
                     
                     
                       </div>
-                      <br></br>
                 </div>
-                
               ):(<div> </div>)}
                     <div>
                       <h3>{quizName}</h3>
