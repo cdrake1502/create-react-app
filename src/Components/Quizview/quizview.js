@@ -174,6 +174,7 @@ const QuizView = () => {
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
             console.log(item.name);
+            console.log(item.content);
             //setTextBoxValue(item.content);
         });
 
