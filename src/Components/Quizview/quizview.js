@@ -239,9 +239,14 @@ for ( i=0;i < Quizzes.length;i++){
                 </textarea>
 
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
-                <input type="Quiz name" id="newQuizName"></input>
+                
             </div>
-            
+            <input type="text" 
+                    className="quiz-nameBox" 
+                    placeholder='Please enter name for Quiz'
+                    id="newQuizName">
+              Name:
+              </input>
             <div className="button-container2">
                     <button className="saveButton"onClick={saveQuiz}>
                         Save
