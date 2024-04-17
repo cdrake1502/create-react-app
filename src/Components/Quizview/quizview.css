@@ -56,6 +56,7 @@
   .copy-button{
     width: calc(10% - 10px); /* Take up 10% of the top container minus margin */
     margin-left: 10px; /* Add margin between elements */
+    justify-content: center;
     align-items: center;
     background:lightgreen;
   }
@@ -74,12 +75,7 @@
     width:100%;
 
   }
-  .quizNames-Button{
-    border-width: 3px;
-    border-color: black;
-    border-style: solid;
-    padding-bottom:-5%;
-  }
+
   .quizNames-Button:hover{
     background-color: lightgrey;
   }
