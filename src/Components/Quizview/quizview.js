@@ -223,37 +223,41 @@ for ( i=0;i < Quizzes.length;i++){
            
 
             <div className="text-container" >
-          { savePress ?(
-              
-            <div id="display-names" className="display-names"> 
-           
-            </div>
-          ):(<div> </div>)}
-  
-                <textarea
-                className='text-box2'
-                id="text-box"
-                
-                value={textBoxValue}
-                onChange={handleTextAreaChange}
-                >
-                    {textToCopy} 
-                </textarea>
+              <div className="container-col">
+                    { savePress ?(
+                        
+                      <div id="display-names" className="display-names"> 
+                    
+                      </div>
+                    ):(<div> </div>)}
+            
+                          <textarea
+                          className='text-box2'
+                          id="text-box"
+                          
+                          value={textBoxValue}
+                          onChange={handleTextAreaChange}
+                          >
+                              {textToCopy} 
+                          </textarea>
 
-                <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
-                { savePress ?(<div></div>):
-            (<div className="input-name">
-                      <input type="text" 
-                              className="quiz-nameBox" 
-                              placeholder='Please enter name for Quiz'
-                              id="newQuizName"
-                              />
-                        Name:
-                 
-             </div>
-            )}
+                          <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
+                </div>
+                    
                 
             </div>
+            { savePress ?(<div></div>):
+
+              (<div className="container-row">
+                        <input type="text" 
+                                className="quiz-nameBox" 
+                                placeholder='Please enter name for Quiz'
+                                id="newQuizName"
+                        />
+                      Name:
+
+              </div>
+              )}
             
             <div className="button-container2">
                     <button className="saveButton"onClick={saveQuiz}>
