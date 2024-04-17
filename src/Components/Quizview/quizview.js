@@ -28,7 +28,7 @@ const QuizView = () => {
       const doc = new jsPDF({
           orientation: 'landscape',
           unit: 'pt',
-          format: [1600, 2000] 
+          format: [1500, 1700] 
       });
       doc.text(textBoxValue, 25, 25);
       doc.autoPrint({variant: 'non-conform'});
