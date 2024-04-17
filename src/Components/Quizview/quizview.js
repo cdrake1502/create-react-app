@@ -17,7 +17,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 const QuizView = () => {
     const [savePress, setSavePress] = useState(false);
-    //const [Quizzes, setQuizzes] = useState([]); // Array to store quiz data
+    const [quizName, setNameQuiz] = useState("");
     const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
   
     const newValue = "null";
@@ -117,38 +117,11 @@ const QuizView = () => {
             
            
             //setQuizzesUse(quiznames);
-            displayquizzes(quizzes,"display-names");
-           
-
-          
+            displayquizzes(quizzes,"display-names");     
         
     }
   }
-/*
-    useEffect(() => {
-        const saveButton= async () => {
-            setSavePress(true)
-            const user = getLoginState().user_id;
-          const { data, error } = await supabase
-            .from('quizzes') // Replace with your table name
-            .select('*')
-            .eq('user_id', user);
-      
-          if (error) {
-            console.error('Error fetching quizzes:', error);
-            return; // Handle error appropriately0
-          }
-      
-          setQuizzes(data); // Update state with fetched quizzes
-          
-          console.log(data.at(0).user_id);
 
-        };
-      
-        saveButton();
-      }, []); // Run only on component mount
-  
-  */
     
     
     const displayquizzes =(array, containerId)=>{
@@ -181,8 +154,8 @@ const QuizView = () => {
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
-            console.log(item.name);
             setTextBoxValue(item.content);
+            setNameQuiz(item.name)
             //setTextBoxValue(item.content);
         });
           heading.append();
@@ -209,79 +182,6 @@ const onclickItem = (count) =>{
 
 }
 
-/* 
-first function gets all quiz objects and displays the names 
-so we save each quiz with its quiz id in an array array index is correlated to the displayed quizzes
-
-
-const iterate =(Quizzes)=>{
-  let i;
-
-for ( i=0;i < Quizzes.length;i++){
-  console.log(Quizzes.id);
-}
-}*/
-
-/*
- <div className="container2">
-            <h1 className="main-heading">Generated Quiz</h1>
-           
-
-            <div className="text-container" >
-              <div className="container-col">
-                    { savePress ?(
-                        
-                      <div id="display-names" className="display-names"> 
-                    
-                      </div>
-                    ):(<div> </div>)}
-            
-                          <textarea
-                          className='text-box2'
-                          id="text-box"
-                          
-                          value={textBoxValue}
-                          onChange={handleTextAreaChange}
-                          >
-                              {textToCopy} 
-                          </textarea>
-
-                          <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
-                </div>
-                { savePress ?(<div></div>):
-
-                (<div className="container-row">
-                          <input type="text" 
-                                  className="quiz-nameBox" 
-                                  placeholder='Please enter name for Quiz'
-                                  id="newQuizName"
-                          />
-                        Name:
-
-                </div>
-                )}
-
-                
-            </div>
-           
-            <div className="button-container2">
-                    <button className="saveButton"onClick={saveQuiz}>
-                        Save
-                        </button>
-
-                       
-
-                    <button onClick={generatePDF}>
-                        Get PDF</button>
-                    <button onClick={handleBack}>
-                        Back</button>
-                </div>
-               
-
-       
-      </div>
-      
-*/
 
     
 
@@ -301,16 +201,18 @@ for ( i=0;i < Quizzes.length;i++){
                       </div>
                 </div>
               ):(<div> </div>)}
-      
-                    <textarea
-                    className='text-box2'
-                    id="text-box"
-                    
-                    value={textBoxValue}
-                    onChange={handleTextAreaChange}
-                    >
-                        {textToCopy} 
-                    </textarea>
+                    <div>
+                      <h3>{quizName}</h3>
+                      <textarea
+                      className='text-box2'
+                      id="text-box"
+                      
+                      value={textBoxValue}
+                      onChange={handleTextAreaChange}
+                      >
+                          {textToCopy} 
+                      </textarea>
+                    </div>
 
                     <button className="copy-button"id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
           </div>
