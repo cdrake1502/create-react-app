@@ -326,9 +326,11 @@ for ( i=0;i < Quizzes.length;i++){
       </div>
      
       <div className="button-container2">
+        { savePress ?(<div></div>):(
               <button className="saveButton"onClick={saveQuiz}>
                   Save
                   </button>
+          )}
 
                  
 
