@@ -289,10 +289,12 @@ for ( i=0;i < Quizzes.length;i++){
       <div className="text-container" >
         <div className="container-col">
               { savePress ?(
-                  
-                <div id="display-names" className="display-names"> 
-               
-              
+                  <div>
+                    <h3 className='quizzes-heading'>Saved Quizzes</h3>
+                      <div id="display-names" className="display-names"> 
+                    
+                    
+                      </div>
                 </div>
               ):(<div> </div>)}
       
