@@ -1,26 +1,26 @@
 :root{
 --color-gainsboro: #d9d9d9;
 }
-
+/*
 .container2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     background-color: #f8ae20;
-    border-radius: 10px; /* Rounded corners for container */
-    padding: 20px; /* Add some padding inside the container */
+    border-radius: 10px; 
+    padding: 20px;
   }
   .text-container {
-    display: flex; /* Enable flexbox for the container */
+    display: flex; 
     flex-direction: column;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  justify-content: center; 
     background-color:white;
     width:80.4%;
     height:80.4%;
     margin: 0;
-    border-radius: 10px; /* Rounded corners for container */
+    border-radius: 10px;
     padding: 5px;
     border: 1px solid #ddd;
     resize: none;
@@ -32,13 +32,13 @@
     background-color: white;
     width: 80%;
     height: 80%;
-    margin: 0; /* Remove margin as we added padding to container */
-    border-radius: 10px; /* Rounded corners for container */
+    margin: 0; 
+    border-radius: 10px;
     padding: 5px;
     padding-left:10px;
     border: 1px solid #ddd;
     resize: none;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1); /* Inset shadow for text box */
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
     
   }
   
@@ -61,12 +61,12 @@
   }
   
   button:hover {
-    background-color:  #bfbfbf; /* Button background on hover */
+    background-color:  #bfbfbf; 
   }
   .main-heading {
     text-align: center;
     text-decoration: wavy;
-    /* fonts */
+
     --font-jetbrains-mono: "JetBrains Mono";
   
   }
@@ -83,7 +83,62 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Center items along the main axis (horizontally) */
+    justify-content: center; 
     margin-top: 20px;
   }
+  */
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8ae20;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: calc(100% - 60px); /* Adjust height to fit button container and quiz name input */
+    margin-bottom: 10px; /* Add margin between textarea and button container */
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+    overflow: hidden; /* Hide overflow for textarea */
+}
+
+.text-box2 {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 10px;
+    padding: 10px; /* Increase padding for textarea */
+    border: 1px solid #ddd;
+    resize: none;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quiz-name-container {
+    display: flex;
+    justify-content: flex-end; /* Align quiz name input to the right */
+    padding: 5px; /* Add padding around the input */
+}
+
+.quiz-nameBox {
+    padding: 5px;
+    margin-left: 10px; /* Add some space between input and button */
+}
+
   

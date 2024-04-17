@@ -214,11 +214,8 @@ for ( i=0;i < Quizzes.length;i++){
 }
 }*/
 
-    
-
-    return(
-       
-        <div className="container2">
+/*
+ <div className="container2">
             <h1 className="main-heading">Generated Quiz</h1>
            
 
@@ -275,6 +272,30 @@ for ( i=0;i < Quizzes.length;i++){
 
        
       </div>
+      
+*/
+
+    
+
+    return(
+      <div class="container2">
+      <h1 class="main-heading">Generated Quiz</h1>
+      <div class="text-container">
+          <textarea class="text-box2" id="text-box" value={textBoxValue} onChange={handleTextAreaChange}></textarea>
+      </div>
+      <div class="button-container2">
+          <button class="saveButton" onClick={saveQuiz}>Save</button>
+          <button onClick={generatePDF}>Get PDF</button>
+          <button onClick={handleBack}>Back</button>
+      </div>
+      {savePress ? null : (
+          <div class="quiz-name-container">
+              <input type="text" class="quiz-nameBox" placeholder="Please enter name for Quiz" id="newQuizName" />
+              <span>Name:</span>
+          </div>
+      )}
+  </div>
+  
       
     );
 };
