@@ -158,9 +158,9 @@ const QuizView = () => {
             console.error("Error: Container element with ID", containerId, "not found.");
             return;
           }
-        const heading = document.createElement("h3");
+        const heading = document.createElement("p");
         heading.id="quizzes-heading";
-        heading.value="Saved Quizzes";
+        heading.textContent="Saved Quizzes";
         const listElement = document.createElement("ul");
         
 
