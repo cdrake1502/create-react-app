@@ -73,11 +73,11 @@
     width:100%;
   }
   .quizNames-Button{
-    border-width: 5px;
-    border-color: lightgray;
+    border-width: 3px;
+    border-color: black;
     border-style: solid;
   }
-  .quizNames-Button.hover{
+  .quizNames-Button:hover{
     background-color: lightgrey;
   }
  
