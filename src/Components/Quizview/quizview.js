@@ -25,14 +25,36 @@ const QuizView = () => {
 
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
     const generatePDF = () => {
+      const contentWidth = measureContentWidth(textBoxValue); 
+      const contentHeight = measureContentHeight(textBoxValue); 
+      
       const doc = new jsPDF({
           orientation: 'landscape',
           unit: 'pt',
-          format: [1500, 1700] 
+          format: [contentWidth + 50, contentHeight + 50] 
       });
+      
       doc.text(textBoxValue, 25, 25);
       doc.autoPrint({variant: 'non-conform'});
       doc.save('quiz.pdf');
+  };
+  
+
+  const measureContentWidth = (content) => {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      context.font = '12px Arial'; 
+      return context.measureText(content).width; 
+  };
+  
+
+  const measureContentHeight = (content) => {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      context.font = '12px Arial'; 
+      const lineHeight = 16; 
+      const lines = content.split('\n'); 
+      return lines.length * lineHeight; 
   };
   
   
