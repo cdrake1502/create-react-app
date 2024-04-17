@@ -242,13 +242,16 @@ for ( i=0;i < Quizzes.length;i++){
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
                 
             </div>
-            {
-            <input type="text" 
-                    className="quiz-nameBox" 
-                    placeholder='Please enter name for Quiz'
-                    id="newQuizName">
-              Name:
-        </input>}
+            { savePress ?(<div></div>):
+            (<div>
+                      <input type="text" 
+                              className="quiz-nameBox" 
+                              placeholder='Please enter name for Quiz'
+                              id="newQuizName">
+                        Name:
+                  </input>
+             </div>
+            )}
             <div className="button-container2">
                     <button className="saveButton"onClick={saveQuiz}>
                         Save
