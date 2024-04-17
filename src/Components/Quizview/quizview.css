@@ -97,10 +97,14 @@
 
   .quizNames-Button:hover{
     background-color: lightgrey;
+    border-bottom: black;
+    border-width: 1px;
+    border-right: solid;
   }
   .quizzes-heading{
     text-decoration: underline;
     text-emphasis: black;
+    text-align: center;
   }
 
 
