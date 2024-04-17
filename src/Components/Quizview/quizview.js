@@ -24,16 +24,22 @@ const QuizView = () => {
     const navigate = useNavigate();
 
     const [textBoxValue, setTextBoxValue] = useState(getResponseState().Response);
-        const generatePDF = () => {
-          const doc = new jsPDF({
-            orientation: 'landscape', 
-            unit: 'pt', 
-            format: 'letter' 
-        });
-            doc.text(textBoxValue, 25, 25,  { autoPrint: true });
+    const generatePDF = () => {
+      const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'pt',
+          format: 'letter',
+          marginLeft: 10,
+          marginRight: 10,
+          marginTop: 10,
+          marginBottom: 10
+      });
+      doc.text(textBoxValue, 25, 25);
+      doc.autoPrint({variant: 'non-conform'});
+      doc.save('quiz.pdf');
+  };
            
-            doc.save('quiz.pdf');
-        };
+
         
     
 
