@@ -166,10 +166,15 @@ const QuizView = () => {
             console.log(item.user_id);
           quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
-          baseItem.id = count; //push id to each div
+          baseItem.id = 'quiz-${count}'; //push id to each div
           console.log("id: " +baseItem.id)
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
+          buttonItem.addEventListener("click", () => {
+            // Log the content of the clicked quiz to the console
+            console.log(item.content);
+        });
+
           baseItem.appendChild(buttonItem);
           listElement.appendChild(baseItem);
           count++;
