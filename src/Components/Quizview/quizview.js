@@ -301,7 +301,7 @@ for ( i=0;i < Quizzes.length;i++){
                         {textToCopy} 
                     </textarea>
 
-                    <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
+                    <button className="copy-button"id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
           </div>
           { savePress ?(<div></div>):
 
