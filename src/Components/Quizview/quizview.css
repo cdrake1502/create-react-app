@@ -39,7 +39,7 @@
   }
   
   .text-box2 {
-    align-content:center ;
+    text-align: left;
     background-color: white;
     width: 80%;
     height: 500px;
