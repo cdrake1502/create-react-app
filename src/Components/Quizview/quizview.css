@@ -82,6 +82,7 @@
     border-width: 3px;
     border-color: black;
     border-style: solid;
+    text-align: center;
   }
   .quiz-nameBox li {
     /* Add padding to list items */
