@@ -207,7 +207,10 @@ const onclickItem = (count) =>{
                 </div>
               ):(<div> </div>)}
                     <div>
-                      <h3>{quizName}</h3>
+                      {savePress ?(<h3>{quizName}</h3>):
+                      (<div></div>)
+                      
+                      }
                       <textarea
                       className='text-box2'
                       id="text-box"
