@@ -6,6 +6,7 @@ import { setResponseState } from "../apiresponse/setResponseState";
 import {getResponseState} from "../apiresponse/getResponseState";
 
 
+
 const QuizGen = (props) => {
     const navigate = useNavigate();
     const [prompt, setPrompt] = useState('');

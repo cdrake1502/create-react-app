@@ -73,7 +73,7 @@ const QuizView = () => {
 
                 const handleTextAreaChange = (event) => {
                     setTextBoxValue(event.target.value);
-                    textToCopy = document.getElementById("text-box");
+                    textToCopy = document.getElementById("text-box2");
                     setTextToCopy(event.target.value);
                 };
                 const { copied, copyToClipboard } = CopyQuiz(textToCopy);
