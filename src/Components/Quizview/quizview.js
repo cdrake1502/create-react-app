@@ -167,13 +167,14 @@ const QuizView = () => {
           quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
           baseItem.id = 'quiz-${count}'; //push id to each div
+          console.log("id: " + count);
           
           const buttonItem = document.createElement("button");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
             console.log(item.name);
-            setTextBoxValue(item.content);
+            //setTextBoxValue(item.content);
         });
 
           baseItem.appendChild(buttonItem);
@@ -241,12 +242,13 @@ for ( i=0;i < Quizzes.length;i++){
                 <button id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
                 
             </div>
+            {/*
             <input type="text" 
                     className="quiz-nameBox" 
                     placeholder='Please enter name for Quiz'
                     id="newQuizName">
               Name:
-              </input>
+        </input>*/}
             <div className="button-container2">
                     <button className="saveButton"onClick={saveQuiz}>
                         Save
