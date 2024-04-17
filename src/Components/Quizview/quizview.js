@@ -169,7 +169,7 @@ const QuizView = () => {
           baseItem.id = 'quiz-${count}'; //push id to each div
           console.log("id: " + count);
           
-          const buttonItem = document.createElement("button");
+          const buttonItem = document.createElement("h3");
           buttonItem.textContent = item.quiz_name; // Set the content of the list item
           buttonItem.addEventListener("click", () => {
             // Log the content of the clicked quiz to the console
