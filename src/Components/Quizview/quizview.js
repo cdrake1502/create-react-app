@@ -306,12 +306,13 @@ for ( i=0;i < Quizzes.length;i++){
           { savePress ?(<div></div>):
 
           (<div className="container-row">
+             Name:
                     <input type="text" 
                             className="quiz-nameBox" 
                             placeholder='Please enter name for Quiz'
                             id="newQuizName"
                     />
-                  Name:
+                 
 
           </div>
           )}
