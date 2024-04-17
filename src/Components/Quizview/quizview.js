@@ -295,7 +295,9 @@ for ( i=0;i < Quizzes.length;i++){
                     
                     
                       </div>
+                      <br></br>
                 </div>
+                
               ):(<div> </div>)}
       
                     <textarea

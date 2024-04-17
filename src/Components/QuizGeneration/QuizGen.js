@@ -88,7 +88,7 @@ const generateTagline = async () => {
     const selectedValue = selectedOption.value;
     const questionType = selectedOptions;
     const answerBool = isChecked;
-    let answerString = "";
+    const answerString = true;
     
     if (answerBool === true){
       answerString = "Please add the answers to each question";
