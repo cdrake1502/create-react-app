@@ -158,12 +158,15 @@ const QuizView = () => {
             console.error("Error: Container element with ID", containerId, "not found.");
             return;
           }
+        const heading = document.createElement("h3");
+        heading.id="quizzes-heading";
+        heading.value="Saved Quizzes";
         const listElement = document.createElement("ul");
+        
 
         // Loop through the array and create list items
       let count = 0;
-        for (const item of array) {
-            
+        for (const item of array){
           quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
           baseItem.id = 'quiz-${count}'; //push id to each div
@@ -178,7 +181,7 @@ const QuizView = () => {
             setTextBoxValue(item.content);
             //setTextBoxValue(item.content);
         });
-
+          heading.append();
           baseItem.appendChild(buttonItem);
           listElement.appendChild(baseItem);
           count++;
@@ -288,7 +291,7 @@ for ( i=0;i < Quizzes.length;i++){
               { savePress ?(
                   
                 <div id="display-names" className="display-names"> 
-                <h3 className="quizzes-title">My Quizzes</h3>
+               
               
                 </div>
               ):(<div> </div>)}
