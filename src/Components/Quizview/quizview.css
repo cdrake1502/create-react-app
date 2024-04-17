@@ -71,15 +71,15 @@
   align-items: flex-end; /* Align items to the bottom */
   flex: 1; /* Take up remaining space */
   }
-
-  .quiz-nameBox{
-    width:100%;
-
-  }
   .quiz-nameBox {
+    width:100%;
     list-style-type: none; /* Remove default list styles */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+  }
+  .display-names{
     border-width: 3px;
     border-color: black;
     border-style: solid;
@@ -96,10 +96,9 @@
   .quizNames-Button:hover{
     background-color: lightgrey;
   }
-  .quizzes-title{
+  .quizzes-heading{
     text-decoration: underline;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
+    text-emphasis: black;
   }
 
 
