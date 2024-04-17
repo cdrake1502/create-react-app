@@ -288,6 +288,7 @@ for ( i=0;i < Quizzes.length;i++){
               { savePress ?(
                   
                 <div id="display-names" className="display-names"> 
+                <h3 className="quizzes-title">My Quizzes</h3>
               
                 </div>
               ):(<div> </div>)}

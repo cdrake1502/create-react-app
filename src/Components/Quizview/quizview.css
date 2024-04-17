@@ -82,6 +82,10 @@
   .quizNames-Button:hover{
     background-color: lightgrey;
   }
+  .quizzes-title{
+    text-decoration: underline;
+    
+  }
 
   
 
