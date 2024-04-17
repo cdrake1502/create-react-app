@@ -1,7 +1,7 @@
 :root{
 --color-gainsboro: #d9d9d9;
 }
-/*
+
 .container2 {
     display: flex;
     flex-direction: column;
@@ -86,59 +86,5 @@
     justify-content: center; 
     margin-top: 20px;
   }
-  */
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8ae20;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    width: 100%;
-    height: calc(100% - 60px); /* Adjust height to fit button container and quiz name input */
-    margin-bottom: 10px; /* Add margin between textarea and button container */
-    border-radius: 10px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    resize: none;
-    overflow: hidden; /* Hide overflow for textarea */
-}
-
-.text-box2 {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    border-radius: 10px;
-    padding: 10px; /* Increase padding for textarea */
-    border: 1px solid #ddd;
-    resize: none;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
-}
-
-.button-container2 {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.quiz-name-container {
-    display: flex;
-    justify-content: flex-end; /* Align quiz name input to the right */
-    padding: 5px; /* Add padding around the input */
-}
-
-.quiz-nameBox {
-    padding: 5px;
-    margin-left: 10px; /* Add some space between input and button */
-}
-
   
+ 
