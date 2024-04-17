@@ -29,7 +29,7 @@ const QuizView = () => {
       const contentHeight = measureContentHeight(textBoxValue); 
       
       const doc = new jsPDF({
-          orientation: 'portrait',
+          orientation: 'landscape',
           unit: 'pt',
           format: [contentWidth + 50, contentHeight + 50] 
       });
