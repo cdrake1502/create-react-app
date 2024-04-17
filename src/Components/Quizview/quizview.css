@@ -85,7 +85,7 @@
     border-style: solid;
   }
   .quiz-nameBox li {
-    padding: 10px; /* Add padding to list items */
+    /* Add padding to list items */
     border-bottom: 1px solid #eee; /* Add a bottom border for visual separation */
   }
   .quiz-nameBox li:last-child {
