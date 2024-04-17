@@ -42,7 +42,7 @@ const Navbar = ({onLogout }) => {
     <div className="navbar-container fixed-top z-10 flex items-center justify-between px-4 bg-gray-800 text-white">
       <div className="navbar-image">
         {/* Replace with your image component or source */}
-        <img src={Logo} alt="Navbar logo" />
+        <img className='logo-nav' src={Logo} alt="Navbar logo" />
       </div>
       <div className="center-nav">
         <button className="Home-Button" onClick={handleHome}>Home</button>
