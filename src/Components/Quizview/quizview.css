@@ -79,8 +79,7 @@
     display:inline;
   }
   .input-name{
-    display:flex;
-    flex-direction:row;
+   
     align-items: center;
     justify-content: center; /* Center items along the main axis (horizontally) */
     margin-top: 20px;
