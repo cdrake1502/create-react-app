@@ -80,6 +80,9 @@
     list-style-type: none; /* Remove default list styles */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
   }
   .quiz-nameBox li {
     padding: 10px; /* Add padding to list items */
