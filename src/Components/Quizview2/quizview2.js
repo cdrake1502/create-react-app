@@ -16,7 +16,7 @@ const QuizView2 = () => {
     //const [user,setUserId] = useState(5);
     const user = getLoginState().user_id; // setting id if availavble
     console.log(user);
-   // getUserQuizzes;
+   addLink();
 
     
        
