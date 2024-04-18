@@ -83,7 +83,7 @@
     border-width: 3px;
     border-color: black;
     border-style: solid;
-    text-align: left;
+
   }
   .quiz-nameBox li {
     /* Add padding to list items */
@@ -96,7 +96,7 @@
   .quizNames-Button{
     display:flex;
     text-align: left;
-    padding:-10px;
+    padding: right;
     background-color:  #212529;
   }
 
@@ -111,6 +111,9 @@
     text-decoration: underline;
     text-emphasis: black;
     text-align: center;
+  }
+  .array-container{
+    padding-right:10px;
   }
 
 

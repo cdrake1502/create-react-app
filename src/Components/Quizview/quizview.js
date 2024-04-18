@@ -179,8 +179,8 @@ const QuizView = () => {
         for (const item of array){
           quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
-          baseItem.id = 'quiz-${count}'; //push id to each div
-          console.log("id: " + count);
+          baseItem.id = 'array-container'; //push id to each div
+          
           
           const buttonItem = document.createElement("h3");
           buttonItem.className = "quizNames-Button";
