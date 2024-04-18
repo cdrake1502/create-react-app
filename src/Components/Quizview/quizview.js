@@ -20,6 +20,7 @@ const QuizView = () => {
     const [savePress, setSavePress] = useState(false);
     const [quizName, setNameQuiz] = useState("");
     const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
+    const [copied, setCopied] = useState(false);
   
     const newValue = "null";
     const navigate = useNavigate();
@@ -77,8 +78,7 @@ const QuizView = () => {
                     setTextBoxValue(event.target.value);
                     textToCopy = document.getElementById("text-box2");
                     setTextToCopy(event.target.value);
-                    const settingtext = await setTextToCopy(event.target.value);  
-                    
+                    setCopied(true);
                 };
 
                 const copyToClipboard = () =>{
