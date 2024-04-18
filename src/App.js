@@ -5,11 +5,13 @@ import SignUp from './Components/SignUp/sighnup';
 import Splash from './Components/splash_page/splash';
 import QuizGen from './Components/QuizGeneration/QuizGen';
 import QuizView from './Components/Quizview/quizview';
+import QuizView2 from './Components/Quizview2/quizview2';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import {createClient} from '@supabase/supabase-js';
 import { setLoginState} from './Components/authenticate/setLoginState'; // Import functions from auth.js
 import {getLoginState } from './Components/authenticate/getLoginState';
+
 //import {DisplayQuiz} from './Components/displayQuizzes/DisplayQuizzes.js';
 
 
@@ -63,6 +65,8 @@ function App() {
                   <Route path="/login" element = {<Login onLogin = {handleLogin}/>} />
                   <Route path="/quizgen" element = {<QuizGen/>} />
                   <Route path="/quizview" element = {<QuizView/>} />
+                  <Route path="/quizview2" element = {<QuizView2/>} />
+                  
               
             </Routes>
        <Footer/>

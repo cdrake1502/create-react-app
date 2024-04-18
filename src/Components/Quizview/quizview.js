@@ -84,6 +84,7 @@ const [copied, setCopied]= useState(false);
       const textElement = document.getElementById("text-box");
       const text = textElement.value;
       console.log(text)
+      CopyIt()
       const CopyIt = async () => {
         try {
           await navigator.clipboard.writeText(text);
@@ -93,6 +94,9 @@ const [copied, setCopied]= useState(false);
           console.error('Failed to copy text:', err);
         }
       };
+      if(copied === true){
+      console.log("copied: is good");
+      }
     }
     
 
@@ -207,7 +211,7 @@ const [copied, setCopied]= useState(false);
         // Loop through the array and create list items
       let count = 0;
         for (const item of array){
-          quizArray.push(item.content); //push content to array 
+          //quizArray.push(item.content); //push content to array 
           const baseItem = document.createElement("div");
           baseItem.id = 'array-container'; //push id to each div
           
@@ -232,6 +236,7 @@ const [copied, setCopied]= useState(false);
         // Append the list to the container element
         containerElement.appendChild(listElement);
 }   
+/*
 const quizArray = [];
 const onclickItem = (count) =>{
     const quiz = "";
@@ -244,7 +249,7 @@ const onclickItem = (count) =>{
     setTextBoxValue(quiz);
 
 }
-
+*/
 
     
 
@@ -272,7 +277,7 @@ const onclickItem = (count) =>{
                       value={textBoxValue}
                       
                       >
-                          {textToCopy} 
+                          
                       </textarea>
                     
 

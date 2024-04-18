@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./splash_global.css";
 import "./splash_index.css";
@@ -7,23 +7,11 @@ import bottom from "./bottom.png";
 
 const Splash = () => {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userFiles, setUserFiles] = useState([]);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchUserFiles();
-    }
-  }, [isLoggedIn]);
-
-  const fetchUserFiles = () => {
-    const placeholderFiles = [
-      { name: "File 1", content: "Quiz 1" },
-      { name: "File 2", content: "Quiz 2" },
-      { name: "File 3", content: "Quiz 3" },
-    ];
-    setUserFiles(placeholderFiles);
-  };
+ 
+  
   const handleSignup = () => {
     navigate("/signup");
   };

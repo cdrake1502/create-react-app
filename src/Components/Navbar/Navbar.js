@@ -33,7 +33,7 @@ const Navbar = ({onLogout }) => {
     navigate('/splash');
   }
   const handleDisplaySaved = () =>{
-    navigate('/quizview');
+    navigate('/quizview2');
   }
 
 
@@ -56,12 +56,14 @@ const Navbar = ({onLogout }) => {
                 <button onClick={handleLogout}>Logout</button>
                 
                 
+                
                   {pathname !== '/QuizGen' && (
                     <button onClick={handleQuzGen}> QuizGen</button>
                   )}
               </div>
             ):(
               <div>
+                <button onClick={handleDisplaySaved}>Saved Quizzes</button>
                 <button onClick={handleLogin}>Login</button>
                 <button onClick={handleSignup}>Sign Up</button>
               </div>
