@@ -40,15 +40,16 @@ const QuizView2 =async () => {
                 let count = 0;
                 const quiznames = [];
                 for (const quiz of quizzes) {
-                    if (quizzes.at(0)){
+                    if (count === 0){
                         setTextBoxValue(quiz.content);
                         console.log(  quiz.content);
+                        count++;
                     }
-                 console.log("idQ2: " + quiz.id)
+                 console.log("idQ2: " + quiz.id);
 
                 }    
 
-               // displayquizzes(quizzes,"display-names");     
+                displayquizzes(quizzes,"display-names");     
             
         }
      // }
