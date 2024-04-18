@@ -181,8 +181,6 @@ const [copied, setCopied]= useState(false);
 
 
             }
-            
-           
             //setQuizzesUse(quiznames);
             displayquizzes(quizzes,"display-names");     
         
@@ -236,20 +234,9 @@ const [copied, setCopied]= useState(false);
         // Append the list to the container element
         containerElement.appendChild(listElement);
 }   
-/*
-const quizArray = [];
-const onclickItem = (count) =>{
-    const quiz = "";
-    if (quizArray === null) {
-        
-    }else {
-        quiz = quizArray[count];
 
-    }
-    setTextBoxValue(quiz);
 
-}
-*/
+
 
     
 

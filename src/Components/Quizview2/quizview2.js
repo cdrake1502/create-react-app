@@ -38,7 +38,6 @@ const QuizView2 =async () => {
             console.log("Generation Successful");
             
                 let count = 0;
-                const quiznames = [];
                 for (const quiz of quizzes) {
                     if (count === 0){
                         setTextBoxValue(quiz.content);
