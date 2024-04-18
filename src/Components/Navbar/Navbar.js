@@ -54,7 +54,7 @@ const Navbar = ({onLogout }) => {
               <div>
                 <p className='userName'>{getLoginState().user}</p>  
                 <button onClick={handleLogout}>Logout</button>
-                
+                <button onClick={handleDisplaySaved}>Saved Quizzes</button>
                 
                 
                   {pathname !== '/QuizGen' && (
@@ -63,7 +63,7 @@ const Navbar = ({onLogout }) => {
               </div>
             ):(
               <div>
-                <button onClick={handleDisplaySaved}>Saved Quizzes</button>
+              
                 <button onClick={handleLogin}>Login</button>
                 <button onClick={handleSignup}>Sign Up</button>
               </div>
