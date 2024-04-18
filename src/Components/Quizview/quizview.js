@@ -71,7 +71,7 @@ const QuizView = () => {
           }
 
 //--------------------------------------for copying the text -------------------------------------------------------//
-let [textToCopy, setTextToCopy] = useState('');
+//let [textToCopy, setTextToCopy] = useState('');
 const [copied, setCopied]= useState(false);
 
     /*const handleTextAreaChange = (event) => {
@@ -83,6 +83,7 @@ const [copied, setCopied]= useState(false);
     const callCopy = () =>{
       const textElement = document.getElementById("text-box");
       const text = textElement.value;
+      console.log(text)
       const CopyIt = async () => {
         try {
           await navigator.clipboard.writeText(text);
@@ -93,6 +94,7 @@ const [copied, setCopied]= useState(false);
         }
       };
     }
+    
 
 
 
