@@ -16,9 +16,9 @@ const QuizView2 = () => {
     //const [user,setUserId] = useState(5);
     const user = getLoginState().user_id; // setting id if availavble
     console.log(user);
-    getUserQuizzes();
+   // getUserQuizzes;
 
-    function getUserQuizzes() {
+    
         addLink(user)
             .then(quizzes => {
                 // You can access the retrieved quizzes array here (optional)
@@ -27,8 +27,8 @@ const QuizView2 = () => {
             .catch(error => {
                 console.error('Error:', error);
             });
-    }
     
+
     const addLink= async (user) =>{
 
         const {data: quizzes, error}= await supabase.from('quizzes')
@@ -163,7 +163,7 @@ const QuizView2 = () => {
     return(
         
         <div className="container2">
-            {getUserQuizzes}
+           
             <h1 className="main-heading">Generated Quiz</h1>
         <div className="text-container" >
         <div className="container-col">
