@@ -78,10 +78,12 @@ const QuizView = () => {
                     textToCopy = document.getElementById("text-box2");
                     setTextToCopy(event.target.value);
                     const settingtext = await setTextToCopy(event.target.value);  
-                    navigator.clipboard.writeText(text);
+                    
                 };
 
-                //const { copied, copyToClipboard } = CopyQuiz(textToCopy);
+                const copyToClipboard = () =>{
+                  navigator.clipboard.writeText(textToCopy);
+                }
                 
 //----------------------------------------for copying the text -------------------------------------------------------//
     
