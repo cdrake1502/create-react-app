@@ -1,0 +1,125 @@
+:root{
+    --color-gainsboro: #d9d9d9;
+    }
+    
+    .container2 {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        background-color: #f8ae20;
+        border-radius: 10px; 
+        padding: 20px;
+      }
+    
+    
+      .text-container {
+        /*main white container*/
+        display:flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center; 
+        background-color:white;
+        width:80.4%;
+        height:80.4%;
+        margin-right: 10px;
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        resize: none;
+    
+      }
+      .container-col{
+        /*column textbox and copy*/
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-items: center;
+        margin-right: 20px;
+    
+       flex: 1;
+      }
+      .text-box2{
+        align-items: left;
+        width: 80%;
+        height: 500px;
+        background-color: white;
+        margin: 0; 
+        border-radius: 10px;
+        padding-left:10px;
+        padding-top: 15px;
+        border: 1px solid #ddd;
+        resize: none;
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        
+      }
+      .copy-button{
+        width: calc(10% - 10px); /* Take up 10% of the top container minus margin */
+        margin-left: 10px; /* Add margin between elements */
+        justify-content: center;
+        align-items: center;
+       
+      }
+    
+     
+      
+     
+      .container-row{
+        display: flex;
+      justify-content: center;
+      align-items: flex-end; /* Align items to the bottom */
+      flex: 1; /* Take up remaining space */
+      }
+      .quiz-nameBox {
+        width:100%;
+        list-style-type: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        overflow-y: scroll;
+        border-right: 10px solid #ccc;
+        border: 1px solid #ccc;
+      }
+      .display-names{
+        border-width: 3px;
+        border-color: black;
+        border-style: solid;
+    
+      }
+      .quiz-nameBox li {
+        /* Add padding to list items */
+        /* Add a bottom border for visual separation */
+        background-color:  #212529;
+      }
+      .quiz-nameBox li:last-child {
+        border-bottom: none; /* Remove bottom border from the last list item */
+      }
+      .quizNames-Button{
+        display:flex;
+        text-align: left;
+        padding: right;
+        background-color:  #212529;
+      }
+    
+      .quizNames-Button:hover{
+        background-color: lightgrey;
+        border-bottom: black;
+        border-width: 1px;
+        border-right: solid;
+        
+      }
+      .quizzes-heading{
+        text-decoration: underline;
+        text-emphasis: black;
+        text-align: center;
+      }
+      .array-container{
+        padding-right:10px;
+        align-items: left;
+      }
+    
+    
+      
+    
+    
+    
+    
