@@ -10,7 +10,7 @@ const supabase = createClient('https://vyvojvrtkryvbsmcgzrq.supabase.co', 'eyJhb
 
 
 
-const QuizView2 = () => {
+const QuizView2 =async () => {
     const navigate = useNavigate();
     const [textBoxValue, setTextBoxValue] = useState("test"); // quiz 0 in the array // display the first quiz
     //const [user,setUserId] = useState(5);
@@ -19,17 +19,10 @@ const QuizView2 = () => {
    // getUserQuizzes;
 
     
-        addLink(user)
-            .then(quizzes => {
-                // You can access the retrieved quizzes array here (optional)
-                console.log('Quizzes:', quizzes);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+       
     
 
-    const addLink= async (user) =>{
+    //const addLink= async (user) =>{
 
         const {data: quizzes, error}= await supabase.from('quizzes')
         .select('*')
@@ -56,7 +49,7 @@ const QuizView2 = () => {
                 displayquizzes(quizzes,"display-names");     
             
         }
-      }
+     // }
 
       const displayquizzes =(array, containerId)=>{
         if (!Array.isArray(array)) {
