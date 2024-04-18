@@ -20,7 +20,7 @@ const QuizView = () => {
     const [savePress, setSavePress] = useState(false);
     const [quizName, setNameQuiz] = useState("");
     const [selectedQuiz, setSelectedQuiz] = useState(null); // Track selected quiz (optional, for content display)
-    const [copied, setCopied] = useState(false);
+  
   
     const newValue = "null";
     const navigate = useNavigate();
@@ -71,6 +71,16 @@ const QuizView = () => {
           }
 
 //--------------------------------------for copying the text -------------------------------------------------------//
+const [textToCopy, setTextToCopy] = useState('');
+
+const handleTextAreaChange = (event) => {
+    //setResponse(response);
+    textToCopy = {response};
+    setTextToCopy(event.target.value);
+  };
+const { copied, copyToClipboard } = CopyQuiz(textToCopy);
+
+/*
                 let [textToCopy, setTextToCopy] = useState('');
                 
 
@@ -85,7 +95,7 @@ const QuizView = () => {
                   handleTextAreaChange();
                   navigator.clipboard.writeText(textToCopy);
                 }
-                
+        */        
 //----------------------------------------for copying the text -------------------------------------------------------//
     
 
