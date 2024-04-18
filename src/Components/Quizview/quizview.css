@@ -88,7 +88,7 @@
   .quiz-nameBox li {
     /* Add padding to list items */
     /* Add a bottom border for visual separation */
-    background-color:  white;
+   background-color: white;
   }
   .quiz-nameBox li:last-child {
     border-bottom: none; /* Remove bottom border from the last list item */
@@ -97,7 +97,7 @@
     display:flex;
     text-align: left;
     padding: right;
-    background-color: white;
+    
   }
 
   .quizNames-Button:hover{
