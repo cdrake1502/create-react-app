@@ -268,13 +268,13 @@ const onclickItem = (count) =>{
                       id="text-box"
                       
                       value={textBoxValue}
-                      onChange={handleTextAreaChange}
+                      
                       >
                           {textToCopy} 
                       </textarea>
                     
 
-                    <button className="copy-button"id="copy-button" onClick={copyToClipboard}>{copied ? 'Copied!' : 'Copy'}</button>
+                    <button className="copy-button"id="copy-button" onClick={callCopy}>{copied ? 'Copied!' : 'Copy'}</button>
           </div>
           { savePress ?(<div></div>):
 
