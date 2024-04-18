@@ -82,6 +82,7 @@ const QuizView = () => {
                 };
 
                 const copyToClipboard = () =>{
+                  handleTextAreaChange();
                   navigator.clipboard.writeText(textToCopy);
                 }
                 
