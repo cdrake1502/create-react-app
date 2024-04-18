@@ -15,17 +15,20 @@ const QuizView2 = () => {
     const [textBoxValue, setTextBoxValue] = useState("test"); // quiz 0 in the array // display the first quiz
     //const [user,setUserId] = useState(5);
     const user = getLoginState().user_id; // setting id if availavble
+    console.log(user);
+    getUserQuizzes();
 
-    const getUserQuizzes=()=>{
+    function getUserQuizzes() {
         addLink(user)
-        .then(quizzes => {
-        // You can access the retrieved quizzes array here (optional)
-        console.log('Quizzes:', quizzes);
-        })
-        .catch(error => {
-        console.error('Error:', error);
-        })
+            .then(quizzes => {
+                // You can access the retrieved quizzes array here (optional)
+                console.log('Quizzes:', quizzes);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
+    
     const addLink= async (user) =>{
 
         const {data: quizzes, error}= await supabase.from('quizzes')
