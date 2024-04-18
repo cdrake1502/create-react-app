@@ -74,7 +74,8 @@ const QuizView = () => {
 const [textToCopy, setTextToCopy] = useState('');
 
     const handleTextAreaChange = (event) => {
-        //setResponse(response);
+        setTextBoxValue(event.target.value);
+        let response = textBoxValue;
         textToCopy = {response};
         setTextToCopy(event.target.value);
       };
