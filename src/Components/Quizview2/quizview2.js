@@ -42,7 +42,7 @@ const QuizView2 =async () => {
                 for (const quiz of quizzes) {
                     if (count === 0){
                         setTextBoxValue(quiz.content);
-                        console.log(quiz.content);
+                        console.log(   quizzes.quiz.content);
                     }
                  console.log("idQ2: " + quiz.id)
 
