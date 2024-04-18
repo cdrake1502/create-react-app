@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {getResponseState} from "../apiresponse/getResponseState";
 import { createClient} from '@supabase/supabase-js';
 import { getLoginState } from '../authenticate/getLoginState';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 
@@ -70,13 +71,18 @@ const QuizView = () => {
 
 //--------------------------------------for copying the text -------------------------------------------------------//
                 let [textToCopy, setTextToCopy] = useState('');
+                
 
-                const handleTextAreaChange = (event) => {
+                const handleTextAreaChange = async (event) => {
                     setTextBoxValue(event.target.value);
                     textToCopy = document.getElementById("text-box2");
                     setTextToCopy(event.target.value);
+                    const settingtext = await setTextToCopy(event.target.value);  
+                    navigator.clipboard.writeText(text);
                 };
-                const { copied, copyToClipboard } = CopyQuiz(textToCopy);
+
+                //const { copied, copyToClipboard } = CopyQuiz(textToCopy);
+                
 //----------------------------------------for copying the text -------------------------------------------------------//
     
 
